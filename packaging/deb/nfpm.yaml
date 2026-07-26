@@ -36,8 +36,8 @@ contents:
     dst: /usr/share/icons/hicolor/1024x1024/apps/trademonke.png
   - src: desktop/assets/trade-monke-icon.png
     dst: /usr/share/icons/hicolor/256x256/apps/trademonke.png
-  - src: desktop/assets/trade-monke-icon.png
-    dst: /usr/lib/trademonke/desktop/assets/trade-monke-icon.png
+  # Desktop assets (including the app icon) are already staged under
+  # packaging/deb/staging/usr/lib/trademonke/desktop/ via build-deb.sh.
 scripts:
   postinstall: packaging/deb/scripts/postinst
   postremove: packaging/deb/scripts/postrm
