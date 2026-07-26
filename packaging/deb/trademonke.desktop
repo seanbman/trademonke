@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=TradeMonke
+Comment=Dry-run research workstation (spot only)
+Exec=/usr/bin/trademonke
+Icon=trademonke
+Terminal=false
+Categories=Finance;Office;
+StartupNotify=true
+Keywords=trading;research;crypto;dry-run;

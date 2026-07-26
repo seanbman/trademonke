@@ -1,0 +1,81 @@
+name: quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -c requirements.lock -e '.[dev]'
+      - run: python -m pytest
+      - run: python -m ruff check app tests user_data/strategies
+
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose --env-file .env.example config -q
+
+  migration-boot:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: trading_platform
+          POSTGRES_USER: trading
+          POSTGRES_PASSWORD: test-only-password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U trading -d trading_platform"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      PLATFORM_DATABASE_URL: postgresql+psycopg://trading:test-only-password@127.0.0.1:5432/trading_platform
+      PLATFORM_DRY_RUN: "true"
+      PLATFORM_TRADING_MODE: spot
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -c requirements.lock -e '.[dev]'
+      - run: python -m app.telemetry.migrations
+      - run: python -m app.telemetry.migrations
+
+  gui:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: gui
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: gui/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - run: npm audit --audit-level=high
+
+  freqtrade-strategy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose --env-file .env.example run --rm freqtrade list-strategies --config /freqtrade/user_data/config/config.dryrun.json

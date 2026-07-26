@@ -1,0 +1,44 @@
+TRANSCRIBED TRADING NOTES
+
+PAGE 1 — INTERMEDIATE VS. PROFESSIONAL TRADER
+
+Indication:
+- Auction Market Theory: Is the market balanced or seeking discovery (trending)?
+- HTF, anchored VWAP, swing structure
+- Volume profile (POC, HVN, LVN)
+- Footprint volume: who is in control
+- Bid × ask and delta; absorption
+- Order flow / auction theory
+
+Establish context: balanced or trending.
+Volume profile finds location and an LVN that overlaps an FVG.
+Then use footprint volume to get confirmation—absorption or aggression—at the order block before acting.
+Skipping one of these steps will lead to failed signals.
+
+Balanced or Imbalanced Markets
+Balanced markets rotate between the high and low. Imbalanced markets break out on strong aggression, leaving thin, fast-traded areas behind—zones that show up as FVGs later.
+LVNs help determine which state markets are in: look for reversion trades when balanced, or continuation when imbalanced.
+
+PAGE 2 — ORDER FLOW + GEX [?]
+
+Anchored VWAP:
+- 4H swing, session VWAP
+- Market structure; fair-value line for the move in progress
+- Price holding above VWAP during an up-leg, or below during a down-leg
+
+Swing Highs / Swing Lows
+- Trend vs. discovery
+- SH/SL: fingerprints for auctions
+- SH/SL at the same level show balance; use them to validate order blocks
+
+Footprint Charts
+A grid shows the inside of a candle: sellers hitting the bid and buyers lifting the offer. It basically breaks down what happened from open to close—the blueprint of the candle and the finest resolution of order flow.
+
+Absorption
+One side (large bids) absorbs [b/s?] aggressive selling at that price without making a new low.
+On a footprint chart, it looks like an outsized size/number at the same price level across different candles.
+It signals that buyers keep buying at that level and absorbing selling into that level—exactly what forms an order block.
+
+Notes:
+- “GEX” in the page-two title is somewhat unclear.
+- “[b/s?]” is written unclearly in the absorption paragraph.

@@ -1,0 +1,9 @@
+runtime/
+output.txt
+.git/
+user_data/
+docs/prompt_notes/
+*.pdf
+gui/node_modules/
+tests/
+.github/

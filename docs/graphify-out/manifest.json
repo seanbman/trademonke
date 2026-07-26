@@ -1,0 +1,137 @@
+{
+  "ARCHITECTURE.md": {
+    "mtime": 1784265271.007692,
+    "ast_hash": "bd6e9e0a52f6761ccbb846daddfd8d6a",
+    "semantic_hash": "bd6e9e0a52f6761ccbb846daddfd8d6a"
+  },
+  "BACKTESTING.md": {
+    "mtime": 1784265271.0082324,
+    "ast_hash": "3f6d5825e42291b540c94902de33e904",
+    "semantic_hash": "3f6d5825e42291b540c94902de33e904"
+  },
+  "Confluence_Trade_Filtration_Whitepaper.md": {
+    "mtime": 1784524666.888513,
+    "ast_hash": "1e01e3174cce34e6245e9608d05b048f",
+    "semantic_hash": "1e01e3174cce34e6245e9608d05b048f"
+  },
+  "DATA_MODEL.md": {
+    "mtime": 1784265271.0083306,
+    "ast_hash": "df9331c8938330452c197e55f1c352af",
+    "semantic_hash": "df9331c8938330452c197e55f1c352af"
+  },
+  "DEPLOYMENT.md": {
+    "mtime": 1784265271.0083823,
+    "ast_hash": "404be832edccb6b7689ca18e3c231093",
+    "semantic_hash": "404be832edccb6b7689ca18e3c231093"
+  },
+  "DESKTOP.md": {
+    "mtime": 1784522861.4063742,
+    "ast_hash": "09b8a07e783f049bdd6cad985223c909",
+    "semantic_hash": "09b8a07e783f049bdd6cad985223c909"
+  },
+  "GUI.md": {
+    "mtime": 1784522713.2290113,
+    "ast_hash": "22289233660657ab6d144b44f6280adb",
+    "semantic_hash": "22289233660657ab6d144b44f6280adb"
+  },
+  "MARKET_DATA.md": {
+    "mtime": 1784522708.3715303,
+    "ast_hash": "38e576e827c5167e90ed8db0d8f09750",
+    "semantic_hash": "38e576e827c5167e90ed8db0d8f09750"
+  },
+  "ROADMAP.md": {
+    "mtime": 1784265271.0213826,
+    "ast_hash": "449a2103552097e5a96971acb67e7c2e",
+    "semantic_hash": "449a2103552097e5a96971acb67e7c2e"
+  },
+  "SECURITY.md": {
+    "mtime": 1784265271.0220423,
+    "ast_hash": "25ce1b65fa76e06c66a97e50ca649704",
+    "semantic_hash": "25ce1b65fa76e06c66a97e50ca649704"
+  },
+  "STRATEGY_SPEC.md": {
+    "mtime": 1784265271.0091538,
+    "ast_hash": "78e4650c1e0ce385af61a55e376162ed",
+    "semantic_hash": "78e4650c1e0ce385af61a55e376162ed"
+  },
+  "TELEGRAM.md": {
+    "mtime": 1784265271.0217671,
+    "ast_hash": "67cad9cac45c780de6866e3ab57ff0bb",
+    "semantic_hash": "67cad9cac45c780de6866e3ab57ff0bb"
+  },
+  "WORK_ORDER_AUDIT.md": {
+    "mtime": 1784265271.0093393,
+    "ast_hash": "8f9ba6645d47bc3ea4829af9c43a9818",
+    "semantic_hash": "8f9ba6645d47bc3ea4829af9c43a9818"
+  },
+  "prompt_notes/freqai_initial.txt": {
+    "mtime": 1784265271.0212696,
+    "ast_hash": "f00ab7b03a155acd491741bac494daee",
+    "semantic_hash": "f00ab7b03a155acd491741bac494daee"
+  },
+  "trading_partner_context_exhaustive.txt": {
+    "mtime": 1784518043.4058876,
+    "ast_hash": "ff61e6831dc927ef9d91e52c3d56dd79",
+    "semantic_hash": "ff61e6831dc927ef9d91e52c3d56dd79"
+  },
+  "transcribed_trading_notes.txt": {
+    "mtime": 1784267209.6242633,
+    "ast_hash": "7a24f94bd60b88ab656f97b48eefb2d9",
+    "semantic_hash": "7a24f94bd60b88ab656f97b48eefb2d9"
+  },
+  "Order Flow White Paper.pdf": {
+    "mtime": 1784266898.718372,
+    "ast_hash": "b0519773e5fdc65afbf08e76acfbca8e",
+    "semantic_hash": "b0519773e5fdc65afbf08e76acfbca8e"
+  },
+  "prompt_notes/Cryptocurrency Trading Platform Development.pdf": {
+    "mtime": 1784265271.0123823,
+    "ast_hash": "83aa9028acb518f3998d7f3fbddfd158",
+    "semantic_hash": "83aa9028acb518f3998d7f3fbddfd158"
+  },
+  "prompt_notes/Persistent Storage and Backups.pdf": {
+    "mtime": 1784265271.0133824,
+    "ast_hash": "b5d794c469ea58730c11ea8805060c3b",
+    "semantic_hash": "b5d794c469ea58730c11ea8805060c3b"
+  },
+  "prompt_notes/Supplementary_Codex_Prompt_Institutional_Liquidity.pdf": {
+    "mtime": 1784265271.0113823,
+    "ast_hash": "6641bd18c435f6d756d22a72f9cd6e2a",
+    "semantic_hash": "6641bd18c435f6d756d22a72f9cd6e2a"
+  },
+  "prompt_notes/supporting_documents/FVG_PRO_ELITE_RAW.txt (1).pdf": {
+    "mtime": 1784265271.0163825,
+    "ast_hash": "05a7c5c0779f7a1d843cebdead5e9a37",
+    "semantic_hash": "05a7c5c0779f7a1d843cebdead5e9a37"
+  },
+  "prompt_notes/supporting_documents/Fib Retest Sniper Entry.pdf": {
+    "mtime": 1784265271.020646,
+    "ast_hash": "a1335ea9ff460a466cf6cd342b5c5fbf",
+    "semantic_hash": "a1335ea9ff460a466cf6cd342b5c5fbf"
+  },
+  "prompt_notes/supporting_documents/IFVG Model Breakdown.pdf": {
+    "mtime": 1784265271.0209,
+    "ast_hash": "4c650e4670ef8400e332a7d8b9399046",
+    "semantic_hash": "4c650e4670ef8400e332a7d8b9399046"
+  },
+  "prompt_notes/supporting_documents/Lab Report 1 Signal Tiers.pdf": {
+    "mtime": 1784265271.020378,
+    "ast_hash": "6d2615ec3d5aaf228dfd3790032f17b3",
+    "semantic_hash": "6d2615ec3d5aaf228dfd3790032f17b3"
+  },
+  "prompt_notes/supporting_documents/Lab Report 2 TP Box Targeting.pdf": {
+    "mtime": 1784265271.0201445,
+    "ast_hash": "9621de9d40c16e450fa19a6a21f8dc98",
+    "semantic_hash": "9621de9d40c16e450fa19a6a21f8dc98"
+  },
+  "prompt_notes/supporting_documents/Lab Report 3 Infrastructure Survey.pdf": {
+    "mtime": 1784265271.0198877,
+    "ast_hash": "31e7a3854d903b6635b05b0ffe3f4e3c",
+    "semantic_hash": "31e7a3854d903b6635b05b0ffe3f4e3c"
+  },
+  "prompt_notes/trading_bot_technical_development_specification_gui_updated.pdf": {
+    "mtime": 1784265271.0153825,
+    "ast_hash": "79e147d4ffdf835293fa54ba39786683",
+    "semantic_hash": "79e147d4ffdf835293fa54ba39786683"
+  }
+}

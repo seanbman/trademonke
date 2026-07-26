@@ -1,0 +1,10 @@
+*
+!Dockerfile
+!pyproject.toml
+!requirements.lock
+!app
+!app/**
+!migrations
+!migrations/**
+!scripts
+!scripts/**

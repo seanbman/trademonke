@@ -1,0 +1,1838 @@
+TRADING PLATFORM PARTNER IMAGE SET
+EXHAUSTIVE CONTEXT EXTRACTION, LEARNINGS, INTENTIONS, AND PLATFORM IMPLICATIONS
+
+Prepared from: “WhatsApp Unknown 2026-07-19 at 2.33.41 PM.zip”
+Archive contents reviewed: 21 JPEG screenshots
+Purpose: Reconstruct what the business partner appears to be studying, emphasizing, and implicitly asking to be represented in the trading platform.
+
+======================================================================
+1. HOW TO READ THIS DOCUMENT
+======================================================================
+
+This is not merely a transcription of text appearing in the screenshots. It separates four layers:
+
+1. OBSERVATION
+   What is visibly present in an image.
+
+2. TECHNICAL INTERPRETATION
+   What the visible chart language or diagram is trying to convey.
+
+3. INFERRED PARTNER INTENTION
+   What repeated selection of this material likely says about the business partner’s desired trading process or product.
+
+4. PLATFORM IMPLICATION
+   What should be represented in data, logic, user experience, training, alerts, backtesting, or automation.
+
+The screenshots are mostly social-media posts, many marked as AI content and several promoting Telegram channels. They should therefore be treated as inspiration, vocabulary, and evidence of interest—not as validated trading research. Some diagrams are simplified, ambiguous, or promotional. The platform should encode hypotheses that can be tested, not accept social-media claims as proven market laws.
+
+Several images are duplicates or near-duplicates. This is meaningful: repetition indicates salience. The partner appears especially interested in:
+
+- “Would you buy or sell here?” decision exercises.
+- Price action without heavy indicators.
+- Smart Money Concepts / ICT-style terminology.
+- Liquidity sweeps.
+- Market structure shifts and breaks of structure.
+- Fair value gaps and order blocks.
+- Supply/demand and consolidation zones.
+- Candle Range Theory.
+- Visual pattern recognition.
+- Turning chart-reading into a trainable skill.
+
+======================================================================
+2. EXECUTIVE SYNTHESIS: WHAT THE IMAGE SET MEANS AS A WHOLE
+======================================================================
+
+The images collectively describe a platform that should not be conceived as a simple “indicator that prints BUY or SELL.” They point toward a layered trading intelligence system with five connected functions:
+
+A. MARKET READING
+The system identifies market structure, liquidity, zones, patterns, and possible institutional-style traps from raw candle data.
+
+B. SCENARIO GENERATION
+At a decision point, it should construct competing bullish, bearish, and no-trade scenarios rather than pretending that one chart fragment always has an obvious answer.
+
+C. CONFIRMATION AND EXECUTION
+The system waits for evidence such as a sweep, displacement, reclaim, break of structure, market structure shift, retest, or rejection before escalating a setup from “interesting” to “actionable.”
+
+D. TRAINING AND CALIBRATION
+The repeated quizzes strongly imply that the product should help the trader learn. Historical candles can be hidden, the user can make a directional or no-trade decision, and the platform can reveal the future path and score both the outcome and the quality of the reasoning.
+
+E. LEARNING FROM FAILURE
+One screenshot explicitly shows a stop-loss being hit on a setup labelled with SMC concepts. This is important. The intended platform should not only catalogue successful examples. It must preserve invalidated setups, false positives, stop-outs, and the conditions under which a reasonable thesis failed.
+
+The central inferred philosophy is:
+
+“Read what the market is doing around liquidity and structure, describe the evidence, wait for confirmation, manage risk, and learn from both correct and incorrect interpretations.”
+
+The partner appears to want a system that can eventually automate execution but begins by formalizing discretionary visual reasoning. This is compatible with the broader trading-platform direction: Freqtrade and CCXT for execution and exchange connectivity, a private Python service for strategies and data, Telegram for interaction, and a later GUI for visual inspection and control.
+
+======================================================================
+3. HIGH-CONFIDENCE PARTNER INTENTIONS
+======================================================================
+
+3.1 PRICE ACTION IS THE PRIMARY INPUT
+
+The images contain almost no conventional indicators such as RSI, MACD, Bollinger Bands, or moving averages. One advertisement explicitly says “5 charts, 20 bars each. No indicators,” and asks the viewer to predict what happens next.
+
+High-confidence inference:
+The partner wants the platform to understand raw market geometry and candle sequencing rather than depend on a stack of lagging indicators.
+
+Platform consequence:
+Indicator values can be supplemental, but the core event model should be derived from OHLCV data, swing structure, range behavior, liquidity levels, displacement, and reaction to zones.
+
+3.2 THE CORE EXPLANATORY MODEL IS LIQUIDITY PLUS STRUCTURE
+
+The most explicit conceptual image is “10 Liquidity Sweeps Every Trader Must Know.” Other images repeatedly use BOS, CHOCH, MSS, equal highs/lows, previous-day levels, session highs/lows, FVG, order blocks, QML, supply/demand, and liquidity labels.
+
+High-confidence inference:
+The partner wants to interpret price movement as a search for liquidity followed by repricing, rather than as random pattern completion alone.
+
+Platform consequence:
+Liquidity pools and structure transitions should be first-class entities, not merely chart drawings.
+
+3.3 THE SYSTEM SHOULD TEACH, NOT ONLY SIGNAL
+
+Multiple images are explicitly framed as quizzes:
+
+- “Test Your Skills.”
+- “Would you buy or sell here?”
+- “Train Your Skills Quiz.”
+- “Can you read price action cold?”
+
+High-confidence inference:
+The platform should include a replay/training mode that develops the user’s judgment and records how they reason.
+
+Platform consequence:
+A quiz/replay subsystem should be treated as a core feature, not a later marketing add-on.
+
+3.4 BINARY OUTPUT IS THE QUESTION, NOT THE FINAL DESIGN
+
+The screenshots repeatedly ask “buy or sell?” but usually present ambiguous chart fragments with insufficient context.
+
+High-confidence inference:
+The partner is interested in the moment of decision, but the product should improve on the simplistic framing.
+
+Platform consequence:
+The platform should support at least three outcomes:
+
+- Bullish candidate.
+- Bearish candidate.
+- No trade / insufficient evidence.
+
+It should also show conditional branches, for example:
+
+- Bullish only if price sweeps the low, reclaims the zone, and breaks local structure.
+- Bearish only if price rejects the upper boundary and closes below the trigger level.
+- No trade while price remains inside the unresolved range.
+
+3.5 VISUAL EXPLANATIONS MATTER
+
+Nearly every image uses hand-drawn boxes, arrows, levels, labels, and before/after examples.
+
+High-confidence inference:
+The partner thinks visually and wants chart annotations that make reasoning visible.
+
+Platform consequence:
+The GUI should display detected objects directly on the chart and provide a synchronized explanation panel. Alerts should link back to a visual snapshot of the evidence.
+
+3.6 FAILURE MUST BE INCLUDED IN THE KNOWLEDGE BASE
+
+The GBP/USD example is captioned “SL hit!!!” and shows the proposed short invalidated by a later upside breakout.
+
+High-confidence inference:
+The partner is not only collecting idealized winners. He is interested in what happens when a technically labelled setup fails.
+
+Platform consequence:
+Every setup needs an invalidation definition, stop logic, and post-trade classification. The system should compare failed and successful instances of the same setup family.
+
+======================================================================
+4. IMAGE-BY-IMAGE EXTRACTION
+======================================================================
+
+The numbering below follows chronological filename order inside the archive.
+
+---------------------------------------------------------------------
+IMAGE 1
+Filename: WhatsApp Image 2026-07-19 at 2.32.21 PM.jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A photographed wall chart of common classical technical-analysis patterns. Visible patterns include:
+
+- Inverse head and shoulders.
+- Bullish flag.
+- Ascending triangle.
+- Head and shoulders.
+- Bearish flag.
+- Descending triangle.
+- Falling wedge.
+- Symmetrical triangle with bullish resolution.
+- Double bottom.
+- Rising wedge.
+- Symmetrical triangle with bearish resolution.
+- Double top.
+
+The diagrams use green and red candles, yellow boundary lines, arrows, shaded target regions, and labels suggesting minimum targets after breakout.
+
+TECHNICAL INTERPRETATION
+
+This image represents classical chart-pattern taxonomy. It treats recurring geometric formations as compressed descriptions of market behavior:
+
+- Reversal patterns: head and shoulders, inverse head and shoulders, double top, double bottom.
+- Continuation patterns: flags and some triangles.
+- Compression patterns: wedges and triangles.
+- Breakout targets: projected moves based on pattern height or structure.
+
+INFERRED PARTNER INTENTION
+
+The partner wants the system to retain compatibility with familiar retail technical-analysis language. Even though the rest of the archive leans strongly toward SMC/ICT concepts, the partner has not discarded classic patterns. He likely sees them as useful visual primitives or as an introductory layer.
+
+PLATFORM IMPLICATION
+
+The platform should include a pattern-recognition library, but patterns should not directly trigger trades. Each detected pattern should be contextualized by:
+
+- Trend and higher-timeframe structure.
+- Location relative to liquidity.
+- Volume or displacement, where available.
+- Breakout quality.
+- Retest behavior.
+- Proximity to opposing supply/demand or order blocks.
+- Historical performance for the asset and timeframe.
+
+A pattern event should store:
+
+pattern_type, start_time, completion_time, upper_boundary, lower_boundary, neckline_or_break_level, projected_target, invalidation_level, confidence, and outcome.
+
+IMPORTANT LIMITATION
+
+Pattern recognition is subjective. A robust platform must define pivot rules and tolerances precisely, otherwise the same chart can produce multiple conflicting patterns.
+
+---------------------------------------------------------------------
+IMAGE 2
+Filename: WhatsApp Image 2026-07-19 at 2.32.21 PM (1).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+An infographic titled “10 Liquidity Sweeps Every Trader Must Know.” It lists:
+
+1. Buy-side sweep
+   - Sweeps highs.
+   - Takes buy stops.
+   - Reverses down.
+
+2. Sell-side sweep
+   - Sweeps lows.
+   - Takes sell stops.
+   - Reverses up.
+
+3. Trendline sweep
+   - Breaks trendline.
+   - Traps breakout traders.
+   - Returns to trend.
+
+4. Session high sweep
+   - Sweeps London/New York high.
+   - Strong rejection.
+   - Institutional entry.
+
+5. Session low sweep
+   - Sweeps London/New York low.
+   - Buyers step in.
+   - Bullish reversal.
+
+6. Previous-day high sweep (PDH)
+   - Takes PDH liquidity.
+   - Fake breakout.
+   - Bearish move.
+
+7. Previous-day low sweep (PDL)
+   - Sweeps PDL.
+   - Strong buying.
+   - Bullish move.
+
+8. Equal-highs sweep
+   - Equal highs form.
+   - Liquidity is taken.
+   - Market reverses.
+
+9. Equal-lows sweep
+   - Equal lows form.
+   - Sell stops are taken.
+   - Market reverses.
+
+10. Range-liquidity sweep
+    - Price breaks the range.
+    - Traders are trapped.
+    - Price returns inside the range.
+
+The bottom message says the market hunts liquidity before making its real move.
+
+TECHNICAL INTERPRETATION
+
+The image frames obvious highs, lows, boundaries, and breakout levels as locations where orders cluster. A sweep occurs when price trades beyond such a level and then rejects or reclaims it, implying that the excursion was a liquidity event rather than sustained acceptance.
+
+INFERRED PARTNER INTENTION
+
+This is probably the single most important conceptual image in the set. The partner wants the platform to identify not just breakouts, but the difference between:
+
+- A breakout that gains acceptance.
+- A sweep that quickly rejects and returns.
+
+He likely wants institutional-style market behavior represented as event sequences.
+
+PLATFORM IMPLICATION
+
+Create a general LiquidityLevel object with types:
+
+- swing_high
+- swing_low
+- equal_highs
+- equal_lows
+- previous_day_high
+- previous_day_low
+- session_high
+- session_low
+- range_high
+- range_low
+- trendline_liquidity
+- weekly/monthly high or low, later
+
+Create a LiquiditySweep event with:
+
+- level_id
+- sweep_direction
+- penetration_distance
+- wick_distance
+- body_close_relative_to_level
+- time_beyond_level
+- reclaim_time
+- displacement_after_reclaim
+- local_structure_shift_after_sweep
+- volume response, when available
+- session
+- success/failure outcome
+
+Do not encode “sweep equals reversal” as a guaranteed rule. A sweep should create a setup candidate. Confirmation should determine whether it becomes actionable.
+
+---------------------------------------------------------------------
+IMAGE 3
+Filename: WhatsApp Image 2026-07-19 at 2.32.21 PM (2).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A “Test Your Skills” chart asking whether to buy or sell. Price makes a strong recovery from a deep low, produces a sharp upward displacement, and then consolidates in a tight horizontal zone near the top. Green and red arrows show possible breakout directions.
+
+TECHNICAL INTERPRETATION
+
+This is a post-impulse consolidation. Possible readings include:
+
+- Bullish continuation if the range is a pause after displacement and price breaks and holds above it.
+- Bearish reversal if the consolidation is distribution or if price sweeps the top and loses the lower boundary.
+- No trade while price remains inside the range.
+
+INFERRED PARTNER INTENTION
+
+The partner is interested in the difficult transition between directional movement and compression. He wants the system to reason about whether a consolidation is continuation, accumulation/distribution, or an unresolved range.
+
+PLATFORM IMPLICATION
+
+Implement consolidation detection with:
+
+- range duration
+- range width relative to ATR
+- overlap ratio between candles
+- direction and magnitude of the impulse entering the range
+- position within higher-timeframe structure
+- liquidity above and below the range
+- breakout candle body size
+- close outside range
+- retest and acceptance
+
+The correct platform behavior before confirmation is “conditional,” not a premature buy or sell.
+
+---------------------------------------------------------------------
+IMAGE 4
+Filename: WhatsApp Image 2026-07-19 at 2.32.22 PM.jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A chart labelled “15 Min Order Block.” Price previously reacts around a horizontal zone, later returns toward that zone after a decline, and presents both a projected buy path and projected sell path.
+
+TECHNICAL INTERPRETATION
+
+The chart is asking whether a lower-timeframe order block will act as demand/support or fail and become resistance. It is not enough that a box exists. The reaction and confirmation determine the trade.
+
+INFERRED PARTNER INTENTION
+
+The partner wants order blocks to be detected and monitored as live zones. He is interested in their retest behavior and in deciding whether a zone remains valid.
+
+PLATFORM IMPLICATION
+
+An OrderBlock object should store:
+
+- bullish/bearish type
+- source candle or candle cluster
+- timeframe
+- proximal and distal boundaries
+- displacement that originated from the zone
+- whether structure was broken after departure
+- number of prior touches
+- mitigation percentage
+- age
+- invalidation status
+- associated FVG or liquidity event
+
+A zone should decay in confidence after repeated tests or a decisive close through it. The system should distinguish untouched, partially mitigated, fully mitigated, and invalidated zones.
+
+---------------------------------------------------------------------
+IMAGE 5
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM.jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A quiz chart asks “Would you buy or sell here?” Price shows a large bearish displacement, a rebound, and several green candles recovering from the low. The future direction is omitted.
+
+TECHNICAL INTERPRETATION
+
+This image intentionally removes context. The latest candles show short-term bullish recovery after a strong selloff, but the broader structure may still be bearish. A rational decision requires more information:
+
+- Has local structure shifted?
+- Is price reclaiming a key zone?
+- Is the bounce retracing into supply?
+- Was sell-side liquidity taken?
+- What is the higher-timeframe trend?
+
+INFERRED PARTNER INTENTION
+
+The partner wants the platform to test the trader’s ability to separate a bounce from a reversal.
+
+PLATFORM IMPLICATION
+
+Training exercises should ask more than direction. They should ask:
+
+- What evidence supports the thesis?
+- What would invalidate it?
+- Where is the nearest liquidity?
+- Is this an entry now, a wait, or a no-trade?
+- What confirmation is still missing?
+
+---------------------------------------------------------------------
+IMAGE 6
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (1).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A black-and-white candlestick chart asks “Would you buy or sell here?” It shows an overall rise, multiple swing highs and lows, a recent lower low followed by a rebound, and arrows indicating either continuation up or reversal down.
+
+TECHNICAL INTERPRETATION
+
+The latest rebound is occurring inside a larger swing structure. It could be:
+
+- A bullish market structure recovery.
+- A retracement into supply before continuation down.
+- A range transition.
+
+INFERRED PARTNER INTENTION
+
+The partner is repeatedly focused on ambiguous inflection points. This suggests the product should help formalize decision criteria at exactly the moment when human traders are tempted to guess.
+
+PLATFORM IMPLICATION
+
+The platform should display a checklist of evidence, including:
+
+- Higher-timeframe bias.
+- Current dealing range.
+- Premium/discount location.
+- Most recent protected high/low.
+- BOS/CHOCH/MSS status.
+- Nearby liquidity.
+- Zone interaction.
+- Entry trigger.
+- Risk/reward after confirmation.
+
+---------------------------------------------------------------------
+IMAGE 7
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (2).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A two-panel SMC/ICT-style illustration.
+
+Top panel labels:
+
+- FVG (Fair Value Gap).
+- MSS (Market Structure Shift).
+- BOS (Break of Structure).
+- L (Liquidity).
+- HL/LH swing notation.
+
+Bottom panel is titled “CRT + TBS” and labels:
+
+- BOS.
+- FVG.
+- Zone of Interest.
+- CNSW.
+- CRTH.
+- CRTL.
+
+The exact expansion of every acronym is not provided in the image. CRTH and CRTL appear to refer to Candle Range Theory high and low. TBS may refer to a specific strategy model, possibly a turtle-soup-style setup, but that should not be assumed without confirmation from the partner.
+
+TECHNICAL INTERPRETATION
+
+The diagram expresses a sequence model:
+
+1. Price interacts with liquidity or a range extreme.
+2. Market structure changes.
+3. A displacement creates imbalance/FVG.
+4. Price retraces into a zone of interest.
+5. A continuation or reversal target is defined from the range.
+
+INFERRED PARTNER INTENTION
+
+The partner is not interested in isolated chart objects. He wants confluence among structure, liquidity, imbalance, and a range model.
+
+PLATFORM IMPLICATION
+
+Represent setups as event graphs, not flat indicator scores. Example:
+
+liquidity_sweep
+  -> market_structure_shift
+  -> displacement
+  -> fair_value_gap_created
+  -> retrace_to_zone
+  -> entry_trigger
+  -> target_opposing_liquidity
+
+The system should preserve sequence and timing. The same FVG means something different depending on what caused it and where it appears.
+
+UNCERTAINTY TO RESOLVE
+
+Ask the partner to define TBS and CNSW in his own words before implementing them. Acronym ambiguity is dangerous in automated strategy code.
+
+---------------------------------------------------------------------
+IMAGE 8
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (3).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A GBP/USD four-hour chart shown before and after. Labels include:
+
+- CHOCH.
+- 30M MSS.
+- FVG.
+- BOS.
+- QML.
+- “$$$,” indicating liquidity.
+
+A short trade is drawn with a stop zone above and a large target below. The second panel shows price breaking upward and hitting the stop. The caption says “SL hit.”
+
+TECHNICAL INTERPRETATION
+
+A bearish thesis was constructed from a QML/resistance area and prior structure concepts, but price ultimately invalidated it. The chart is an example of a plausible setup failing.
+
+INFERRED PARTNER INTENTION
+
+This image is critical evidence that the partner is thinking about real trade outcomes, not only perfect textbook examples. He may want the platform to explain why a setup failed, whether the failure was expected variance, and which evidence was weak or contradictory.
+
+PLATFORM IMPLICATION
+
+Store the complete pre-trade snapshot before outcome data is known. For each setup, retain:
+
+- Thesis at decision time.
+- Evidence used.
+- Conflicting evidence.
+- Entry and stop.
+- Planned targets.
+- Maximum favorable excursion.
+- Maximum adverse excursion.
+- Outcome.
+- Invalidation event.
+- Whether a reverse setup emerged after invalidation.
+
+This avoids hindsight rewriting. It also supports loss-cluster analysis such as:
+
+- Shorts taken against higher-timeframe momentum.
+- Zones with too many prior touches.
+- Entries before confirmation.
+- Stops placed inside normal volatility.
+- QML/FVG ideas that failed after acceptance above the zone.
+
+---------------------------------------------------------------------
+IMAGE 9
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (4).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A notebook-style “Train Your Skills Quiz” asks buy or sell. The chart shows a prior uptrend, a significant decline, a basing/ranging period, a sharp bullish expansion, and then a short pullback or small consolidation.
+
+TECHNICAL INTERPRETATION
+
+This resembles a regime-transition question:
+
+- The sharp bullish move may be a structure shift and the pullback may offer continuation.
+- The move may instead be a liquidity spike into resistance.
+- The correct action may be to wait for a retest or local confirmation.
+
+INFERRED PARTNER INTENTION
+
+The partner wants a curriculum of chart snapshots where the user must infer state from sequence, not from a labelled final answer.
+
+PLATFORM IMPLICATION
+
+Replay mode should support:
+
+- Variable historical window length.
+- Multiple timeframes.
+- Hidden instrument and timestamp for blind testing.
+- Direction, no-trade, entry, stop, target, and confidence inputs.
+- Optional written rationale.
+- Reveal by one candle or by a fixed horizon.
+- Outcome scoring and reasoning feedback.
+
+---------------------------------------------------------------------
+IMAGE 10
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (5).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A near-duplicate of Image 6: the same black-and-white ambiguous buy/sell chart.
+
+INFERRED SIGNIFICANCE OF REPETITION
+
+This reinforces that the partner considers decision training important. It is not a one-off image accidentally included among unrelated concepts.
+
+PLATFORM IMPLICATION
+
+Prioritize the quiz/replay interface in the product roadmap. The repeated material suggests it may be central to user engagement and strategy development.
+
+---------------------------------------------------------------------
+IMAGE 11
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (6).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A dark-themed buy/sell chart with:
+
+- A red supply zone across the top.
+- A teal demand zone across the bottom.
+- A large decline from supply.
+- A reaction and base at demand.
+- A recovery that fails below supply.
+- A second decline and another rebound.
+- A small highlighted current-price box with bullish and bearish arrows.
+
+TECHNICAL INTERPRETATION
+
+This is a location-based decision model. Current price is between major supply and demand, not clearly at either extreme. The proper trade may depend on whether price:
+
+- Continues toward supply.
+- Rejects from a lower-timeframe zone.
+- Breaks local structure.
+- Remains trapped in the middle of the range.
+
+INFERRED PARTNER INTENTION
+
+The partner wants supply/demand zones represented, but the image also implies that location within the range matters. Trading in the middle is lower quality than trading from an extreme with confirmation.
+
+PLATFORM IMPLICATION
+
+The system should calculate:
+
+- Distance to nearest supply and demand.
+- Position within the current dealing range.
+- Premium/discount percentile.
+- Expected reward to opposing zone.
+- Whether the entry is too close to resistance/support.
+- Whether the setup occurs at an edge or in midrange.
+
+A “middle of range” warning should be available.
+
+---------------------------------------------------------------------
+IMAGE 12
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (7).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A duplicate of Image 4 showing the 15-minute order block and possible buy/sell paths.
+
+INFERRED SIGNIFICANCE OF REPETITION
+
+Order-block interaction is another repeated focus. The partner likely wants zones to remain visible and actionable in the platform.
+
+PLATFORM IMPLICATION
+
+Zone monitoring and retest alerts should be core functionality. A Telegram alert could say:
+
+“BTC/USDT entered a fresh 15-minute bullish order block after a sell-side sweep. No market structure shift yet. Waiting for confirmation.”
+
+This is more useful than “BUY BTC NOW.”
+
+---------------------------------------------------------------------
+IMAGE 13
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (8).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A duplicate of Image 8 showing the stopped-out GBP/USD short.
+
+INFERRED SIGNIFICANCE OF REPETITION
+
+The failed-trade example was deliberately preserved more than once. This increases confidence that loss analysis and invalidation are meaningful to the partner.
+
+PLATFORM IMPLICATION
+
+The system should make postmortems easy and should never hide losses from strategy summaries. It should support tagging a loss as:
+
+- valid setup, normal loss
+- invalid setup, rule violation
+- premature entry
+- wrong directional bias
+- zone failure
+- news/volatility event
+- execution/slippage issue
+- data or detector issue
+
+---------------------------------------------------------------------
+IMAGE 14
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (9).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A duplicate of Image 3 showing the post-impulse consolidation and possible buy/sell breakout.
+
+INFERRED SIGNIFICANCE OF REPETITION
+
+Consolidation and breakout interpretation are repeated priorities. The partner may expect the platform to distinguish real continuation from fake breakout/liquidity sweep behavior.
+
+PLATFORM IMPLICATION
+
+The platform should classify range exits as:
+
+- unconfirmed breakout
+- accepted breakout
+- failed breakout
+- sweep and reclaim
+- breakout and retest
+- range expansion without retest
+
+---------------------------------------------------------------------
+IMAGE 15
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (10).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+A duplicate of Image 9, the notebook-style “Train Your Skills Quiz.”
+
+INFERRED SIGNIFICANCE OF REPETITION
+
+Again reinforces training mode and chart-by-chart judgment.
+
+---------------------------------------------------------------------
+IMAGE 16
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (11).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+Another near-duplicate of the black-and-white buy/sell chart from Images 6 and 10.
+
+INFERRED SIGNIFICANCE OF REPETITION
+
+This is the most repeated ambiguous chart. The partner appears drawn to a product interaction in which the trader is challenged to make and explain a decision.
+
+PLATFORM IMPLICATION
+
+A repeated chart should not simply be used repeatedly in training; the platform should deduplicate datasets and separate unique scenarios from reposted social-media material.
+
+---------------------------------------------------------------------
+IMAGE 17
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (12).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+Another duplicate of the notebook-style “Train Your Skills Quiz.”
+
+INFERRED SIGNIFICANCE OF REPETITION
+
+Training is not peripheral. It is one of the dominant themes in the set.
+
+---------------------------------------------------------------------
+IMAGE 18
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (13).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+An infographic titled “The 4 Models of CRT – Candle Range Theory.” It shows bullish and bearish examples of:
+
+- 2-candle model CRT.
+- 3-candle model CRT.
+- Multiple-candle CRT.
+- Inside-bar CRT.
+
+Each example marks CRT high and CRT low around a defining candle or range. Subsequent candles interact with or extend beyond these boundaries.
+
+TECHNICAL INTERPRETATION
+
+The image treats a candle or multi-candle cluster as a bounded range. Later price behavior around the range high and low is used to infer liquidity-taking, expansion, or direction.
+
+The infographic alone does not provide enough exact rules to implement Candle Range Theory safely. It visually establishes variants but not precise entry, invalidation, close, or target conditions.
+
+INFERRED PARTNER INTENTION
+
+The partner wants CRT included as a formal setup family, including more than a single two-candle pattern. He likely wants the platform to recognize a defining range and monitor how later candles sweep or close relative to it.
+
+PLATFORM IMPLICATION
+
+Create a configurable CandleRange object:
+
+- model_type: 2_candle, 3_candle, multi_candle, inside_bar
+- defining_start_time
+- defining_end_time
+- range_high
+- range_low
+- range_midpoint
+- sweep_high_time
+- sweep_low_time
+- close_outside_high/low
+- reclaim status
+- target opposite side
+- invalidation
+
+Before coding a live CRT strategy, obtain an explicit written rulebook from the partner and test it against labelled examples.
+
+---------------------------------------------------------------------
+IMAGE 19
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (14).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+An advertisement says:
+
+- “5 charts. 20 bars each.”
+- “No indicators.”
+- “Test your trading skills.”
+- “What happens next?”
+- “Can you read price action cold?”
+
+The chart shows an uptrend, a peak, a controlled decline, a very large bearish displacement, a short rebound, and further downside candles.
+
+TECHNICAL INTERPRETATION
+
+This is a pure price-action prediction exercise. The large bearish candle may represent displacement and a structural break; the small rebound may be a retracement rather than reversal.
+
+INFERRED PARTNER INTENTION
+
+The partner is interested in limited-window, indicator-free testing. He may want the system to evaluate whether traders can identify trend, momentum, displacement, continuation, and failure from a small sample of candles.
+
+PLATFORM IMPLICATION
+
+The replay engine should support a “cold read” mode:
+
+- Fixed number of visible bars.
+- No indicator overlays.
+- Optional removal of symbol, price, and time labels.
+- User prediction horizon.
+- Confidence estimate.
+- Score based on direction, excursion, and risk-adjusted trade plan.
+
+However, the platform should teach that twenty bars may be insufficient without higher-timeframe context. The no-context exercise is useful for skill measurement, not necessarily for real execution.
+
+---------------------------------------------------------------------
+IMAGE 20
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (15).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+An infographic titled “Best Apps for Forex Traders (My Picks)” organizes tools by category:
+
+TRADING
+- MetaTrader.
+- OANDA.
+- cTrader.
+
+NEWS
+- DailyFX.
+- Finance Magnates.
+- DailyForex.com.
+
+ANALYSIS
+- TradingView.
+- FXStreet.com.
+- AutoChartist.
+
+EDUCATION
+- BabyPips.
+- Udemy.
+- YouTube.
+
+A small SMC-style chart in the center labels BOS, MSS, FVG, supply zone, and demand zone.
+
+TECHNICAL INTERPRETATION
+
+The partner recognizes that trading is an ecosystem containing execution, market information, analysis, and education. No single app supplies everything.
+
+INFERRED PARTNER INTENTION
+
+The platform may be intended to consolidate or coordinate these functions:
+
+- Connect to exchanges/brokers.
+- Display and annotate charts.
+- Provide news/context.
+- Train the user.
+- Execute or automate strategies.
+
+PLATFORM IMPLICATION
+
+The architecture should remain modular:
+
+- Execution adapter layer: CCXT/Freqtrade initially for crypto; other broker adapters later.
+- Market-data layer.
+- Chart/analysis layer.
+- News/event layer.
+- Strategy and detector layer.
+- Training/replay layer.
+- Telegram interface.
+- GUI/API layer.
+
+The named apps should not be assumed to be required integrations. They indicate functional categories more than a final vendor list.
+
+---------------------------------------------------------------------
+IMAGE 21
+Filename: WhatsApp Image 2026-07-19 at 2.32.23 PM (16).jpeg
+---------------------------------------------------------------------
+
+OBSERVED CONTENT
+
+Another duplicate of the notebook “Train Your Skills Quiz.”
+
+INFERRED SIGNIFICANCE OF REPETITION
+
+The final image again reinforces the learning/decision-training concept. Across the archive, the partner has collected more quiz-format material than any other single type.
+
+======================================================================
+5. DUPLICATE GROUPS AND WHAT THEIR FREQUENCY SUGGESTS
+======================================================================
+
+The archive has 21 files but fewer unique chart ideas. The duplicate/near-duplicate groups are:
+
+GROUP A: Notebook “Train Your Skills Quiz”
+- Images 9, 15, 17, and 21.
+
+GROUP B: Black-and-white “Would You Buy or Sell Here?”
+- Images 6, 10, and 16.
+
+GROUP C: 15-minute order-block decision
+- Images 4 and 12.
+
+GROUP D: GBP/USD short with stop-loss hit
+- Images 8 and 13.
+
+GROUP E: Consolidation-zone breakout decision
+- Images 3 and 14.
+
+The repetition changes the interpretation of the set. It is not merely a random collection of chart concepts. The strongest repeated intentions are:
+
+1. Build decision-training exercises.
+2. Analyze ambiguous setups rather than obvious completed patterns.
+3. Monitor order blocks and consolidation zones.
+4. Retain failed trade examples.
+5. Make the product visually interactive.
+
+For dataset construction, these duplicates should be removed or linked to a canonical scenario so they do not artificially overweight a setup during training or evaluation.
+
+======================================================================
+6. THE PARTNER’S IMPLIED TRADING MODEL
+======================================================================
+
+The image set implies the following model of market behavior.
+
+6.1 PRICE CREATES STRUCTURE
+
+The system identifies swing highs and lows and derives:
+
+- Higher highs.
+- Higher lows.
+- Lower highs.
+- Lower lows.
+- Protected highs/lows.
+- Internal and external structure.
+
+6.2 OBVIOUS LEVELS ATTRACT LIQUIDITY
+
+Potential liquidity accumulates around:
+
+- Equal highs and lows.
+- Prior swing highs and lows.
+- Previous-day high/low.
+- Session high/low.
+- Range boundaries.
+- Trendlines.
+- Pattern necklines and breakout points.
+
+6.3 PRICE MAY SWEEP A LEVEL BEFORE THE “REAL” MOVE
+
+A brief trade beyond a level followed by rejection can indicate:
+
+- Stops triggered.
+- Breakout traders trapped.
+- Liquidity collected.
+- A transition toward the opposite side of a range.
+
+6.4 DISPLACEMENT REVEALS INTENT
+
+A large body candle or rapid sequence away from a level may indicate strong repricing. The displacement can:
+
+- Break structure.
+- Create an FVG.
+- Leave an order block or origin zone.
+
+6.5 PRICE OFTEN RETRACES TO A ZONE
+
+The partner’s material repeatedly highlights:
+
+- FVG retraces.
+- Order-block retests.
+- Supply/demand reactions.
+- Consolidation boundaries.
+- CRT ranges.
+
+6.6 CONFIRMATION OCCURS THROUGH STRUCTURE
+
+Labels such as MSS, CHOCH, and BOS imply that entry should be tied to a change in the local sequence of highs and lows, not merely to touching a box.
+
+6.7 THE TARGET IS OFTEN OPPOSING LIQUIDITY OR A RANGE EXTREME
+
+Potential targets include:
+
+- Equal highs/lows.
+- Prior day/session high/low.
+- Opposing supply/demand.
+- The other side of a CRT range.
+- Pattern-projection targets.
+
+6.8 EVERY THESIS NEEDS INVALIDATION
+
+The stopped-out GBP/USD example demonstrates that confluence does not guarantee success. The model must support loss and reversal.
+
+======================================================================
+7. PROPOSED MACHINE-READABLE MARKET ONTOLOGY
+======================================================================
+
+To convert the partner’s visual ideas into software, the platform needs a consistent vocabulary.
+
+7.1 MARKET CONTEXT
+
+- instrument
+- venue/exchange
+- asset class
+- timeframe
+- timestamp
+- session
+- day of week
+- higher-timeframe bias
+- volatility regime
+- trend/range regime
+- news/event proximity
+
+7.2 STRUCTURE OBJECTS
+
+SwingPoint
+- time
+- price
+- high/low
+- pivot strength
+- internal/external
+- swept status
+
+StructureLeg
+- start swing
+- end swing
+- direction
+- magnitude
+- duration
+- displacement score
+
+StructureEvent
+- BOS
+- CHOCH
+- MSS
+- protected_high_broken
+- protected_low_broken
+- reclaim
+
+Because BOS, CHOCH, and MSS are used inconsistently across trading communities, the platform must define them explicitly and display the operative definition in settings.
+
+7.3 LIQUIDITY OBJECTS
+
+LiquidityLevel
+- type
+- price or dynamic line
+- creation time
+- number of touches
+- equal-level tolerance
+- session/day reference
+- strength
+- active/swept/invalidated
+
+LiquidityEvent
+- sweep
+- raid
+- breakout
+- failed breakout
+- reclaim
+- acceptance
+
+7.4 ZONE OBJECTS
+
+- order_block
+- fair_value_gap
+- supply_zone
+- demand_zone
+- consolidation_range
+- QML or equivalent level
+- CRT range
+- classical pattern boundary
+
+Common zone attributes:
+
+- upper price
+- lower price
+- timeframe
+- source candles
+- origin event
+- freshness
+- touches
+- mitigation percentage
+- invalidation
+- confluence links
+
+7.5 PATTERN OBJECTS
+
+- head_and_shoulders
+- inverse_head_and_shoulders
+- double_top
+- double_bottom
+- bullish_flag
+- bearish_flag
+- ascending_triangle
+- descending_triangle
+- symmetrical_triangle
+- rising_wedge
+- falling_wedge
+
+7.6 SETUP OBJECT
+
+A Setup is not one feature. It is a structured bundle:
+
+- direction
+- market context
+- liquidity premise
+- structure premise
+- location/zone premise
+- trigger premise
+- entry plan
+- stop/invalidation
+- target plan
+- reward/risk
+- confidence
+- conflicting evidence
+- status
+- outcome
+
+7.7 TRADE DECISION
+
+Possible decisions:
+
+- wait
+- watchlist
+- long candidate
+- short candidate
+- enter long
+- enter short
+- manage long
+- manage short
+- exit
+- invalidate
+- no trade
+
+This is better than a single Boolean buy/sell flag.
+
+======================================================================
+8. PROPOSED SETUP STATE MACHINE
+======================================================================
+
+A useful platform state machine based on the images is:
+
+STATE 1: CONTEXT IDENTIFIED
+- Trend/range and higher-timeframe bias are known.
+
+STATE 2: LOCATION IDENTIFIED
+- Price approaches liquidity, an order block, FVG, supply/demand, pattern boundary, or CRT high/low.
+
+STATE 3: EVENT OCCURS
+- Sweep, breakout, rejection, displacement, or zone touch.
+
+STATE 4: CONFIRMATION PENDING
+- System waits for reclaim, MSS, CHOCH, BOS, retest, or close acceptance.
+
+STATE 5: SETUP VALIDATED
+- Entry, invalidation, and target can be defined with acceptable risk/reward.
+
+STATE 6: EXECUTION ELIGIBLE
+- Risk limits, liquidity, spread, slippage, and portfolio exposure pass.
+
+STATE 7: ACTIVE TRADE
+- Position is monitored.
+
+STATE 8A: TARGET/EXIT
+- Outcome recorded.
+
+STATE 8B: INVALIDATION/STOP
+- Failure is recorded, including possible reverse setup.
+
+STATE 9: POSTMORTEM
+- System compares actual sequence with the expected one.
+
+This event-driven model is preferable to calculating one continuous “smart money score.” It preserves causality and lets the trader see exactly what happened.
+
+======================================================================
+9. TRAINING AND QUIZ SYSTEM: A CENTRAL PRODUCT FEATURE
+======================================================================
+
+The image set strongly supports a training subsystem.
+
+9.1 BASIC QUIZ MODE
+
+- Show a historical chart up to a random cutoff.
+- Ask: long, short, or no trade?
+- Ask for confidence from 0 to 100.
+- Reveal the next candles.
+- Score direction and calibration.
+
+9.2 STRUCTURED REASONING MODE
+
+Ask the user to identify:
+
+- Market regime.
+- Higher-timeframe bias.
+- Nearest liquidity above and below.
+- Last BOS/CHOCH/MSS.
+- Relevant FVG/order block/supply-demand zone.
+- Entry trigger.
+- Invalidation.
+- Target.
+- Reasons to avoid the trade.
+
+9.3 EXECUTION-QUALITY MODE
+
+The user draws entry, stop, and target. The platform calculates:
+
+- Planned reward/risk.
+- Actual maximum favorable excursion.
+- Actual maximum adverse excursion.
+- Whether stop placement was structurally valid.
+- Whether the target was realistic.
+
+9.4 COLD-READ MODE
+
+- Exactly 20 bars, matching the image inspiration.
+- No indicators.
+- Symbol and time hidden.
+- One timeframe only.
+
+9.5 MULTI-TIMEFRAME MODE
+
+- Higher timeframe for context.
+- Lower timeframe for trigger.
+- Useful for 4H/30M and 15M examples seen in the images.
+
+9.6 FAILURE REVIEW MODE
+
+Show only failed trades and ask:
+
+- Was the setup valid?
+- What invalidated it?
+- Was the trade early?
+- Was opposing evidence ignored?
+- Did price accept beyond the zone?
+- Was the stop too tight?
+
+9.7 CALIBRATION OVER RAW ACCURACY
+
+The platform should not reward guessing. A trader who selects “no trade” when evidence is insufficient should often score better than a trader who guesses the next candle correctly for weak reasons.
+
+9.8 AVOID LOOKAHEAD BIAS
+
+All features and screenshots used in a quiz must be generated using only data available before the cutoff. Future pivots, repainted zones, and indicators that require future candles must be prohibited or clearly marked.
+
+======================================================================
+10. SIGNAL EXPLANATION DESIGN
+======================================================================
+
+A strong alert inspired by the image set should look like this conceptually:
+
+BTC/USDT – 15m – BULLISH CANDIDATE
+
+Observed:
+- Sell-side liquidity below equal lows was swept.
+- Price reclaimed the range low within two candles.
+- Bullish displacement broke local lower-high structure.
+- A fresh bullish FVG overlaps a partially mitigated order block.
+
+Still missing:
+- Retest of the FVG/order-block overlap.
+
+Invalidation:
+- 15-minute close below the sweep low.
+
+Potential target:
+- Previous-day high / equal highs.
+
+Status:
+- WAITING FOR RETEST. No order placed.
+
+This format directly reflects the partner’s interests while avoiding simplistic social-media signaling.
+
+======================================================================
+11. PLATFORM USER-INTERFACE IMPLICATIONS
+======================================================================
+
+11.1 CHART OVERLAYS
+
+The GUI should allow toggling:
+
+- Swing structure.
+- BOS/CHOCH/MSS labels.
+- Liquidity levels.
+- Sweep markers.
+- Session and previous-day highs/lows.
+- Order blocks.
+- Fair value gaps.
+- Supply/demand zones.
+- Consolidation ranges.
+- CRT ranges.
+- Classical patterns.
+- Entries, stops, targets, and outcomes.
+
+11.2 EXPLANATION PANEL
+
+A panel beside the chart should show:
+
+- Current market state.
+- Active scenarios.
+- Confirmed evidence.
+- Missing evidence.
+- Conflicting evidence.
+- Invalidation.
+- Target liquidity.
+- Historical performance of similar setups.
+
+11.3 CHECKLIST
+
+The repeated “buy or sell” prompts imply a decision checklist. A practical checklist should include:
+
+CONTEXT
+- Is the higher-timeframe market trending or ranging?
+- Where is price within the dealing range?
+
+LIQUIDITY
+- What liquidity is nearest?
+- Has it been swept or merely approached?
+
+STRUCTURE
+- Did a meaningful BOS/MSS/CHOCH occur?
+- Is the break confirmed by a close or only a wick?
+
+LOCATION
+- Is price at a fresh zone or in the middle of the range?
+- Has the zone already been mitigated repeatedly?
+
+TRIGGER
+- Is there displacement?
+- Is there a retrace or reclaim?
+
+RISK
+- Is invalidation clear?
+- Does target distance justify the risk?
+- Are spread, slippage, and fees acceptable?
+
+DECISION
+- Enter, wait, or no trade?
+
+11.4 REPLAY CONTROLS
+
+- Step one candle.
+- Reveal N candles.
+- Pause at detected event.
+- Hide/show annotations.
+- Submit thesis before reveal.
+- Compare user thesis to engine thesis.
+
+======================================================================
+12. DATA ARCHITECTURE IMPLICATIONS
+======================================================================
+
+12.1 RAW MARKET DATA
+
+Persist immutable:
+
+- OHLCV candles.
+- Trades and order-book data where available.
+- Funding, open interest, and liquidation data for crypto, later.
+- Session/calendar metadata.
+
+12.2 DERIVED FEATURE DATA
+
+Persist versioned detectors:
+
+- swing points
+- structure events
+- liquidity levels
+- sweeps
+- zones
+- patterns
+- setup candidates
+
+Every derived object should record the detector version and parameters. Otherwise historical results become irreproducible after code changes.
+
+12.3 DECISION LOG
+
+For every engine or user decision:
+
+- timestamp
+- data cutoff
+- selected scenario
+- confidence
+- reasons
+- rejected alternatives
+- risk plan
+- final action
+
+12.4 EXECUTION LOG
+
+- order request
+- exchange response
+- fill price
+- quantity
+- fees
+- slippage
+- partial fills
+- cancellation
+- stop/target changes
+
+12.5 OUTCOME LOG
+
+- P&L
+- R multiple
+- MFE
+- MAE
+- time in trade
+- exit reason
+- setup validity
+- postmortem tags
+
+12.6 SCREENSHOT AND SNAPSHOT STORAGE
+
+The partner values annotated visuals. Store a chart snapshot at:
+
+- setup detection
+- alert
+- entry
+- management change
+- exit
+
+The snapshot should be reproducible from stored data and annotation objects, not only saved as a raster image.
+
+======================================================================
+13. AUTOMATION ROADMAP IMPLIED BY THE MATERIAL
+======================================================================
+
+PHASE 1: VISUAL RESEARCH ASSISTANT
+
+- Detect and draw structure, liquidity, zones, and patterns.
+- Let partners confirm, reject, or edit detections.
+- Send watchlist alerts through Telegram.
+- No autonomous live orders.
+
+PHASE 2: RULE-BASED SETUP ENGINE
+
+- Encode explicit event sequences.
+- Generate conditional scenarios.
+- Paper trade.
+- Record all candidates, including skipped trades.
+
+PHASE 3: TRAINING AND PERFORMANCE ANALYTICS
+
+- Build chart replay and quizzes.
+- Compare human and engine decisions.
+- Analyze setup families and failure modes.
+
+PHASE 4: GUARDED EXECUTION
+
+- Allow only well-tested setup families.
+- Require portfolio and risk checks.
+- Use exchange-specific execution rules through Freqtrade/CCXT.
+- Keep kill switch and manual override.
+
+PHASE 5: ADAPTIVE MODELS
+
+- Use FreqAI or other ML only after the event taxonomy and clean labelled dataset exist.
+- ML may rank or contextualize setups; it should not erase the underlying reasons.
+
+======================================================================
+14. BACKTESTING AND VALIDATION REQUIREMENTS
+======================================================================
+
+The social-media images present patterns as if they are reliable. The platform must test them rigorously.
+
+14.1 NO CHERRY-PICKING
+
+Evaluate every detected instance, not only visually attractive examples.
+
+14.2 WALK-FORWARD TESTING
+
+Train/tune on one period and test on later unseen periods.
+
+14.3 REGIME SEGMENTATION
+
+Measure performance by:
+
+- trending/ranging
+- high/low volatility
+- session
+- weekday
+- asset
+- timeframe
+- bull/bear market
+
+14.4 REALISTIC EXECUTION
+
+Include:
+
+- fees
+- spread
+- slippage
+- latency
+- funding
+- partial fills
+- exchange minimums
+
+14.5 PARAMETER SENSITIVITY
+
+A detector that works only with one exact pivot length or tolerance may be overfit.
+
+14.6 OUTCOME DEFINITIONS
+
+Do not judge a setup only by whether the next candle was green or red. Evaluate:
+
+- Did price reach invalidation first?
+- Did it reach target first?
+- What was MFE/MAE?
+- Was the move large enough after costs?
+- How long did it take?
+
+14.7 BASELINE COMPARISONS
+
+Compare complex SMC logic against simple baselines:
+
+- random direction
+- trend following
+- breakout/retest
+- mean reversion
+- buy-and-hold where relevant
+
+14.8 ABLATION TESTS
+
+Remove one feature at a time:
+
+- Does FVG add value after a sweep and MSS?
+- Does the order block add value beyond structure alone?
+- Does session context improve results?
+- Does CRT add independent predictive value?
+
+======================================================================
+15. RISK AND QUALITY WARNINGS FROM THE SOURCE MATERIAL
+======================================================================
+
+15.1 SOCIAL-MEDIA SOURCE QUALITY
+
+Many screenshots are AI-generated posts or promotional content linked to Telegram channels. They may contain:
+
+- Incorrect terminology.
+- Hindsight-drawn levels.
+- Repainted structure.
+- Cherry-picked examples.
+- Missing timeframe and instrument context.
+- No proof of performance.
+
+The platform should not copy these rules literally without validation.
+
+15.2 TERMINOLOGY COLLISION
+
+BOS, CHOCH, MSS, order block, QML, CRT, and other terms are not universally defined. The partners must agree on exact machine-readable definitions.
+
+15.3 AMBIGUOUS BUY/SELL FRAMING
+
+Many screenshots omit the information required for a rational trade. The product should teach abstention and conditional thinking.
+
+15.4 PATTERN SUBJECTIVITY
+
+Triangles, wedges, head-and-shoulders patterns, and zones can be drawn differently by different people. Detection parameters must be explicit.
+
+15.5 HINDSIGHT AND REPAINTING
+
+A swing high may only be known after several future candles. Historical charts often draw it as though it were known immediately. The platform must timestamp when a feature became knowable.
+
+15.6 AUTOMATION RISK
+
+A visual concept can appear compelling but fail under fees, latency, or changing regimes. Live automation should follow paper trading and controlled deployment.
+
+======================================================================
+16. QUESTIONS THAT SHOULD BE PUT TO THE BUSINESS PARTNER
+======================================================================
+
+These questions arise directly from the images and should be answered before implementation.
+
+1. Which concepts are mandatory for version one: liquidity sweeps, order blocks, FVG, structure shifts, CRT, classical patterns, or all of them?
+
+2. What exact definitions do you use for BOS, CHOCH, and MSS?
+
+3. What is the exact meaning of TBS and CNSW in the CRT + TBS image?
+
+4. How do you define an order block?
+   - Last opposite candle?
+   - Candle cluster?
+   - Must it cause displacement and BOS?
+
+5. How do you define a valid FVG?
+   - Three-candle wick gap?
+   - Minimum size?
+   - Body-based or wick-based?
+
+6. What confirms a sweep?
+   - Wick beyond and close back inside?
+   - Reclaim within N candles?
+   - Must a structure shift follow?
+
+7. How close must highs/lows be to count as equal?
+
+8. Which sessions matter for crypto, which trades continuously?
+
+9. How is higher-timeframe bias determined?
+
+10. Should classical patterns be traded directly or only used as supporting context?
+
+11. What is the preferred entry:
+    - market on confirmation
+    - limit at zone
+    - retrace into FVG
+    - breakout/retest
+
+12. Where should stops be placed?
+    - beyond swept liquidity
+    - beyond zone boundary
+    - volatility-adjusted
+
+13. What are the target rules?
+    - fixed R multiple
+    - opposing liquidity
+    - session/day level
+    - partial exits
+
+14. What makes a setup “no trade” even when several concepts align?
+
+15. How should news and macro events affect execution?
+
+16. Which markets and timeframes are the initial focus?
+
+17. Is the quiz/training system intended for the two partners only, for future customers, or both?
+
+18. Should the engine provide one preferred scenario or several competing scenarios?
+
+19. Should the trader be required to approve every order during early deployment?
+
+20. How should the system classify a stopped-out trade that followed all rules?
+
+======================================================================
+17. RECOMMENDED VERSION-ONE PRODUCT DEFINITION
+======================================================================
+
+A disciplined version one suggested by the image set would be:
+
+MARKET SCOPE
+- One or two liquid crypto pairs.
+- 4H/1H context and 15M/5M trigger timeframes.
+
+CORE DETECTORS
+- Swing highs/lows.
+- HH/HL/LH/LL structure.
+- Previous-day high/low.
+- Session/range high/low.
+- Equal highs/lows.
+- Sweep and reclaim.
+- Displacement.
+- BOS/MSS using one agreed definition.
+- FVG.
+- One agreed order-block definition.
+
+SETUP FAMILY
+
+Bullish example:
+1. Price reaches external sell-side liquidity or a demand zone.
+2. Low is swept.
+3. Price reclaims the level.
+4. Bullish displacement creates an FVG and breaks local structure.
+5. Price retraces to the FVG/order-block overlap.
+6. Entry is considered only if risk/reward to buy-side liquidity is acceptable.
+
+Bearish setup is the inverse.
+
+USER EXPERIENCE
+- Chart overlays.
+- Evidence checklist.
+- Conditional Telegram alerts.
+- Manual confirmation.
+- Paper execution.
+- Post-trade review.
+- Basic replay quiz.
+
+DEFER UNTIL LATER
+- Full classical-pattern library.
+- Every CRT variant.
+- AutoChartist-style broad scanning.
+- Fully autonomous execution.
+- Machine learning before reliable labels exist.
+
+======================================================================
+18. EXAMPLE OF AN INTERNAL STRATEGY SPECIFICATION
+======================================================================
+
+STRATEGY NAME
+Liquidity Sweep + Structure Shift + FVG Retest
+
+BULLISH PRECONDITIONS
+
+- Higher timeframe is bullish, neutral, or at major discount/demand.
+- A defined sell-side liquidity level exists.
+- Price is not in the middle of a broad unresolved range unless the target remains adequate.
+
+EVENT SEQUENCE
+
+1. Price trades below the liquidity level.
+2. Price closes back above the level within a configured number of candles.
+3. Bullish displacement breaks the last confirmed lower high.
+4. A valid bullish FVG is created during the displacement.
+5. Price retraces into the FVG or overlapping bullish order block.
+6. Entry trigger occurs.
+
+INVALIDATION
+
+- Price closes below the sweep low.
+- Structure fails before entry.
+- Zone is fully traversed with acceptance.
+- Risk/reward falls below threshold.
+
+TARGETS
+
+- Internal high.
+- Previous-day/session high.
+- Equal highs.
+- Opposing supply.
+
+METRICS
+
+- sweep depth
+- reclaim speed
+- displacement strength
+- FVG size
+- zone freshness
+- distance to target
+- stop distance
+- session
+- higher-timeframe alignment
+
+This type of explicit specification is what the partner’s visual language needs to become before safe automation.
+
+======================================================================
+19. BUSINESS AND PRODUCT POSITIONING IMPLIED BY THE IMAGES
+======================================================================
+
+The image set could support a platform positioned as more than a trading bot.
+
+Possible product identity:
+
+“A visual market-structure and liquidity intelligence platform that helps traders study, explain, test, and automate evidence-based setups.”
+
+Differentiators implied by the partner’s interests:
+
+- Explains every setup on the chart.
+- Trains the trader through replay and quizzes.
+- Preserves uncertainty and no-trade decisions.
+- Learns from stopped-out examples.
+- Converts discretionary SMC/price-action concepts into versioned, testable rules.
+- Connects analysis to Telegram and guarded execution.
+
+The strongest defensible value is not claiming to predict every move. It is building a system that makes trading reasoning explicit, testable, reviewable, and progressively automatable.
+
+======================================================================
+20. FINAL INTERPRETATION OF THE PARTNER’S MESSAGE
+======================================================================
+
+Taken together, the screenshots appear to be the partner’s visual shorthand for the following request:
+
+“Build a platform that can read charts the way an experienced discretionary price-action trader tries to read them. It should recognize standard patterns, but go deeper into liquidity, institutional traps, order blocks, fair value gaps, market structure shifts, supply/demand, and candle ranges. It should not blindly tell us to buy or sell. It should show the competing scenarios, identify what evidence is present, wait for confirmation, define invalidation and targets, and help us study what happened afterward. It should also train our own judgment with chart quizzes and eventually turn the best-tested sequences into alerts and automated execution.”
+
+The most important development lesson is this:
+
+Do not implement the screenshots as a bag of visual indicators. Implement a structured event language for market context, liquidity, structure, zones, confirmations, decisions, risk, and outcomes. Then use that language consistently in the chart UI, Telegram alerts, replay training, backtesting, and eventual automation.
+
+======================================================================
+21. SOURCE INVENTORY VERIFICATION
+======================================================================
+
+Total files extracted from archive: 21
+Total files reviewed: 21
+
+Reviewed sequence:
+
+1. WhatsApp Image 2026-07-19 at 2.32.21 PM.jpeg
+2. WhatsApp Image 2026-07-19 at 2.32.21 PM (1).jpeg
+3. WhatsApp Image 2026-07-19 at 2.32.21 PM (2).jpeg
+4. WhatsApp Image 2026-07-19 at 2.32.22 PM.jpeg
+5. WhatsApp Image 2026-07-19 at 2.32.23 PM.jpeg
+6. WhatsApp Image 2026-07-19 at 2.32.23 PM (1).jpeg
+7. WhatsApp Image 2026-07-19 at 2.32.23 PM (2).jpeg
+8. WhatsApp Image 2026-07-19 at 2.32.23 PM (3).jpeg
+9. WhatsApp Image 2026-07-19 at 2.32.23 PM (4).jpeg
+10. WhatsApp Image 2026-07-19 at 2.32.23 PM (5).jpeg
+11. WhatsApp Image 2026-07-19 at 2.32.23 PM (6).jpeg
+12. WhatsApp Image 2026-07-19 at 2.32.23 PM (7).jpeg
+13. WhatsApp Image 2026-07-19 at 2.32.23 PM (8).jpeg
+14. WhatsApp Image 2026-07-19 at 2.32.23 PM (9).jpeg
+15. WhatsApp Image 2026-07-19 at 2.32.23 PM (10).jpeg
+16. WhatsApp Image 2026-07-19 at 2.32.23 PM (11).jpeg
+17. WhatsApp Image 2026-07-19 at 2.32.23 PM (12).jpeg
+18. WhatsApp Image 2026-07-19 at 2.32.23 PM (13).jpeg
+19. WhatsApp Image 2026-07-19 at 2.32.23 PM (14).jpeg
+20. WhatsApp Image 2026-07-19 at 2.32.23 PM (15).jpeg
+21. WhatsApp Image 2026-07-19 at 2.32.23 PM (16).jpeg
+
+End of document.

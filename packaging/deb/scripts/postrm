@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+# Leave /opt/trademonke and /etc/trademonke so user data survives package removal.
+if [ "$1" = "purge" ]; then
+  rm -f /etc/trademonke/repo.url
+  rmdir /etc/trademonke 2>/dev/null || true
+fi
+exit 0

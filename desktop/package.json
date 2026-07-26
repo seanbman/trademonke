@@ -1,0 +1,14 @@
+{
+  "name": "trademonke-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Thin Electron shell for the TradeMonke research workstation",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron ."
+  },
+  "dependencies": {
+    "electron": "^35.1.2"
+  }
+}

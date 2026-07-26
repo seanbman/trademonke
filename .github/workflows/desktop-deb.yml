@@ -1,0 +1,46 @@
+name: desktop-deb
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deb:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build .deb
+        run: bash scripts/desktop/build-deb.sh
+
+      - name: Smoke-test package metadata
+        run: |
+          set -euo pipefail
+          DEB="$(ls -1t dist/trademonke_*.deb | head -1)"
+          dpkg-deb -I "$DEB"
+          dpkg-deb -c "$DEB" | grep -E 'usr/bin/trademonke|usr/lib/trademonke/desktop/main.js|usr/share/applications/trademonke.desktop'
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: trademonke-deb
+          path: dist/trademonke_*.deb
+          if-no-files-found: error
+
+      - name: Attach .deb to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/trademonke_*.deb
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

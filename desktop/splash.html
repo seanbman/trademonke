@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TradeMonke setup</title>
+  <style>
+    :root {
+      --bg: #0b1218;
+      --panel: #111a22;
+      --border: #243442;
+      --text: #d7e2ea;
+      --muted: #7f93a3;
+      --accent: #3aa6e8;
+      --ok: #5ecf8a;
+      --err: #e27a7a;
+      --mono: "IBM Plex Mono", "JetBrains Mono", "Cascadia Code", ui-monospace, monospace;
+      --sans: "IBM Plex Sans", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; height: 100%;
+      background: radial-gradient(1200px 600px at 10% -10%, #152433 0%, var(--bg) 55%);
+      color: var(--text);
+      font-family: var(--sans);
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 16px 18px 14px;
+      gap: 12px;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      font-weight: 650;
+    }
+    h1 span { color: var(--accent); }
+    .lede {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.4;
+    }
+    .status-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 22px;
+    }
+    .pulse {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(58, 166, 232, 0.55);
+      animation: pulse 1.6s ease-out infinite;
+      flex: 0 0 auto;
+    }
+    .pulse.done { background: var(--ok); animation: none; box-shadow: none; }
+    .pulse.fail { background: var(--err); animation: none; box-shadow: none; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(58, 166, 232, 0.5); }
+      70% { box-shadow: 0 0 0 10px rgba(58, 166, 232, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(58, 166, 232, 0); }
+    }
+    #status {
+      font-size: 13px;
+      color: #b7d8f0;
+      letter-spacing: 0.01em;
+    }
+    .bar {
+      height: 3px;
+      border-radius: 999px;
+      background: #1a2833;
+      overflow: hidden;
+    }
+    .bar > i {
+      display: block;
+      height: 100%;
+      width: 35%;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      animation: slide 1.4s linear infinite;
+    }
+    .bar.done > i, .bar.fail > i { animation: none; width: 100%; }
+    .bar.done > i { background: var(--ok); }
+    .bar.fail > i { background: var(--err); }
+    @keyframes slide {
+      0% { transform: translateX(-120%); }
+      100% { transform: translateX(320%); }
+    }
+    .console-wrap {
+      flex: 1 1 auto;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .console-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .console-head label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: none;
+      letter-spacing: 0;
+      cursor: pointer;
+      user-select: none;
+    }
+    #log {
+      flex: 1 1 auto;
+      margin: 0;
+      padding: 10px 12px 14px;
+      overflow: auto;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #c5d3dd;
+    }
+    #log .stderr { color: #efb0b0; }
+    #log .status { color: #7ec8f5; }
+    #log .meta { color: #6f8797; }
+    footer {
+      color: var(--muted);
+      font-size: 11px;
+    }
+    code {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: #9eb4c4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TradeMonke <span>setup</span></h1>
+    <p class="lede">Installing dependencies and starting the dry-run research stack. Verbose output streams below — leave this window open until the workstation opens.</p>
+    <div class="status-row">
+      <span class="pulse" id="pulse" aria-hidden="true"></span>
+      <div id="status">Preparing…</div>
+    </div>
+    <div class="bar" id="bar"><i></i></div>
+  </header>
+
+  <section class="console-wrap" aria-label="Installation output">
+    <div class="console-head">
+      <span>Verbose output</span>
+      <label><input type="checkbox" id="follow" checked /> Follow</label>
+    </div>
+    <pre id="log"></pre>
+  </section>
+
+  <footer>
+    Logs also saved under <code>~/.local/share/trademonke/logs/desktop/</code>
+  </footer>
+
+  <script>
+    const statusEl = document.getElementById("status");
+    const logEl = document.getElementById("log");
+    const followEl = document.getElementById("follow");
+    const pulseEl = document.getElementById("pulse");
+    const barEl = document.getElementById("bar");
+    const MAX_LINES = 4000;
+    let lineCount = 0;
+
+    function setPhase(phase) {
+      pulseEl.classList.remove("done", "fail");
+      barEl.classList.remove("done", "fail");
+      if (phase === "done") {
+        pulseEl.classList.add("done");
+        barEl.classList.add("done");
+      } else if (phase === "fail") {
+        pulseEl.classList.add("fail");
+        barEl.classList.add("fail");
+      }
+    }
+
+    function appendLine(entry) {
+      const text = typeof entry === "string" ? entry : (entry && entry.text) || "";
+      if (!text) return;
+      const stream = (entry && entry.stream) || "stdout";
+      const span = document.createElement("span");
+      if (text.startsWith("STATUS:")) span.className = "status";
+      else if (stream === "stderr") span.className = "stderr";
+      else if (stream === "meta") span.className = "meta";
+      span.textContent = text.endsWith("\n") ? text : `${text}\n`;
+      logEl.appendChild(span);
+      lineCount += 1;
+      while (lineCount > MAX_LINES && logEl.firstChild) {
+        logEl.removeChild(logEl.firstChild);
+        lineCount -= 1;
+      }
+      if (followEl.checked) {
+        logEl.scrollTop = logEl.scrollHeight;
+      }
+    }
+
+    if (window.trademonkeDesktop) {
+      window.trademonkeDesktop.onBootStatus((payload) => {
+        statusEl.textContent = payload.message || "Starting…";
+        if (payload.phase) setPhase(payload.phase);
+      });
+      window.trademonkeDesktop.onBootLog((entry) => appendLine(entry));
+      window.trademonkeDesktop.getBootStatus().then((payload) => {
+        if (payload?.message) statusEl.textContent = payload.message;
+        if (payload?.phase) setPhase(payload.phase);
+      });
+      window.trademonkeDesktop.getBootLog().then((entries) => {
+        for (const entry of entries || []) appendLine(entry);
+      });
+    }
+  </script>
+</body>
+</html>

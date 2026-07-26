@@ -1,0 +1,25 @@
+export type Setup = {id:string; pair:string; timeframe:string; direction:string; state:string; highest_state_reached:string; components:Record<string, unknown>};
+export type Episode = {id:string; liquidity_level_id:string; exchange:string; symbol:string; timeframe:string; direction:"long"|"short"; current_state:string; highest_state_reached:string; started_at:string; updated_at:string; terminal_reason:string|null; current_gate_snapshot:Record<string, unknown>};
+export type Recommendation = {id:string; episode_id:string; recommendation_type:string; version:number; status:string; geometry:Record<string, any>; source_rules:string[]; source_object_ids:string[]; valid_from:string; valid_until:string|null};
+export type IndicatorSnapshot = {direction:"long"|"short";score:number;setup_state:string;candle_timestamp:string;components:Record<string,Record<string,any>>};
+export type Bootstrap = {contract_version:string; generated_at:string; watchlist:{symbol:string;status:string;protected:boolean}[]; setups:Setup[]; episodes:Episode[]; recommendations:Recommendation[]; controls:{paused:boolean;kill_switch:boolean}};
+export type ChartPattern = {
+  id:string;
+  pattern_type:string;
+  status:string;
+  confidence:string;
+  direction_hint:string|null;
+  points:{index:number;price:string;kind:string;timestamp:string}[];
+  upper_line:{index:number;price:string;kind:string;timestamp:string}[]|null;
+  lower_line:{index:number;price:string;kind:string;timestamp:string}[]|null;
+  measurements:Record<string,unknown>;
+  soft_label:boolean;
+  authority:string;
+};
+export type ChartPayload = {contract_version:string;exchange:string;symbol:string;timeframe:string;candles:{timestamp:string;open:string;high:string;low:string;close:string;volume:string}[];liquidity_levels:{id:string;price:string;direction:string;level_type:string;status:string}[];imbalances:{id:string;episode_id:string;direction:string;type:string;lower_price:string;upper_price:string;status:string;created_at:string}[];episodes:Episode[];recommendations:Recommendation[];indicator_snapshots:IndicatorSnapshot[];patterns?:ChartPattern[]};
+export type EpisodeEvent = {event_id:string;event_type:string;prior_state:string|null;current_state:string;occurred_at:string;reason_codes:string[];measurements:Record<string,unknown>};
+export type Health = {status:string;database:string;feed_status:string;stale_streams:number;total_streams:number;services:Record<string,string>;paused:boolean;kill_switch:boolean;strategy_version:string;git_sha:string};
+export type Alert = {event_id:string;symbol:string;timeframe:string;event_type:string;score:number;message:string;created_at:string;acknowledged:boolean};
+export type ExecutionConsole = {contract_version:string;mode:string;dry_run_submission_locked:boolean;gate_reason:string;controls:{paused:boolean;kill_switch:boolean};plans:{id:string;status:string;version:number;entry:Record<string,unknown>;targets:Record<string,unknown>[];stop:Record<string,unknown>;size:Record<string,unknown>;execution_connected:boolean}[];events:{event_id:string;trade_plan_id:string;event_type:string;occurred_at:string;reason_codes:string[]}[]};
+export type LiveCandle = {timestamp:string;open:string;high:string;low:string;close:string;volume:string};
+export type WorkstationMessage = {contract_version:"workstation.v1";type:"heartbeat";generated_at:string}|{contract_version:"workstation.v1";type:"snapshot";generated_at:string;data:{bootstrap:Bootstrap;chart:ChartPayload;events:EpisodeEvent[];health:Health;alerts:Alert[];execution:ExecutionConsole}}|{contract_version:"market-stream-status.v1";type:"market_status";status:"connected"|"disconnected";observed_at:string}|{contract_version:"feeder-status.v1";type:"feeder_status";status:"live"|"cached"|"offline";observed_at:string}|{contract_version:"live-candle.v1";type:"live_candle";exchange:string;symbol:string;timeframe:string;observed_at:string;authoritative:false;candle:LiveCandle}|{contract_version:"live-price.v1";type:"live_price";exchange:string;symbol:string;observed_at:string;authoritative:false;price_kind:"bbo_midpoint";price:string;bid:string;ask:string};

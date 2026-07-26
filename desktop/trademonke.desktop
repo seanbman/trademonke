@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=TradeMonke
+Comment=Dry-run research workstation (spot only)
+Exec=env TRADEMONKE_ROOT=@TRADEMONKE_ROOT@ @LAUNCH@
+Icon=@ICON@
+Terminal=false
+Categories=Finance;Office;
+StartupNotify=true
+Keywords=trading;research;crypto;dry-run;

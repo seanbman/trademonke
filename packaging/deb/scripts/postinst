@@ -1,0 +1,41 @@
+#!/bin/sh
+set -e
+
+REPO_URL_SRC="/usr/lib/trademonke/repo.url"
+mkdir -p /etc/trademonke
+if [ -f "$REPO_URL_SRC" ]; then
+  cp "$REPO_URL_SRC" /etc/trademonke/repo.url
+fi
+
+# Best-effort: add the installing user to the docker group when available.
+TARGET_USER="${SUDO_USER:-}"
+if [ -z "$TARGET_USER" ] && [ -n "${USER:-}" ] && [ "$USER" != "root" ]; then
+  TARGET_USER="$USER"
+fi
+
+# Pre-create the app tree so first-run git clone does not need write access to /opt.
+INSTALL_ROOT="/opt/trademonke"
+if [ ! -e "$INSTALL_ROOT" ]; then
+  mkdir -p "$INSTALL_ROOT"
+fi
+if [ -n "$TARGET_USER" ] && [ "$TARGET_USER" != "root" ]; then
+  chown "$TARGET_USER:$TARGET_USER" "$INSTALL_ROOT" || true
+  if getent group docker >/dev/null 2>&1; then
+    usermod -aG docker "$TARGET_USER" || true
+  fi
+fi
+
+if command -v update-desktop-database >/dev/null 2>&1; then
+  update-desktop-database -q /usr/share/applications || true
+fi
+
+cat <<'EOF'
+TradeMonke package installed.
+
+Open "TradeMonke" from the app menu to finish first-run setup
+(clone from GitHub, prepare .env, build research Docker images).
+
+Dry-run / spot research only — this package does not unlock live trading.
+EOF
+
+exit 0

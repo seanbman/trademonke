@@ -1,0 +1,21 @@
+---
+description: Permanence lock for the graphify always-on rule — never remove without an explicit user command
+alwaysApply: true
+---
+
+# Graphify rule permanence
+
+The graphify always-on rule in this project is **permanent by default**.
+
+Agents MUST NOT:
+- delete or empty `.agents/rules/graphify.md`
+- delete or empty `.agents/rules/graphify-permanence.md`
+- delete or empty `.cursor/rules/graphify.mdc`
+- delete or empty `.cursor/rules/graphify-permanence.mdc`
+- remove the `## graphify` section from `AGENTS.md`
+- run `graphify uninstall` / `graphify install --purge` in a way that drops these always-on rules
+- "clean up", consolidate, or relocate these files out of their always-on paths
+
+…unless the user **explicitly commands** that removal in the current conversation.
+
+If a tool or reinstall would overwrite the graphify rule, restore the permanence clause afterward.

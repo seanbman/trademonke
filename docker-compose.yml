@@ -1,0 +1,155 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-trading_platform}
+      POSTGRES_USER: ${POSTGRES_USER:-trading}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      TZ: UTC
+    volumes:
+      - ${DATA_ROOT:-./runtime/data}/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks: [backend]
+
+  migrate:
+    build: .
+    command: ["python", "-m", "app.telemetry.migrations"]
+    environment:
+      PLATFORM_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-trading}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-trading_platform}
+      PLATFORM_DRY_RUN: "true"
+      PLATFORM_TRADING_MODE: spot
+    depends_on:
+      postgres: {condition: service_healthy}
+    restart: "no"
+    networks: [backend]
+
+  platform-api:
+    build: .
+    environment:
+      PLATFORM_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-trading}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-trading_platform}
+      PLATFORM_DRY_RUN: "true"
+      PLATFORM_TRADING_MODE: spot
+      PLATFORM_GIT_SHA: ${PLATFORM_GIT_SHA:-unknown}
+      PLATFORM_GUI_ACCESS_TOKEN: ${PLATFORM_GUI_ACCESS_TOKEN:?set PLATFORM_GUI_ACCESS_TOKEN in .env}
+      PLATFORM_EXECUTION_MODE: ${PLATFORM_EXECUTION_MODE:-disabled}
+      PLATFORM_MARKET_STREAM_URL: ws://market-data:8100
+      TZ: UTC
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    ports: ["127.0.0.1:${PLATFORM_API_PORT:-8000}:8000"]
+    volumes:
+      - ${DATA_ROOT:-./runtime/data}/platform:/app/data
+      - ${LOG_ROOT:-./runtime/logs}/platform:/app/logs
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks: [backend, frontend]
+
+  research-gui:
+    build: ./gui
+    depends_on:
+      platform-api: {condition: service_healthy}
+    ports: ["127.0.0.1:${PLATFORM_GUI_PORT:-3000}:8080"]
+    restart: unless-stopped
+    networks: [frontend]
+
+  market-data:
+    build: .
+    command: ["market-data", "run", "--poll-seconds", "30"]
+    environment:
+      PLATFORM_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-trading}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-trading_platform}
+      PLATFORM_MARKET_DATA_EXCHANGE: ${PLATFORM_MARKET_DATA_EXCHANGE:-kraken}
+      PLATFORM_MARKET_DATA_SYMBOLS: ${PLATFORM_MARKET_DATA_SYMBOLS:-BTC/USDT,ETH/USDT}
+      PLATFORM_MARKET_DATA_TIMEFRAMES: ${PLATFORM_MARKET_DATA_TIMEFRAMES:-5m,15m,30m,1h,4h,1d}
+      PLATFORM_MARKET_DATA_HISTORY_DAYS: ${PLATFORM_MARKET_DATA_HISTORY_DAYS:-365}
+      PLATFORM_MARKET_STREAM_BIND_HOST: 0.0.0.0
+      PLATFORM_MARKET_STREAM_PORT: 8100
+      PLATFORM_INDICATOR_BASE_TIMEFRAME: ${PLATFORM_INDICATOR_BASE_TIMEFRAME:-5m}
+      PLATFORM_INDICATOR_HTF_TIMEFRAMES: ${PLATFORM_INDICATOR_HTF_TIMEFRAMES:-15m,30m,1h,4h,1d}
+      PLATFORM_INDICATOR_EMA_LENGTH: ${PLATFORM_INDICATOR_EMA_LENGTH:-50}
+      PLATFORM_INDICATOR_STRUCTURE_LOOKBACK: ${PLATFORM_INDICATOR_STRUCTURE_LOOKBACK:-10}
+      PLATFORM_INDICATOR_SMT_LOOKBACK: ${PLATFORM_INDICATOR_SMT_LOOKBACK:-10}
+      PLATFORM_INDICATOR_PIVOT_LOOKBACK: ${PLATFORM_INDICATOR_PIVOT_LOOKBACK:-30}
+      PLATFORM_INDICATOR_FVG_MAX_AGE: ${PLATFORM_INDICATOR_FVG_MAX_AGE:-40}
+      PLATFORM_SETUP_DETECTION_MIN_SCORE: ${PLATFORM_SETUP_DETECTION_MIN_SCORE:-2}
+      PLATFORM_SETUP_EXPIRY_CANDLES: ${PLATFORM_SETUP_EXPIRY_CANDLES:-40}
+      PLATFORM_LIQUIDITY_PIVOT_LEFT: ${PLATFORM_LIQUIDITY_PIVOT_LEFT:-2}
+      PLATFORM_LIQUIDITY_PIVOT_RIGHT: ${PLATFORM_LIQUIDITY_PIVOT_RIGHT:-2}
+      PLATFORM_LIQUIDITY_CLUSTER_TOLERANCE_BPS: ${PLATFORM_LIQUIDITY_CLUSTER_TOLERANCE_BPS:-5}
+      PLATFORM_LIQUIDITY_TOUCH_TOLERANCE_BPS: ${PLATFORM_LIQUIDITY_TOUCH_TOLERANCE_BPS:-2}
+      PLATFORM_LIQUIDITY_EXPIRY_CANDLES: ${PLATFORM_LIQUIDITY_EXPIRY_CANDLES:-500}
+      PLATFORM_EPISODE_DISPLACEMENT_BODY_BPS: ${PLATFORM_EPISODE_DISPLACEMENT_BODY_BPS:-20}
+      PLATFORM_RESEARCH_ACCOUNT_BALANCE: ${PLATFORM_RESEARCH_ACCOUNT_BALANCE:-1000}
+      PLATFORM_RESEARCH_TICK_SIZE: ${PLATFORM_RESEARCH_TICK_SIZE:-0.1}
+      PLATFORM_RESEARCH_SLIPPAGE_BPS: ${PLATFORM_RESEARCH_SLIPPAGE_BPS:-10}
+      PLATFORM_RISK_FRACTION: ${PLATFORM_RISK_FRACTION:-0.005}
+      PLATFORM_MINIMUM_RISK_REWARD: ${PLATFORM_MINIMUM_RISK_REWARD:-2}
+      PLATFORM_MAXIMUM_NOTIONAL: ${PLATFORM_MAXIMUM_NOTIONAL:-1000}
+      PLATFORM_MINIMUM_NOTIONAL: ${PLATFORM_MINIMUM_NOTIONAL:-10}
+      TZ: UTC
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    restart: unless-stopped
+    networks: [backend, outbound]
+
+  relay-agent:
+    build: .
+    command: ["relay-agent"]
+    env_file: [.env]
+    environment:
+      PLATFORM_MODE: full
+      PLATFORM_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-trading}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-trading_platform}
+      PLATFORM_MARKET_STREAM_URL: ws://market-data:8100
+      PLATFORM_REMOTE_RELAY_URL: ${PLATFORM_REMOTE_RELAY_URL:?set PLATFORM_REMOTE_RELAY_URL in .env}
+      PLATFORM_FEEDER_TOKEN: ${PLATFORM_FEEDER_TOKEN:?set PLATFORM_FEEDER_TOKEN in .env}
+      PLATFORM_DRY_RUN: "true"
+      PLATFORM_TRADING_MODE: spot
+      TZ: UTC
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      market-data: {condition: service_started}
+    restart: unless-stopped
+    networks: [backend, outbound]
+
+  telegram-bot:
+    build: .
+    command: ["telegram-bot"]
+    env_file: [.env]
+    environment:
+      PLATFORM_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-trading}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-trading_platform}
+      PLATFORM_DRY_RUN: "true"
+      PLATFORM_TRADING_MODE: spot
+      TZ: UTC
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    restart: unless-stopped
+    networks: [backend, outbound]
+
+  freqtrade:
+    image: freqtradeorg/freqtrade:stable
+    command: trade --config /freqtrade/user_data/config/config.dryrun.json --strategy FvgProEliteStrategy
+    environment: {TZ: UTC}
+    volumes:
+      # Bind config/strategies separately so Docker Desktop does not need to
+      # create nested mountpoints inside a root-owned ./user_data tree.
+      - ./user_data/config:/freqtrade/user_data/config:ro
+      - ./user_data/strategies:/freqtrade/user_data/strategies:ro
+      - ${DATA_ROOT:-./runtime/data}/freqtrade:/freqtrade/user_data/data
+      - ${LOG_ROOT:-./runtime/logs}/freqtrade:/freqtrade/user_data/logs
+    ports: ["127.0.0.1:${FREQTRADE_API_PORT:-8080}:8080"]
+    restart: unless-stopped
+    networks: [backend, outbound]
+
+networks:
+  backend:
+    internal: true
+  frontend: {}
+  outbound: {}

@@ -1,0 +1,53 @@
+{
+  "name": "Trading Research Platform",
+  "description": "Dry-run crypto research workstation with relay-only Heroku GUI and local data brain.",
+  "repository": "https://github.com/seanbman/trademonke",
+  "stack": "heroku-24",
+  "buildpacks": [
+    { "url": "heroku/nodejs" },
+    { "url": "heroku/python" }
+  ],
+  "addons": [
+    "heroku-postgresql:essential-0"
+  ],
+  "env": {
+    "PLATFORM_MODE": {
+      "description": "Heroku runs relay-only; local machine runs full mode.",
+      "value": "relay",
+      "required": true
+    },
+    "PLATFORM_DRY_RUN": {
+      "description": "MVP safety guard; must remain true.",
+      "value": "true",
+      "required": true
+    },
+    "PLATFORM_TRADING_MODE": {
+      "description": "Only spot mode is allowed in the MVP.",
+      "value": "spot",
+      "required": true
+    },
+    "PLATFORM_EXECUTION_MODE": {
+      "description": "Execution remains disabled on Heroku.",
+      "value": "disabled",
+      "required": true
+    },
+    "PLATFORM_GUI_ACCESS_TOKEN": {
+      "description": "Long random token for GUI authentication.",
+      "generator": "secret"
+    },
+    "PLATFORM_FEEDER_TOKEN": {
+      "description": "Shared secret for the local relay-agent ingest socket.",
+      "generator": "secret"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "description": "Install GUI build tooling during the Heroku slug compile step.",
+      "value": "false"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}

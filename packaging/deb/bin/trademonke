@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# System wrapper installed by the trademonke .deb package.
+set -euo pipefail
+
+export TRADEMONKE_PACKAGE_ROOT="${TRADEMONKE_PACKAGE_ROOT:-/usr/lib/trademonke}"
+export TRADEMONKE_ROOT="${TRADEMONKE_ROOT:-/opt/trademonke}"
+export TRADEMONKE_INSTALL_ROOT="${TRADEMONKE_INSTALL_ROOT:-/opt/trademonke}"
+
+PACKAGE_DESKTOP="${TRADEMONKE_PACKAGE_ROOT}/desktop"
+PACKAGE_SCRIPTS="${TRADEMONKE_PACKAGE_ROOT}/scripts/desktop"
+ELECTRON="${PACKAGE_DESKTOP}/node_modules/.bin/electron"
+
+if [[ -x "$ELECTRON" ]]; then
+  cd "$PACKAGE_DESKTOP"
+  exec env TRADEMONKE_ROOT="$TRADEMONKE_ROOT" TRADEMONKE_PACKAGE_ROOT="$TRADEMONKE_PACKAGE_ROOT" \
+    "$ELECTRON" . --no-sandbox "$@"
+fi
+
+# Fallback: launch script from package (will bootstrap then prefer browser/start).
+exec bash "${PACKAGE_SCRIPTS}/trademonke-launch.sh" "$@"
