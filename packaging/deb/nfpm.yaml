@@ -17,12 +17,15 @@ depends:
   - ca-certificates
   - curl
   - git
+  - python3
+  - rsync
+  # policykit-1 was removed on newer Debian/Ubuntu; pkexec covers elevation.
+  - pkexec | policykit-1
+recommends:
+  - python3-venv
   - zenity
   - libnotify-bin
-  - python3
-  - python3-venv
-  - rsync
-  - policykit-1
+  - polkitd
 contents:
   - src: packaging/deb/staging/usr/lib/trademonke/
     dst: /usr/lib/trademonke

@@ -250,7 +250,27 @@ ensure_apt_packages() {
   status_line "Installing system packages…"
   export DEBIAN_FRONTEND=noninteractive
   apt-get update -qq
-  apt-get install -y -qq ca-certificates curl git zenity libnotify-bin python3 python3-venv rsync
+  # Hard requirements for bootstrap. Prefer pkexec over removed policykit-1.
+  apt-get install -y -qq ca-certificates curl git python3 rsync
+  apt-get install -y -qq pkexec || apt-get install -y -qq policykit-1 || true
+  # python3-venv often lives in Ubuntu "universe"; zenity/notify are optional UI helpers.
+  if ! python3 -c "import venv" >/dev/null 2>&1; then
+    if command -v add-apt-repository >/dev/null 2>&1; then
+      add-apt-repository -y universe >/dev/null 2>&1 || true
+      apt-get update -qq || true
+    fi
+    apt-get install -y -qq python3-venv || true
+  fi
+  if ! python3 -c "import venv" >/dev/null 2>&1; then
+    dialog_error "python3-venv is required but could not be installed.
+
+On Ubuntu, enable the universe pocket and retry:
+  sudo add-apt-repository universe
+  sudo apt update
+  sudo apt install python3-venv"
+    return 1
+  fi
+  apt-get install -y -qq zenity libnotify-bin || true
 }
 
 ensure_docker() {
