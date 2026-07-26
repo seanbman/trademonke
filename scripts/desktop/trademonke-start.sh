@@ -26,8 +26,8 @@ trap 'code=$?; if [[ $code -ne 0 ]]; then trademonke_write_error_report "trademo
 ensure_env "$ROOT"
 export BUILDKIT_PROGRESS=plain COMPOSE_PROGRESS=plain PYTHONUNBUFFERED=1
 
+ensure_docker_access "$0" "$@" || exit 2
 COMPOSE="$(compose_cmd)" || { dialog_error "Docker Compose is unavailable."; exit 2; }
-docker info >/dev/null 2>&1 || { dialog_error "Cannot access the Docker daemon. Start Docker, then: sudo usermod -aG docker \"\$USER\" and re-login."; exit 2; }
 
 PY="$(python_bin "$ROOT")"
 status_line "Preparing environment (.env / paths)…"

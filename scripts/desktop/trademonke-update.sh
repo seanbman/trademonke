@@ -12,8 +12,8 @@ if [[ ! -d .git ]]; then
   exit 2
 fi
 
+ensure_docker_access "$0" "$@" || exit 2
 COMPOSE="$(compose_cmd)" || { dialog_error "Docker Compose is unavailable."; exit 2; }
-docker info >/dev/null 2>&1 || { dialog_error "Cannot access the Docker daemon. Start Docker and ensure your user is in the docker group."; exit 2; }
 
 # Refuse dirty tracked files (ignore untracked runtime/.env).
 if [[ -n "$(git status --porcelain --untracked-files=no)" ]]; then

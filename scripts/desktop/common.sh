@@ -66,6 +66,93 @@ compose_cmd() {
   fi
 }
 
+docker_daemon_reachable() {
+  docker info >/dev/null 2>&1
+}
+
+user_in_docker_group_file() {
+  local user_name="${1:-${USER:-$(id -un)}}"
+  local members
+  members="$(getent group docker 2>/dev/null | cut -d: -f4 || true)"
+  [[ -n "$members" ]] && [[ ",${members}," == *",${user_name},"* ]]
+}
+
+start_docker_daemon() {
+  if docker_daemon_reachable; then
+    return 0
+  fi
+  if ! command -v systemctl >/dev/null 2>&1; then
+    return 1
+  fi
+  status_line "Starting Docker daemon…"
+  if [[ "$(id -u)" -eq 0 ]]; then
+    systemctl enable --now docker >/dev/null 2>&1 || systemctl start docker >/dev/null 2>&1 || true
+  else
+    if command -v pkexec >/dev/null 2>&1; then
+      pkexec systemctl enable --now docker >/dev/null 2>&1 \
+        || pkexec systemctl start docker >/dev/null 2>&1 \
+        || true
+    fi
+    if ! docker_daemon_reachable; then
+      sudo systemctl enable --now docker >/dev/null 2>&1 \
+        || sudo systemctl start docker >/dev/null 2>&1 \
+        || true
+    fi
+  fi
+  docker_daemon_reachable
+}
+
+# Ensure this process can talk to Docker. If the user is already in the docker
+# group on disk but the current session is stale, re-exec under `sg docker`.
+# Usage: ensure_docker_access "$0" "$@"
+ensure_docker_access() {
+  local self="${1:-}"
+  shift || true
+  if ! command -v docker >/dev/null 2>&1; then
+    dialog_error "Docker is not installed. Open TradeMonke once to finish setup, or install Docker Engine."
+    return 2
+  fi
+  if docker_daemon_reachable; then
+    return 0
+  fi
+  start_docker_daemon || true
+  if docker_daemon_reachable; then
+    return 0
+  fi
+
+  local user_name="${USER:-$(id -un)}"
+  if [[ "${TRADEMONKE_DOCKER_SG:-0}" != "1" ]] \
+    && command -v sg >/dev/null 2>&1 \
+    && user_in_docker_group_file "$user_name" \
+    && ! id -nG | grep -qw docker \
+    && [[ -n "$self" && -x "$self" ]]; then
+    status_line "Activating docker group for this session (no full re-login)…"
+    export TRADEMONKE_DOCKER_SG=1
+    exec sg docker -c "exec $(printf '%q ' "$self" "$@")"
+  fi
+
+  if user_in_docker_group_file "$user_name" && ! id -nG | grep -qw docker; then
+    dialog_error "Docker is installed, but this login session does not have the docker group yet.
+
+Run:
+  newgrp docker
+then open TradeMonke again.
+
+Or log out and back in once."
+    return 2
+  fi
+
+  dialog_error "Cannot access the Docker daemon.
+
+Run these once in a terminal:
+  sudo systemctl enable --now docker
+  sudo usermod -aG docker \"\$USER\"
+  newgrp docker
+
+Then open TradeMonke again."
+  return 2
+}
+
 trademonke_log_dir() {
   printf '%s\n' "${TRADEMONKE_LOG_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/trademonke/logs/desktop}"
 }

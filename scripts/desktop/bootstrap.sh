@@ -131,10 +131,7 @@ if [[ "$USER_ONLY" -eq 1 ]]; then
     dialog_error "Docker is not installed. Re-run bootstrap without --user-only (requires sudo)."
     exit 2
   fi
-  if ! docker info >/dev/null 2>&1; then
-    dialog_error "Cannot access the Docker daemon. Start Docker and ensure your user is in the docker group (re-login after install)."
-    exit 2
-  fi
+  ensure_docker_access "$0" "$@" || exit 2
   run_user_stack
   status_line "Bootstrap complete"
   exit 0
