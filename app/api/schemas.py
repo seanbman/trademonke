@@ -166,6 +166,7 @@ class ChartDataResponse(BaseModel):
     recommendations: list[RecommendationResponse]
     indicator_snapshots: list[IndicatorSnapshotResponse]
     patterns: list[dict[str, Any]] = []
+    annotations: list[dict[str, Any]] = []
 
 
 class AlertAcknowledgementRequest(BaseModel):
@@ -242,3 +243,57 @@ class WatchlistAssetResponse(BaseModel):
 
 class ShadowIntentRequest(BaseModel):
     user_id: str
+
+
+class ChartAnnotationRequest(BaseModel):
+    symbol: str
+    timeframe: str
+    kind: str
+    label: str
+    checklist_item: str | None = None
+    geometry: dict[str, Any]
+    user_id: str = "gui-operator"
+
+
+class ChartAnnotationResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: str
+    exchange: str
+    symbol: str
+    timeframe: str
+    kind: str
+    label: str
+    checklist_item: str | None
+    geometry: dict[str, Any]
+    created_at: datetime
+    updated_at: datetime
+    created_by: str
+    active: bool
+
+
+class WatchlistInvalidationResponse(BaseModel):
+    event_id: str
+    symbol: str
+    timeframe: str
+    event_type: str
+    source: str
+    message: str
+    candle_timestamp: datetime
+    created_at: datetime
+    measurements: dict[str, Any]
+
+
+class TechnicalAnalysisSummaryResponse(BaseModel):
+    contract_version: str
+    exchange: str
+    symbol: str
+    timeframe: str
+    generated_at: datetime
+    trade_stance: str
+    stance_reason: str
+    six_component: dict[str, Any]
+    liquidity_levels: list[dict[str, Any]]
+    open_fvgs: list[dict[str, Any]]
+    latest_structure: list[dict[str, Any]]
+    risk_geometry: dict[str, Any] | None
+    invalidation_events: list[dict[str, Any]]

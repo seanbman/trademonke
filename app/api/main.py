@@ -27,8 +27,14 @@ from app.telemetry.models import (ControlStateRecord, EpisodeEventRecord, EventR
                                   ImbalanceRecord, LiquidityLevelRecord, RecommendationRecord,
                                   ServiceHeartbeatRecord, SetupRecord, StrategyEpisodeRecord,
                                   WatchlistAssetRecord, CandleRecord, IndicatorAlertEventRecord,
-                                  IndicatorSnapshotRecord)
+                                  IndicatorSnapshotRecord, ChartAnnotationRecord,
+                                  WatchlistInvalidationEventRecord)
 from app.telemetry.models import OrderEventRecord, TradePlanRecord
+from app.domain.annotations import ANNOTATION_KINDS, PRESET_LABELS
+from app.liquidity.invalidations import (
+    evaluate_annotation_invalidations,
+    evaluate_liquidity_invalidations,
+)
 from app.market_data.exchange import ReadOnlyExchange
 from app.market_data.storage import latest_candles
 from app.market_data.live import LiveMarketRelay
@@ -41,13 +47,15 @@ from app.domain.models import Candle
 from app.domain.patterns import detect_patterns
 
 from .schemas import (AlertAcknowledgementRequest, AlertAcknowledgementResponse,
-                      ChartDataResponse, CollectionResponse, EpisodeEventResponse,
+                      ChartAnnotationRequest, ChartAnnotationResponse, ChartDataResponse,
+                      CollectionResponse, EpisodeEventResponse,
                       EpisodeResponse, EventResponse, GuiBootstrapResponse, HealthResponse,
                       LiquidityLevelResponse, MarketDataStatus, RecommendationResponse,
                       SetupResponse, ShadowIntentRequest, ShadowReconciliationRequest,
                       SymbolSearchHitResponse, SymbolSearchResponse,
-                      WatchlistAssetResponse, WatchlistChangeRequest,
-                      WatchlistChangeResponse, WatchlistConfirmRequest)
+                      TechnicalAnalysisSummaryResponse, WatchlistAssetResponse,
+                      WatchlistChangeRequest, WatchlistChangeResponse, WatchlistConfirmRequest,
+                      WatchlistInvalidationResponse)
 
 GUI_DIST = Path(__file__).resolve().parents[2] / "gui" / "dist"
 
@@ -352,6 +360,12 @@ def gui_chart(symbol: str, timeframe: str = "5m", limit: int = 500,
         for item in candles
     ]
     patterns = [item.to_chart_dict() for item in detect_patterns(domain_candles)]
+    annotations = list(session.scalars(select(ChartAnnotationRecord).where(
+        ChartAnnotationRecord.exchange == settings.market_data_exchange,
+        ChartAnnotationRecord.symbol == symbol,
+        ChartAnnotationRecord.timeframe == timeframe,
+        ChartAnnotationRecord.active.is_(True),
+    ).order_by(ChartAnnotationRecord.created_at.asc())))
     return ChartDataResponse(
         contract_version="chart.v1", exchange=settings.market_data_exchange,
         symbol=symbol, timeframe=timeframe,
@@ -365,7 +379,12 @@ def gui_chart(symbol: str, timeframe: str = "5m", limit: int = 500,
                     for item in imbalances],
         episodes=episode_rows, recommendations=recommendations,
         indicator_snapshots=indicator_snapshots,
-        patterns=patterns)
+        patterns=patterns,
+        annotations=[{
+            "id": item.id, "kind": item.kind, "label": item.label,
+            "checklist_item": item.checklist_item, "geometry": item.geometry,
+            "created_by": item.created_by, "created_at": item.created_at,
+        } for item in annotations])
 
 
 @app.get("/api/v1/events/stream", dependencies=[Depends(require_gui_access)])
@@ -403,6 +422,188 @@ def gui_alerts(limit: int = 100, session: Session = Depends(db_session)):
              "event_type": item.event_type, "score": item.score, "message": item.message,
              "created_at": item.created_at, "acknowledged": item.event_id in acknowledged}
             for item in rows]
+
+
+@app.get("/api/v1/gui/annotations/presets", dependencies=[Depends(require_gui_access)])
+def annotation_presets():
+    return {"kinds": list(ANNOTATION_KINDS), "labels": list(PRESET_LABELS)}
+
+
+@app.get("/api/v1/gui/annotations", response_model=list[ChartAnnotationResponse],
+         dependencies=[Depends(require_gui_access)])
+def list_annotations(symbol: str, timeframe: str = "5m",
+                     session: Session = Depends(db_session),
+                     settings: Settings = Depends(get_settings)):
+    return list(session.scalars(select(ChartAnnotationRecord).where(
+        ChartAnnotationRecord.exchange == settings.market_data_exchange,
+        ChartAnnotationRecord.symbol == symbol,
+        ChartAnnotationRecord.timeframe == timeframe,
+        ChartAnnotationRecord.active.is_(True),
+    ).order_by(ChartAnnotationRecord.created_at.asc())))
+
+
+@app.post("/api/v1/gui/annotations", response_model=ChartAnnotationResponse,
+          dependencies=[Depends(require_gui_access)])
+def create_annotation(request: ChartAnnotationRequest,
+                      session: Session = Depends(db_session),
+                      settings: Settings = Depends(get_settings)):
+    if request.kind not in ANNOTATION_KINDS:
+        raise HTTPException(400, f"kind must be one of {ANNOTATION_KINDS}")
+    if not request.geometry:
+        raise HTTPException(400, "geometry required")
+    now = datetime.now(timezone.utc)
+    row = ChartAnnotationRecord(
+        exchange=settings.market_data_exchange,
+        symbol=request.symbol,
+        timeframe=request.timeframe,
+        kind=request.kind,
+        label=request.label.strip() or "CUSTOM",
+        checklist_item=request.checklist_item,
+        geometry=request.geometry,
+        created_at=now,
+        updated_at=now,
+        created_by=request.user_id,
+        active=True,
+    )
+    session.add(row)
+    session.commit()
+    session.refresh(row)
+    return row
+
+
+@app.delete("/api/v1/gui/annotations/{annotation_id}",
+            dependencies=[Depends(require_gui_access)])
+def delete_annotation(annotation_id: str, session: Session = Depends(db_session)):
+    row = session.get(ChartAnnotationRecord, annotation_id)
+    if row is None:
+        raise HTTPException(404, "annotation not found")
+    row.active = False
+    row.updated_at = datetime.now(timezone.utc)
+    session.commit()
+    return {"id": annotation_id, "active": False}
+
+
+@app.get("/api/v1/gui/invalidations", response_model=list[WatchlistInvalidationResponse],
+         dependencies=[Depends(require_gui_access)])
+def list_invalidations(symbol: str | None = None, limit: int = 100,
+                       session: Session = Depends(db_session)):
+    query = select(WatchlistInvalidationEventRecord).order_by(
+        WatchlistInvalidationEventRecord.created_at.desc()).limit(max(1, min(limit, 500)))
+    if symbol:
+        query = query.where(WatchlistInvalidationEventRecord.symbol == symbol)
+    rows = list(session.scalars(query))
+    return [WatchlistInvalidationResponse(
+        event_id=item.event_id, symbol=item.symbol, timeframe=item.timeframe,
+        event_type=item.event_type, source=item.source, message=item.message,
+        candle_timestamp=item.candle_timestamp, created_at=item.created_at,
+        measurements=item.measurements,
+    ) for item in rows]
+
+
+@app.post("/api/v1/gui/invalidations/evaluate", dependencies=[Depends(require_gui_access)])
+def evaluate_invalidations(symbol: str, timeframe: str = "5m",
+                           session: Session = Depends(db_session),
+                           settings: Settings = Depends(get_settings)):
+    candles = list(session.scalars(select(CandleRecord).where(
+        CandleRecord.exchange == settings.market_data_exchange,
+        CandleRecord.symbol == symbol, CandleRecord.timeframe == timeframe,
+        CandleRecord.closed.is_(True)).order_by(CandleRecord.timestamp.desc()).limit(80)))
+    candles.reverse()
+    if not candles:
+        return {"created": 0, "items": []}
+    domain = [Candle(item.timestamp, item.open, item.high, item.low, item.close, item.volume)
+              for item in candles]
+    latest = domain[-1]
+    prior = domain[:-1]
+    created = evaluate_annotation_invalidations(
+        session, exchange=settings.market_data_exchange, symbol=symbol,
+        timeframe=timeframe, candle=latest)
+    created += evaluate_liquidity_invalidations(
+        session, exchange=settings.market_data_exchange, symbol=symbol,
+        timeframe=timeframe, candle=latest, prior_candles=prior,
+        touch_tolerance_bps=settings.liquidity_touch_tolerance_bps,
+        structure_lookback=settings.indicator_structure_lookback)
+    session.commit()
+    return {
+        "created": len(created),
+        "items": [{
+            "event_id": item.event_id, "event_type": item.event_type,
+            "message": item.message, "source": item.source,
+        } for item in created],
+    }
+
+
+@app.get("/api/v1/gui/summary/{symbol:path}", response_model=TechnicalAnalysisSummaryResponse,
+         dependencies=[Depends(require_gui_access)])
+def technical_analysis_summary(symbol: str, timeframe: str = "5m",
+                               session: Session = Depends(db_session),
+                               settings: Settings = Depends(get_settings)):
+    chart = gui_chart(symbol, timeframe, 500, session, settings)
+    long_snap = next((item for item in chart.indicator_snapshots if item.direction == "long"), None)
+    short_snap = next((item for item in chart.indicator_snapshots if item.direction == "short"), None)
+    best = None
+    for snap in (long_snap, short_snap):
+        if snap is None:
+            continue
+        if best is None or snap.score > best.score:
+            best = snap
+    components = getattr(best, "components", None) or {}
+    gates = {name: bool(payload.get("passed")) for name, payload in components.items()
+             if isinstance(payload, dict)}
+    score = getattr(best, "score", 0) or 0
+    all_passed = bool(gates) and all(gates.values())
+    if not gates:
+        stance, reason = "insufficient_evidence", "No indicator snapshot available for this market."
+    elif not all_passed or score < 4:
+        stance, reason = "no_trade", "Mandatory six-component gates incomplete or score below watch threshold."
+    else:
+        stance, reason = "watch", f"Score {score} of 6 with measured gate evidence only."
+    open_fvgs = [item for item in chart.imbalances
+                 if item["status"] not in {"invalidated", "expired", "consumed"}]
+    rec = next((item for item in chart.recommendations if item.status == "valid"), None)
+    risk_geometry = None
+    if rec is not None:
+        risk_geometry = {
+            "entry_region": getattr(rec, "geometry", {}).get("entry_region"),
+            "initial_stop": getattr(rec, "geometry", {}).get("initial_stop"),
+            "profit_boxes": getattr(rec, "geometry", {}).get("profit_boxes"),
+            "version": rec.version,
+        }
+    invalidations = list(session.scalars(select(WatchlistInvalidationEventRecord).where(
+        WatchlistInvalidationEventRecord.symbol == symbol,
+        WatchlistInvalidationEventRecord.timeframe == timeframe,
+    ).order_by(WatchlistInvalidationEventRecord.created_at.desc()).limit(12)))
+    structure = [{
+        "event_type": item.event_type, "source": item.source, "message": item.message,
+        "candle_timestamp": item.candle_timestamp, "measurements": item.measurements,
+    } for item in invalidations]
+    return TechnicalAnalysisSummaryResponse(
+        contract_version="ta-summary.v1",
+        exchange=settings.market_data_exchange,
+        symbol=symbol,
+        timeframe=timeframe,
+        generated_at=datetime.now(timezone.utc),
+        trade_stance=stance,
+        stance_reason=reason,
+        six_component={
+            "direction": getattr(best, "direction", None),
+            "score": score,
+            "setup_state": getattr(best, "setup_state", None),
+            "gates": gates,
+        },
+        liquidity_levels=[{
+            "id": item.id, "price": str(item.price), "direction": item.direction,
+            "level_type": item.level_type, "status": item.status,
+        } for item in chart.liquidity_levels if item.status == "active"],
+        open_fvgs=[{
+            "id": item["id"], "direction": item["direction"], "type": item["type"],
+            "lower_price": str(item["lower_price"]), "upper_price": str(item["upper_price"]),
+            "status": item["status"],
+        } for item in open_fvgs],
+        latest_structure=structure,
+        risk_geometry=risk_geometry,
+        invalidation_events=structure,
+    )
 
 
 @app.post("/api/v1/gui/alerts/{event_id}/ack", response_model=AlertAcknowledgementResponse,

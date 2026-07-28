@@ -76,7 +76,7 @@ def test_relay_episode_events_from_cache(monkeypatch):
 
 
 def test_truncate_chart_for_cache_keeps_recent_candles_only():
-    now = datetime(2026, 7, 14, 12, tzinfo=timezone.utc)
+    now = datetime.now(timezone.utc)
     chart = {
         "candles": [
             {"timestamp": (now - timedelta(hours=30)).isoformat()},
@@ -87,6 +87,8 @@ def test_truncate_chart_for_cache_keeps_recent_candles_only():
         "liquidity_levels": [{"id": "lvl-1"}],
         "imbalances": [{"id": "imb-1"}],
         "indicator_snapshots": [{"id": "ind-1"}],
+        "annotations": [{"id": "ann-1"}],
+        "patterns": [{"id": "pat-1"}],
     }
     trimmed = truncate_chart_for_cache(chart, hours=24)
     assert len(trimmed["candles"]) == 1
@@ -95,3 +97,5 @@ def test_truncate_chart_for_cache_keeps_recent_candles_only():
     assert trimmed["liquidity_levels"] == []
     assert trimmed["imbalances"] == []
     assert trimmed["indicator_snapshots"] == []
+    assert trimmed["annotations"] == []
+    assert trimmed["patterns"] == []

@@ -1,0 +1,117 @@
+TRADEMONKE HANDWRITTEN NOTES — TRANSCRIPTION
+Source: Three images extracted from “WhatsApp Unknown 2026-07-28 at 9.51.06 AM.zip”
+
+Notes:
+- Spelling and capitalization are preserved where practical.
+- A small number of ambiguous handwritten words are marked with [unclear] or explained in brackets.
+
+============================================================
+IMAGE 1
+WhatsApp Image 2026-07-28 at 9.49.57 AM.jpeg
+============================================================
+
+1) Patterns dont show up
+   on the chart just at the
+   last part of it;
+
+2) No okay button or Accept
+   button when you search by
+   Confluence, when looking
+   for specific technical Analysis
+   technique
+
+3) list should be on just
+   live ticking data; no need
+   for Historical data;
+
+
+============================================================
+IMAGE 2
+WhatsApp Image 2026-07-28 at 9.49.57 AM (1).jpeg
+============================================================
+
+Whats missing
+
+trendlines, lines, boxes, zones
+so we can draw on charts
+and maybe a drop down
+menu - LQ so we can preset
+       - BOS our own checklist
+       - CHoC when we are
+marking our zones, instead of labelling
+manually
+
+We want the same options as
+trading view or whatever platform
+for Advanced filters and filters
+there has to be open source data
+we can copy the Architecture or
+internal structure
+
+Likely intended structure of the middle section:
+- Add a drop-down menu with preset labels such as LQ, BOS, and CHoC.
+- Let users create their own checklist while marking zones instead of labelling everything manually.
+
+
+============================================================
+IMAGE 3
+WhatsApp Image 2026-07-28 at 9.49.57 AM (2).jpeg
+============================================================
+
+and, like the black
+white and red logo
+we should change the terminal
+like the color of logo desktop
+icons
+
+maybe a window that opens
+on the whatever were looking
+at and do technical analysis
+summarize potential setups
+
+and or alerts when watchlist
+has invalidations like break of
+trendline, MSS, CHoC, BSL, SSL
+liquidity has been sweeped so
+we can potentially capitalize on
+reversals and/or continuations
+
+
+============================================================
+CLEANED PRODUCT REQUIREMENTS
+============================================================
+
+1. Pattern rendering
+Patterns should appear across the relevant chart area, not only at the latest or final portion of the chart.
+
+2. Search confirmation
+When searching by confluence or for a specific technical-analysis technique, provide a clear OK, Apply, or Accept action.
+
+3. Live-data focus
+The list should focus on live ticking data; historical data is not required for this view.
+
+4. Chart drawing tools
+Add trendlines, general lines, boxes, and zones so users can annotate charts directly.
+
+5. Preset technical-analysis labels
+Add a drop-down or quick-label menu for items such as liquidity/LQ, BOS, and CHoC. Allow users to create their own checklist and apply labels while marking zones instead of typing them manually.
+
+6. TradingView-like chart controls
+Provide charting and filtering options comparable to TradingView or another mature charting platform. Investigate open-source charting systems whose architecture or internal structure can be adapted legally.
+
+7. Terminal branding
+Update the terminal and desktop icon colours to match the black, white, and red logo.
+
+8. Technical-analysis summary window
+Provide a contextual window for the selected market or chart that performs technical analysis and summarizes potential setups.
+
+9. Watchlist invalidation and liquidity alerts
+Generate alerts when watchlist items show events such as:
+- Trendline breaks
+- Market Structure Shift (MSS)
+- Change of Character (CHoC)
+- Buy-Side Liquidity (BSL) events
+- Sell-Side Liquidity (SSL) events
+- Liquidity sweeps
+
+The purpose is to help identify potential reversals and continuation setups.
