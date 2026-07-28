@@ -73,6 +73,8 @@ class Settings(BaseSettings):
     minimum_risk_reward: Decimal = Decimal("2")
     maximum_notional: Decimal = Decimal("1000")
     minimum_notional: Decimal = Decimal("10")
+    research_asset_class: str = "crypto"
+    confluence_kill_zone_soft_penalty: bool = True
 
     @field_validator("database_url", mode="before")
     @classmethod
