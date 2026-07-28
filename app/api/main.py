@@ -31,10 +31,17 @@ from app.telemetry.models import (ControlStateRecord, EpisodeEventRecord, EventR
                                   WatchlistInvalidationEventRecord)
 from app.telemetry.models import OrderEventRecord, TradePlanRecord
 from app.domain.annotations import ANNOTATION_KINDS, PRESET_LABELS
+from app.domain.confluence import evaluate_confluence
+from app.domain.ifvg import detect_ifvg_links, observe_v_recovery
+from app.domain.models import Candle, Direction
+from app.domain.patterns import detect_patterns
+from app.domain.sessions import dealing_range, in_kill_zone, premium_discount_position
+from app.domain.structure import detect_order_blocks
 from app.liquidity.invalidations import (
     evaluate_annotation_invalidations,
     evaluate_liquidity_invalidations,
 )
+from decimal import Decimal
 from app.market_data.exchange import ReadOnlyExchange
 from app.market_data.storage import latest_candles
 from app.market_data.live import LiveMarketRelay
@@ -43,8 +50,6 @@ from app.market_data.symbol_search import (enrich_hits_with_closes, enrich_hits_
                                           search_spot_markets, watchlist_index)
 from app.market_data.watchlist import confirm_change, create_change
 from app.telemetry.repository import list_setups, record_heartbeat
-from app.domain.models import Candle
-from app.domain.patterns import detect_patterns
 
 from .schemas import (AlertAcknowledgementRequest, AlertAcknowledgementResponse,
                       ChartAnnotationRequest, ChartAnnotationResponse, ChartDataResponse,
@@ -562,13 +567,27 @@ def technical_analysis_summary(symbol: str, timeframe: str = "5m",
                  if item["status"] not in {"invalidated", "expired", "consumed"}]
     rec = next((item for item in chart.recommendations if item.status == "valid"), None)
     risk_geometry = None
+    risk_reward = None
     if rec is not None:
+        geometry = getattr(rec, "geometry", {}) or {}
         risk_geometry = {
-            "entry_region": getattr(rec, "geometry", {}).get("entry_region"),
-            "initial_stop": getattr(rec, "geometry", {}).get("initial_stop"),
-            "profit_boxes": getattr(rec, "geometry", {}).get("profit_boxes"),
+            "entry_region": geometry.get("entry_region"),
+            "initial_stop": geometry.get("initial_stop"),
+            "profit_boxes": geometry.get("profit_boxes"),
             "version": rec.version,
         }
+        boxes = geometry.get("profit_boxes") or []
+        stop = geometry.get("initial_stop") or {}
+        entry = geometry.get("entry_region") or {}
+        try:
+            entry_mid = (Decimal(str(entry.get("lower"))) + Decimal(str(entry.get("upper")))) / 2
+            stop_px = Decimal(str(stop.get("price")))
+            tp = Decimal(str(boxes[0]["price"])) if boxes else None
+            risk = abs(entry_mid - stop_px)
+            if tp is not None and risk > 0:
+                risk_reward = abs(tp - entry_mid) / risk
+        except Exception:
+            risk_reward = None
     invalidations = list(session.scalars(select(WatchlistInvalidationEventRecord).where(
         WatchlistInvalidationEventRecord.symbol == symbol,
         WatchlistInvalidationEventRecord.timeframe == timeframe,
@@ -577,6 +596,43 @@ def technical_analysis_summary(symbol: str, timeframe: str = "5m",
         "event_type": item.event_type, "source": item.source, "message": item.message,
         "candle_timestamp": item.candle_timestamp, "measurements": item.measurements,
     } for item in invalidations]
+    domain_candles = [
+        Candle(
+            c["timestamp"],
+            Decimal(str(c["open"])), Decimal(str(c["high"])),
+            Decimal(str(c["low"])), Decimal(str(c["close"])), Decimal(str(c["volume"])),
+        ) for c in chart.candles
+    ]
+    direction = Direction(getattr(best, "direction", "long") or "long")
+    session_ctx = in_kill_zone(
+        domain_candles[-1].timestamp if domain_candles else datetime.now(timezone.utc),
+        settings.research_asset_class)
+    range_ = dealing_range(domain_candles) if domain_candles else None
+    premium = None
+    if range_ is not None and domain_candles:
+        premium = premium_discount_position(domain_candles[-1].close, range_, direction)
+    confluence = evaluate_confluence(
+        direction=direction,
+        risk_reward=risk_reward,
+        htf_bias_passed=gates.get("htf_bias"),
+        htf_ranging=False,
+        in_kill_zone=bool(session_ctx.get("in_kill_zone")),
+        structure_shift_passed=gates.get("structure", False),
+        displacement_passed=gates.get("retest_confirmation", False) or gates.get("fvg_retest", False),
+        volatility_expansion_passed=gates.get("liquidity_sweep", False),
+        premium_discount_favorable=bool(premium and premium.get("favorable_for_direction")),
+        smt_passed=gates.get("smt", False),
+        asset_class_specific_passed=bool(open_fvgs),
+        kill_zone_penalty=settings.confluence_kill_zone_soft_penalty,
+    )
+    blocks = detect_order_blocks(domain_candles) if domain_candles else []
+    ifvg_links = detect_ifvg_links(domain_candles, symbol, timeframe) if domain_candles else []
+    v_obs = None
+    if domain_candles and chart.liquidity_levels:
+        level = chart.liquidity_levels[0]
+        v_obs = observe_v_recovery(
+            domain_candles, Decimal(str(level.price)),
+            Direction(level.direction), sweep_index=max(0, len(domain_candles) - 3))
     return TechnicalAnalysisSummaryResponse(
         contract_version="ta-summary.v1",
         exchange=settings.market_data_exchange,
@@ -603,6 +659,37 @@ def technical_analysis_summary(symbol: str, timeframe: str = "5m",
         latest_structure=structure,
         risk_geometry=risk_geometry,
         invalidation_events=structure,
+        confluence={
+            "rejected": confluence.rejected,
+            "reject_reasons": list(confluence.reject_reasons),
+            "score": confluence.score,
+            "max_score": confluence.max_score,
+            "tier": confluence.tier,
+            "categories": confluence.categories,
+            "gatekeepers": confluence.gatekeepers,
+            "authority": confluence.authority,
+        },
+        order_blocks=[{
+            "direction": b.direction.value, "kind": b.kind,
+            "lower": str(b.lower), "upper": str(b.upper),
+            "origin_index": b.origin_index, "measurements": b.measurements,
+        } for b in blocks[:12]],
+        research_streams={
+            "ifvg_links": [{
+                "original_fvg_id": link.original_fvg_id,
+                "inverse_fvg_id": link.inverse_fvg_id,
+                "direction": link.direction.value,
+                "measurements": link.measurements,
+            } for link in ifvg_links[:12]],
+            "v_recovery": None if v_obs is None else {
+                "direction": v_obs.direction.value,
+                "sweep_index": v_obs.sweep_index,
+                "reclaim_index": v_obs.reclaim_index,
+                "measurements": v_obs.measurements,
+            },
+            "authority": "research_only",
+        },
+        session_context={**session_ctx, "premium_discount": premium},
     )
 
 

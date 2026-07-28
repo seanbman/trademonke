@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 from app.domain.annotations import evaluate_annotation_break, label_to_event_hint
 from app.domain.liquidity import LevelEventType, LevelSide, classify_level_candle
 from app.domain.models import Candle, Direction
-from app.domain.signals import structure_break
+from app.domain.structure import classify_structure_break, infer_prior_trend
 from app.telemetry.models import (
     ChartAnnotationRecord,
     LiquidityLevelRecord,
@@ -145,22 +145,25 @@ def evaluate_liquidity_invalidations(
         session.add(row)
         created.append(row)
 
-    # Structure break against recent lookback (UI labels as structure_break until Phase 2)
+    # Structure break against recent lookback (named CHoCH/MSS/BOS when trend known)
     if len(prior_candles) >= structure_lookback:
         window = prior_candles[-structure_lookback:]
+        prior_trend = infer_prior_trend(prior_candles + [candle], lookback=structure_lookback)
         for direction in (Direction.LONG, Direction.SHORT):
-            if not structure_break(candle, window, direction):
+            event = classify_structure_break(
+                candle, window, direction, prior_trend=prior_trend)
+            if event is None:
                 continue
-            event_type = "structure_break"
+            event_type = event.label.value
             event_id = _event_id(
-                "structure", symbol, timeframe, direction.value,
+                "structure", symbol, timeframe, direction.value, event_type,
                 candle.timestamp.isoformat(),
             )
             if session.scalar(select(WatchlistInvalidationEventRecord).where(
                     WatchlistInvalidationEventRecord.event_id == event_id)):
                 continue
             message = (
-                f"Measured structure break ({direction.value}) on {symbol} {timeframe} "
+                f"Measured {event_type} ({direction.value}) on {symbol} {timeframe} "
                 f"(close beyond lookback extreme)."
             )
             row = WatchlistInvalidationEventRecord(
@@ -175,9 +178,9 @@ def evaluate_liquidity_invalidations(
                 candle_timestamp=candle.timestamp,
                 message=message,
                 measurements={
+                    **event.measurements,
                     "direction": direction.value,
                     "lookback": structure_lookback,
-                    "close": str(candle.close),
                 },
                 created_at=now,
             )

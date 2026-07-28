@@ -297,3 +297,7 @@ class TechnicalAnalysisSummaryResponse(BaseModel):
     latest_structure: list[dict[str, Any]]
     risk_geometry: dict[str, Any] | None
     invalidation_events: list[dict[str, Any]]
+    confluence: dict[str, Any] | None = None
+    order_blocks: list[dict[str, Any]] = []
+    research_streams: dict[str, Any] | None = None
+    session_context: dict[str, Any] | None = None

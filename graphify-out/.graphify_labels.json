@@ -217,5 +217,9 @@
   "215": "gui_websocket",
   "216": "5. Trend vs chop (is the market going somewhere?)",
   "217": "import_platform_db.py",
-  "218": "test_market_data.py"
+  "218": "test_market_data.py",
+  "219": "test_qualification_risk.py",
+  "220": "ResearchPipeline",
+  "221": "Auction Market Theory",
+  "222": "GuiRelaySocket"
 }
