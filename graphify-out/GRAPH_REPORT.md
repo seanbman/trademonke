@@ -1,16 +1,16 @@
 # Graph Report - trading-bot-x  (2026-07-28)
 
 ## Corpus Check
-- 222 files · ~397,417 words
+- 222 files · ~397,650 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2627 nodes · 5258 edges · 223 communities (164 shown, 59 thin omitted)
+- 2629 nodes · 5261 edges · 222 communities (165 shown, 57 thin omitted)
 - Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 564 edges (avg confidence: 0.76)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6febfbd8`
+- Built from commit: `416ad6fb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -229,11 +229,9 @@
 - gui_websocket
 - 5. Trend vs chop (is the market going somewhere?)
 - import_platform_db.py
-- test_market_data.py
 - test_qualification_risk.py
 - ResearchPipeline
 - Auction Market Theory
-- GuiRelaySocket
 
 ## God Nodes (most connected - your core abstractions)
 1. `Candle` - 83 edges
@@ -252,12 +250,12 @@
   docs/prompt_notes/Cryptocurrency Trading Platform Development.pdf → AGENTS.md
 - `GUI Research Workstation Boundary` --semantically_similar_to--> `Read-Only React GUI Workstation`  [INFERRED] [semantically similar]
   docs/prompt_notes/trading_bot_technical_development_specification_gui_updated.pdf → README.md
+- `FvgProEliteStrategy Six-Component Model` --semantically_similar_to--> `FvgProEliteStrategy Container Command`  [INFERRED] [semantically similar]
+  docs/prompt_notes/Cryptocurrency Trading Platform Development.pdf → docker-compose.yml
 - `MVP Spot-Only Dry-Run Risk Controls` --semantically_similar_to--> `Dry-Run Fail-Closed MVP Guard`  [INFERRED] [semantically similar]
   docs/prompt_notes/Cryptocurrency Trading Platform Development.pdf → AGENTS.md
 - `Persist Strategy Version Hash SHA With Trades` --semantically_similar_to--> `Strategy Version Config Hash Git SHA Provenance`  [INFERRED] [semantically similar]
   docs/prompt_notes/Persistent Storage and Backups.pdf → AGENTS.md
-- `No Repainting / Future Leakage Rule` --semantically_similar_to--> `No Lookahead / Closed-Candle Rule`  [INFERRED] [semantically similar]
-  docs/prompt_notes/Cryptocurrency Trading Platform Development.pdf → AGENTS.md
 
 ## Import Cycles
 - None detected.
@@ -366,19 +364,19 @@
 - **Bearish Breakout Chart Patterns** — screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_head_shoulders, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_bearish_flag, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_descending_triangle, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_rising_wedge, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_symmetrical_triangle_bearish, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_double_top [EXTRACTED 1.00]
 - **Triangle Pattern Family** — screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_ascending_triangle, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_descending_triangle, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_symmetrical_triangle_bullish, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_symmetrical_triangle_bearish [INFERRED 0.85]
 
-## Communities (223 total, 59 thin omitted)
+## Communities (222 total, 57 thin omitted)
 
 ### Community 0 - "episode_events"
-Cohesion: 0.24
-Nodes (14): classify_level_candle(), detect_confirmed_levels(), DetectedLevel, LevelEventType, LevelSide, Decimal, StrEnum, Detect levels using only pivots with the required closed candles to their right. (+6 more)
+Cohesion: 0.20
+Nodes (15): classify_level_candle(), detect_confirmed_levels(), DetectedLevel, LevelEventType, LevelSide, Decimal, StrEnum, Detect levels using only pivots with the required closed candles to their right. (+7 more)
 
 ### Community 1 - "episodes Module"
-Cohesion: 0.14
-Nodes (19): Session, rank_candidates(), save_candidate_evidence(), ticker_evidence(), main(), closed_rows(), MarketDataCollector, Queue one job per symbol when configured history is absent or incomplete. (+11 more)
+Cohesion: 0.16
+Nodes (13): closed_rows(), MarketDataCollector, Queue one job per symbol when configured history is absent or incomplete., timeframe_ms(), Session, replace_supplement(), upsert_candles(), OhlcvRow (+5 more)
 
 ### Community 2 - "alerts Module"
-Cohesion: 0.21
-Nodes (5): CommandResponse, CommandRouter, inline_keyboard(), Session, get_control()
+Cohesion: 0.06
+Nodes (39): event_matches(), get_subscription(), Session, Setup transitions are watchlist opt-out; newest explicit preference wins., set_enabled(), set_minimum_score(), set_setup_only(), setup_event_matches_default() (+31 more)
 
 ### Community 3 - "candidates Module"
 Cohesion: 0.05
@@ -389,8 +387,8 @@ Cohesion: 0.04
 Nodes (45): BTC/USDT, ETH/USDT, api_server, enabled, listen_ip_address, listen_port, password, username (+37 more)
 
 ### Community 5 - "App Module"
-Cohesion: 0.09
-Nodes (30): From Candles to Order Flow White Paper, Absorption, Aggression, Anchored VWAP, Auction Market Theory, Balance vs Imbalance, Balanced vs Imbalanced Markets, Reading Order: Context → Location → Confirmation (+22 more)
+Cohesion: 0.11
+Nodes (25): From Candles to Order Flow White Paper, Aggression, Auction Market Theory, Reading Order: Context → Location → Confirmation, Delta, Delta Shift, Footprint Chart, HVN (High Volume Node) (+17 more)
 
 ### Community 6 - "FVG Strategy Concepts"
 Cohesion: 0.08
@@ -405,16 +403,16 @@ Cohesion: 0.10
 Nodes (34): Asset-Class Specific Layer, Asset Screener, Correlation Cross-Reference, Crypto Layer, Directional Gating, Confluence Trade Filtration Whitepaper.docx, evaluate_trade Scoring Logic, Filtration Engine (+26 more)
 
 ### Community 9 - "main Module"
-Cohesion: 0.13
-Nodes (31): technical_analysis_summary(), ConfluenceResult, evaluate_confluence(), Decimal, Confluence filtration scorecard (research-only; not position-size authority)., Stage 1 gatekeepers then Stage 2 weighted score using available OHLC evidence on, _tier(), detect_ifvg_links() (+23 more)
+Cohesion: 0.12
+Nodes (36): technical_analysis_summary(), detect_ifvg_links(), fvg_forms_after_displacement(), InverseFvgLink, observe_v_recovery(), Decimal, IFVG and V-recovery research observations (not execution authority)., Golden audit helper: imbalance creation must be at/after displacement. (+28 more)
 
 ### Community 10 - "cache Module"
 Cohesion: 0.13
 Nodes (14): CachedSnapshot, Any, datetime, RelayCache, GuiSubscription, Any, RelayHub, Any (+6 more)
 
 ### Community 11 - "mount_gui"
-Cohesion: 0.11
-Nodes (17): mount_gui(), build_workstation_snapshot(), Session, snapshot_fingerprint(), _forward_live_market(), main(), _push_snapshot(), _relay_heartbeat() (+9 more)
+Cohesion: 0.07
+Nodes (14): mount_gui(), require_gui_access(), Settings, BaseSettings, test_heroku_web_enables_gui_serving(), test_settings_accepts_database_url_alias(), test_settings_accepts_source_version(), GuiRelaySocket (+6 more)
 
 ### Community 12 - "_forward_to_gui"
 Cohesion: 0.07
@@ -433,8 +431,8 @@ Cohesion: 0.13
 Nodes (16): _forward_to_gui(), LiveMarketRelay, normalize_ohlc_message(), normalize_ticker_message(), Any, Convert Kraken forming candles into a presentation-only contract., Convert Kraken BBO updates into non-authoritative midpoint prices., Relay Kraken public BBO and OHLC updates to backend-only clients. (+8 more)
 
 ### Community 16 - "Chart Pattern Catalog"
-Cohesion: 0.22
-Nodes (14): Converts closed-candle snapshots into auditable research setups; never orders., SetupLifecycleEngine, build_engine(), IndicatorSnapshotRecord, SetupRecord, SetupTransitionRecord, snapshot(), test_actionable_setup_invalidates_without_same_candle_replacement() (+6 more)
+Cohesion: 0.20
+Nodes (15): Converts closed-candle snapshots into auditable research setups; never orders., SetupLifecycleEngine, build_engine(), IndicatorSnapshotRecord, SetupRecord, SetupTransitionRecord, add_candle(), test_ema_requires_length_and_indicator_transitions_are_persisted() (+7 more)
 
 ### Community 17 - "engine Module"
 Cohesion: 0.17
@@ -461,12 +459,12 @@ Cohesion: 0.08
 Nodes (24): For /graphify add and --watch, For /graphify query, For the commit hook and native AGENTS.md integration, For --update and --cluster-only, /graphify, Honesty Rules, Interpreter guard for subcommands, Part A - Structural extraction for code files (+16 more)
 
 ### Community 23 - "tsconfig.json"
-Cohesion: 0.18
-Nodes (19): datetime, Setup, state_for_score(), transition(), Fvg, FvgStatus, Decimal, StrEnum (+11 more)
+Cohesion: 0.21
+Nodes (17): datetime, Setup, state_for_score(), transition(), Fvg, Decimal, Setup, SetupState (+9 more)
 
 ### Community 24 - "FVG Strategy Concepts"
-Cohesion: 0.22
-Nodes (9): app/domain Deterministic Calculations, No Lookahead / Closed-Candle Rule, indicator_snapshots Table, No Repainting / Future Leakage Rule, HTF Bias EMA Alignment, Structure Break Close-Confirmed Rule, BOS CHOCH MSS, fvg-pro-elite-python-v0.2.0 Strategy Version (+1 more)
+Cohesion: 0.29
+Nodes (7): app/domain Deterministic Calculations, No Lookahead / Closed-Candle Rule, indicator_snapshots Table, No Repainting / Future Leakage Rule, HTF Bias EMA Alignment, fvg-pro-elite-python-v0.2.0 Strategy Version, Six-Component Confluence Scoring
 
 ### Community 25 - "Triangle Patterns"
 Cohesion: 0.10
@@ -481,24 +479,24 @@ Cohesion: 0.13
 Nodes (24): Bearish Engulfing, Bearish Candle Patterns, Bullish Engulfing, Bullish Candle Patterns, CANDLE PATTERN REFERENCE, Candlestick Pattern + Volume, Candlestick Types Cheat Sheet, Doji (+16 more)
 
 ### Community 28 - "Market Data Relay"
-Cohesion: 0.15
-Nodes (21): lifespan(), heroku_dyno_role(), normalize_database_url(), Process-role helpers for PaaS deployments such as Heroku., Run the Kraken relay inside the web process on Heroku web dynos (full mode only), Run the relay in market-data unless the web dyno already embeds it., Convert Heroku DATABASE_URL values into SQLAlchemy/psycopg URLs., Return web, worker, or release when running on a Heroku dyno. (+13 more)
+Cohesion: 0.20
+Nodes (18): lifespan(), heroku_dyno_role(), normalize_database_url(), Process-role helpers for PaaS deployments such as Heroku., Run the Kraken relay inside the web process on Heroku web dynos (full mode only), Run the relay in market-data unless the web dyno already embeds it., Convert Heroku DATABASE_URL values into SQLAlchemy/psycopg URLs., Return web, worker, or release when running on a Heroku dyno. (+10 more)
 
 ### Community 29 - "FVG Strategy Concepts"
-Cohesion: 0.15
-Nodes (22): require_gui_access(), Session, set_control(), authorize(), KillSwitch, require_authorized(), EventRecord, ServiceHeartbeatRecord (+14 more)
+Cohesion: 0.17
+Nodes (19): Session, set_control(), authorize(), KillSwitch, require_authorized(), EventRecord, ServiceHeartbeatRecord, append_event_idempotently() (+11 more)
 
 ### Community 30 - "Candlestick Patterns"
 Cohesion: 0.09
 Nodes (21): compilerOptions, allowJs, allowSyntheticDefaultImports, esModuleInterop, forceConsistentCasingInFileNames, isolatedModules, jsx, lib (+13 more)
 
 ### Community 31 - "FVG Strategy Concepts"
-Cohesion: 0.13
-Nodes (22): create_annotation(), delete_annotation(), _enabled(), event_stream(), events(), gui_alerts(), gui_bootstrap(), _gui_bootstrap_data() (+14 more)
+Cohesion: 0.33
+Nodes (10): build_workstation_snapshot(), Session, snapshot_fingerprint(), _forward_live_market(), main(), _push_snapshot(), _relay_heartbeat(), run() (+2 more)
 
 ### Community 32 - "Candle Domain"
-Cohesion: 0.25
-Nodes (19): ComponentResult, advance_fvg(), detect_fvgs(), htf_bias(), liquidity_sweep(), Decimal, Pine-compatible indexing: on i, compare candle i-1 with i-2., retest_confirmation() (+11 more)
+Cohesion: 0.22
+Nodes (21): ComponentResult, FvgStatus, advance_fvg(), confirmed_pivots(), detect_fvgs(), htf_bias(), liquidity_sweep(), Decimal (+13 more)
 
 ### Community 33 - "Abandoned Baby"
 Cohesion: 0.11
@@ -513,8 +511,8 @@ Cohesion: 0.15
 Nodes (19): ATR (Average True Range), Avoid obvious support/resistance trap zones, CHoCH (Change of Character), Demand = long, Execution checklist (check 3 things), Failed breakout with long upper wick, Spot Fake outs (institutions grabbing stop losses), FVG (Fair Value Gap) (+11 more)
 
 ### Community 36 - "Price Above/Below 200 EMA"
-Cohesion: 0.12
-Nodes (10): datetime, TelegramService, FakeClient, telegram_parts(), test_callback_queries_enforce_chat_and_user_authorization(), test_guided_menus_and_confirmation_buttons(), test_marketdata_line_explains_open_close_and_freshness(), test_service_delivers_matching_indicator_alert_once() (+2 more)
+Cohesion: 0.33
+Nodes (10): audit_configured_history(), Queue missing configured history, respecting active jobs and retry cooldown., timeframe_seconds(), BackfillJobRecord, FakeExchange, test_interrupted_jobs_are_requeued(), test_worker_completes_job_and_records_page_progress(), test_completed_audit_job_accepts_best_available_but_new_timeframe_queues() (+2 more)
 
 ### Community 39 - "Freqtrade Integration"
 Cohesion: 0.16
@@ -525,8 +523,8 @@ Cohesion: 0.15
 Nodes (17): Bullish Candlestick Pattern, Bullish Engulfing, Bullish Harami, Bullish Long Legged Doji, Bullish Marubozu, Bullish Spinning Top, Dragonfly Doji, @forexsignals5522 (+9 more)
 
 ### Community 41 - "FVG Strategy Concepts"
-Cohesion: 0.11
-Nodes (20): Strategy Version Config Hash Git SHA Provenance, Layered Separation of Concerns, episode_events Append-Only Transitions, imbalances FVG/IFVG Geometry Table, liquidity_levels Table, strategy_episodes Table, Persist Strategy Version Hash SHA With Trades, Persistent Liquidity Map (+12 more)
+Cohesion: 0.10
+Nodes (22): Strategy Version Config Hash Git SHA Provenance, Layered Separation of Concerns, episode_events Append-Only Transitions, imbalances FVG/IFVG Geometry Table, liquidity_levels Table, strategy_episodes Table, Persist Strategy Version Hash SHA With Trades, Persistent Liquidity Map (+14 more)
 
 ### Community 42 - "Liquidity Concepts"
 Cohesion: 0.18
@@ -545,12 +543,12 @@ Cohesion: 0.29
 Nodes (16): Ascending Triangle, Bearish Flag, Bullish Flag, Candlestick Block Diagrams, Chart Patterns Cheat Sheet, Descending Triangle, Double Bottom, Double Top (+8 more)
 
 ### Community 46 - "Freqtrade Integration"
-Cohesion: 0.21
-Nodes (30): run(), audit_configured_history(), collection_symbols(), confirm_backfill_request(), confirm_change(), create_backfill_request(), create_change(), enqueue_backfill() (+22 more)
+Cohesion: 0.33
+Nodes (19): collection_symbols(), confirm_backfill_request(), confirm_change(), create_backfill_request(), create_change(), enqueue_backfill(), ensure_anchors(), normalize_symbol() (+11 more)
 
 ### Community 47 - "FVG Strategy Concepts"
-Cohesion: 0.16
-Nodes (14): IFVG Inversion Confirmation Model, Institutional Pattern Detection Pipeline, A / A+ / A++ Parallel Signal Tiers, V-Shaped Recovery and Displacement, A/A+/A++ Analytical Streams Increment, Freqtrade Dry-Run Wiring Increment, Ordered Institutional Sequence Increment, Pine v6.2/v6.3 Validation Increment (+6 more)
+Cohesion: 0.13
+Nodes (17): Fibonacci Sniper Retest Entry Mode, IFVG Inversion Confirmation Model, Institutional Pattern Detection Pipeline, A / A+ / A++ Parallel Signal Tiers, V-Shaped Recovery and Displacement, 0.618–0.786 Sniper Zone, Fib Anchor Point A Sweep Extreme Point B Recovery Extreme, A/A+/A++ Analytical Streams Increment (+9 more)
 
 ### Community 48 - "FVG Strategy Concepts"
 Cohesion: 0.13
@@ -569,8 +567,8 @@ Cohesion: 0.24
 Nodes (15): Ascending Triangle, Bearish Flag, Bullish Flag, Chart Patterns Cheat Sheet, Descending Triangle, Double Bottom, Double Top, Falling Wedge (+7 more)
 
 ### Community 52 - "FVG Strategy Concepts"
-Cohesion: 0.33
-Nodes (6): Directional Bias and Draw on Liquidity, Target Boxes TP1 TP2, Lab Report 2 Predicted TP Box Targeting, TP Boxes Instead of Exact Lines, Partial Exit at TP1 Runner to TP2, Nearest Swing BE Second TP1 Third TP2
+Cohesion: 0.14
+Nodes (16): Dry-Run Spot-Only MVP Safety, Freqtrade Execution Authority, Directional Bias and Draw on Liquidity, Target Boxes TP1 TP2, Lab Report 1 Signal Frequency Tiers, Three Parallel Independently Configurable Streams, Setup-Level Deduplication Across Tiers, Lab Report 2 Predicted TP Box Targeting (+8 more)
 
 ### Community 53 - "FVG Strategy Concepts"
 Cohesion: 0.14
@@ -585,20 +583,20 @@ Cohesion: 0.08
 Nodes (23): Building the `.deb`, Data locations, Desktop error reports, Desktop (Ubuntu), GUI token, Install from a checkout (developers), Install from `.deb` (recommended), Launch / stop (+15 more)
 
 ### Community 57 - "FVG Strategy Concepts"
-Cohesion: 0.18
-Nodes (13): Auto Execution Mode, Scoring System 0-6, A / A+ / A++ Rating System, HTF FVG Tap, Macro Window, Multi-Liquidity Sweep, Signal Rating A / A+ / A++, Lab Report 1 Signal Frequency Tiers (+5 more)
+Cohesion: 0.24
+Nodes (10): Auto Execution Mode, Scoring System 0-6, A / A+ / A++ Rating System, HTF FVG Tap, Macro Window, Multi-Liquidity Sweep, Signal Rating A / A+ / A++, Per-Stream Statistics Tracking (+2 more)
 
 ### Community 58 - "Candlestick Patterns"
-Cohesion: 0.31
-Nodes (8): main(), get_settings(), main(), run(), configure_json_logging(), JsonFormatter, main(), verify()
+Cohesion: 0.21
+Nodes (5): RecommendationService, main(), get_settings(), main(), verify()
 
 ### Community 59 - "Candlestick Patterns"
 Cohesion: 0.21
 Nodes (13): Confirmation Close Beyond Swing Low, Displacement, Fair Value Gap (Imbalance), Liquidity Sweep, MIS - PxmaXR, 1:1 Risk Reward Ratio, Opposite Liquidity / Previous Day High, Order Block (+5 more)
 
 ### Community 60 - "FVG Strategy Concepts"
-Cohesion: 0.23
-Nodes (21): episode_events(), episodes(), gui_chart(), liquidity_levels(), RecommendationService, Base, ChartAnnotationRecord, FeatureSnapshotRecord (+13 more)
+Cohesion: 0.20
+Nodes (25): episode_events(), episodes(), gui_chart(), liquidity_levels(), datetime, Orchestrates research decisions only; it never calls an execution adapter., ResearchPipeline, Base (+17 more)
 
 ### Community 61 - "Liquidity Concepts"
 Cohesion: 0.17
@@ -617,8 +615,8 @@ Cohesion: 0.17
 Nodes (12): 10. Your one-page trade checklist, 1) Context, 2) Location, 3) Confirmation, After the idea resolves, At a glance, Before the session, For every idea (+4 more)
 
 ### Community 65 - "FVG Strategy Concepts"
-Cohesion: 0.16
-Nodes (14): Cryptocurrency Trading Platform Development Brief, BOS or CHoCH Structure Confirmation, Dry-Run Spot-Only MVP Safety, Freqtrade Execution Authority, FvgProEliteStrategy, Valid FVG and Retest, Higher-Timeframe Bias, Liquidity Sweep (+6 more)
+Cohesion: 0.20
+Nodes (12): Cryptocurrency Trading Platform Development Brief, BOS or CHoCH Structure Confirmation, FvgProEliteStrategy, Valid FVG and Retest, Higher-Timeframe Bias, Liquidity Sweep, Six-Component Confluence System, SMT-Style Divergence (+4 more)
 
 ### Community 66 - "Setup Lifecycle"
 Cohesion: 0.27
@@ -633,8 +631,12 @@ Cohesion: 0.14
 Nodes (17): backend Internal Network, frontend Network, market-data Compose Service, migrate One-Shot Service, outbound Network, platform-api Service, postgres Service, relay-agent Service (+9 more)
 
 ### Community 69 - "relay-agent Service"
-Cohesion: 0.22
-Nodes (14): classify_displacement(), classify_recovery(), EpisodeDecision, EpisodeState, Decimal, StrEnum, zone_retested(), EpisodeEngine (+6 more)
+Cohesion: 0.24
+Nodes (12): classify_displacement(), classify_recovery(), EpisodeDecision, EpisodeState, Decimal, StrEnum, zone_retested(), Direction (+4 more)
+
+### Community 70 - "CandleRecord"
+Cohesion: 0.21
+Nodes (4): FakeWebSocket, test_websocket_rejects_invalid_token(), test_websocket_snapshot_contains_only_closed_candles(), websocket_database()
 
 ### Community 71 - "verify_stack Module"
 Cohesion: 0.25
@@ -657,20 +659,20 @@ Cohesion: 0.20
 Nodes (10): Dry-Run Fail-Closed MVP Guard, Freqtrade Sole Order Execution Authority, freqtrade Dry-Run Service, Architecture Execution Authority Boundary, One Execution Authority Rule, MVP Spot-Only Dry-Run Risk Controls, No Exchange Keys in MVP, Startup Spot and Dry-Run Validation (+2 more)
 
 ### Community 76 - "ReadOnlyExchange"
-Cohesion: 0.24
-Nodes (20): _dedupe(), detect_patterns(), DetectedPattern, _doubles(), _flag_pennant(), _mk(), _pattern_id(), PatternPoint (+12 more)
+Cohesion: 0.21
+Nodes (21): _dedupe(), detect_patterns(), DetectedPattern, _doubles(), _flag_pennant(), _mk(), _pattern_id(), PatternPoint (+13 more)
 
 ### Community 77 - "Order Block (OB)"
-Cohesion: 0.15
-Nodes (21): evaluate_invalidations(), confirmed_pivots(), Return confirmed high/low pivot indices; right-side candles delay confirmation., classify_structure_break(), detect_order_blocks(), infer_prior_trend(), OrderBlock, StrEnum (+13 more)
+Cohesion: 0.38
+Nodes (10): evaluate_annotation_invalidations(), evaluate_liquidity_invalidations(), _event_id(), Decimal, Session, Watchlist invalidation event persistence from drawings and liquidity measurement, ChartAnnotationRecord, WatchlistInvalidationEventRecord (+2 more)
 
 ### Community 78 - "Heroku Runtime"
 Cohesion: 0.17
 Nodes (10): Data model, Canonical Versioned Event Envelope, execution_connected=false Explicit Flag, Immutable Recommendation Versions, setup_transitions Append-Only History, setups Table, Setup Lifecycle State Machine, Stale Eligibility P0 Blocker (+2 more)
 
 ### Community 79 - "CI test-and-lint Job"
-Cohesion: 0.12
-Nodes (16): Institutional Liquidity Research Supplement, Fibonacci Sniper Retest Entry Mode, Institutional Liquidity Hypothesis, Institutional-Pattern Detection Pipeline, V-Shaped Recovery and Displacement, Fibonacci Retest Sniper Entry, 0.618–0.786 Sniper Zone, Fib Anchor Point A Sweep Extreme Point B Recovery Extreme (+8 more)
+Cohesion: 0.22
+Nodes (11): Anchored VWAP, Balance vs Imbalance, Balanced vs Imbalanced Markets, Fair Value Gap (FVG), LVN (Low Volume Node), Fibonacci Retest Sniper Entry, Fib Touch vs Retest Entry Distinction, IFVG Model Breakdown (+3 more)
 
 ### Community 80 - "Stochastic Scalping"
 Cohesion: 0.20
@@ -805,8 +807,8 @@ Cohesion: 0.33
 Nodes (7): BOS — Break of Structure, IDM — Inducement, Judas Swing, LS — Liquidity Sweep, Liquidity Void, MSS — Market Structure Shift, SL — Stop-Loss
 
 ### Community 113 - "Trading Bot Technical Development Specification GUI Updated"
-Cohesion: 0.10
-Nodes (23): Reproducible Backtesting Research Workflow, Shadow Intent Baseline Manifest Gate, Untouched Test Period Seal, FastAPI GUI-Facing API, FreqAI Shadow-Mode Research Layer, FreqAI Supervised Outcome Targets, Trading Bot Technical Development Specification GUI Updated, Canonical Episode State Model (+15 more)
+Cohesion: 0.14
+Nodes (18): FastAPI GUI-Facing API, Institutional Liquidity Research Supplement, Institutional Liquidity Hypothesis, Institutional-Pattern Detection Pipeline, V-Shaped Recovery and Displacement, Trading Bot Technical Development Specification GUI Updated, Canonical Liquidity Event Thesis, Canonical Episode State Model (+10 more)
 
 ### Community 114 - "ORB Concepts"
 Cohesion: 0.33
@@ -818,7 +820,7 @@ Nodes (15): annotation_price_at(), evaluate_annotation_break(), interpolate_pric
 
 ### Community 116 - "POI — Point of Interest"
 Cohesion: 0.09
-Nodes (28): Fib Retest Sniper Entry, Fib Touch, Manipulation Leg Fib Anchor, Retest Entry Fib Plus Reaction, Sniper Zone 0.618-0.786, Fair Value Gap, Liquidity Sweep, Retest Confirmation (+20 more)
+Nodes (25): Fib Retest Sniper Entry, Fib Touch, Manipulation Leg Fib Anchor, Retest Entry Fib Plus Reaction, Sniper Zone 0.618-0.786, Fair Value Gap, Liquidity Sweep, Retest Confirmation (+17 more)
 
 ### Community 117 - "TP — Take Profit"
 Cohesion: 0.33
@@ -889,12 +891,12 @@ Cohesion: 0.50
 Nodes (4): BSL — Buyside Liquidity, EQH — Equal Highs, EQL — Equal Lows, SSL — Sellside Liquidity
 
 ### Community 138 - "FreqAI"
-Cohesion: 0.20
-Nodes (10): FvgProEliteStrategy Container Command, Freqtrade Adapter SMT Unwired Fail-Closed, FvgProEliteStrategy Six-Component Model, FreqAI readiness notes, Deterministic Strategy Remains Source of Truth, FreqAI, No reinforcement learning initially, FreqAI prediction interface (+2 more)
+Cohesion: 0.29
+Nodes (7): FvgProEliteStrategy Six-Component Model, FreqAI readiness notes, Deterministic Strategy Remains Source of Truth, FreqAI, No reinforcement learning initially, FreqAI prediction interface, FreqAI shadow mode
 
 ### Community 139 - "freqtrade Dry-Run Service"
-Cohesion: 0.32
-Nodes (14): event_matches(), get_subscription(), Session, Setup transitions are watchlist opt-out; newest explicit preference wins., set_enabled(), set_minimum_score(), set_setup_only(), setup_event_matches_default() (+6 more)
+Cohesion: 0.25
+Nodes (9): Absorption, Order Block (OB), Swing Highs / Swing Lows, Order blocks, Absorption, Footprint volume, GEX title unclear, Order Block (+1 more)
 
 ### Community 140 - "8. Sweeps: the wick that failed"
 Cohesion: 0.67
@@ -933,8 +935,8 @@ Cohesion: 0.67
 Nodes (3): EQ — Equilibrium, OTE — Optimal Trade Entry, PD — Premium Discount
 
 ### Community 151 - "GuiRelaySocket"
-Cohesion: 0.15
-Nodes (3): Path, test_common_sh_writes_error_report(), test_update_script_refuses_non_git_install()
+Cohesion: 0.14
+Nodes (4): Path, test_check_update_not_git_clone_exits_2(), test_common_sh_writes_error_report(), test_update_script_refuses_non_git_install()
 
 ### Community 181 - "install-ubuntu.sh"
 Cohesion: 0.40
@@ -957,28 +959,28 @@ Cohesion: 0.70
 Nodes (4): install_root_writable(), run_privileged(), run_user_stack(), bootstrap.sh script
 
 ### Community 209 - "ResearchPipeline"
-Cohesion: 0.13
-Nodes (38): acknowledge_alert(), _audit_execution_action(), _audit_watchlist_action(), create_shadow_intent(), empty_collection(), gui_watchlist_confirm_change(), gui_watchlist_create_change(), list_invalidations() (+30 more)
+Cohesion: 0.08
+Nodes (62): acknowledge_alert(), _audit_execution_action(), _audit_watchlist_action(), create_annotation(), create_shadow_intent(), delete_annotation(), empty_collection(), _enabled() (+54 more)
 
 ### Community 210 - "test_dependency_lock.py"
-Cohesion: 0.35
-Nodes (11): Path, ResearchService, ablations(), chronological_split(), dataset_hash(), metrics(), ResearchExample, walk_forward() (+3 more)
+Cohesion: 0.38
+Nodes (10): Path, ResearchService, ablations(), chronological_split(), dataset_hash(), metrics(), ResearchExample, walk_forward() (+2 more)
 
 ### Community 211 - "evaluate_liquidity_invalidations"
 Cohesion: 0.18
 Nodes (27): gui_watchlist_search(), display_name_for(), enrich_hits_with_closes(), enrich_hits_with_tickers(), _format_price(), latest_candidate_evidence(), matches_query(), normalize_query() (+19 more)
 
 ### Community 212 - "GuiRelaySocket"
-Cohesion: 0.20
-Nodes (5): Session, Any, Public-only CCXT client. It exposes no order or credential methods., ReadOnlyExchange, T
+Cohesion: 0.15
+Nodes (12): Session, rank_candidates(), save_candidate_evidence(), ticker_evidence(), main(), run(), Session, Any (+4 more)
 
 ### Community 213 - "4. Support, resistance, and “levels”"
 Cohesion: 0.18
 Nodes (11): 4. Support, resistance, and “levels”, At a glance, Builder note, Common beginner mistakes, Equal highs / equal lows, How to mark levels (beginner method), Levels are places price has “cared about”, Practice (+3 more)
 
 ### Community 214 - "test_dependency_lock.py"
-Cohesion: 0.19
-Nodes (5): Any, RuntimeError, TelegramApiError, TelegramClient, AsyncClient
+Cohesion: 0.25
+Nodes (8): Reproducible Backtesting Research Workflow, Shadow Intent Baseline Manifest Gate, Untouched Test Period Seal, FreqAI Shadow-Mode Research Layer, FreqAI Supervised Outcome Targets, PLATFORM_EXECUTION_MODE, Shadow Execution Boundary, Work Order Audit Status Tracker
 
 ### Community 215 - "gui_websocket"
 Cohesion: 0.29
@@ -989,24 +991,20 @@ Cohesion: 0.18
 Nodes (11): 5. Trend vs chop (is the market going somewhere?), A beginner-friendly decision tree, At a glance, Builder note, Common beginner mistakes, Optional helpers (later), Practice, Simple tests (no indicators required) (+3 more)
 
 ### Community 217 - "import_platform_db.py"
-Cohesion: 0.47
-Nodes (8): Connection, Row, import_candles(), import_simple_table(), main(), _parse_dt(), datetime, _rows()
-
-### Community 218 - "test_market_data.py"
-Cohesion: 0.15
-Nodes (8): CandleRecord, test_websocket_snapshot_contains_only_closed_candles(), websocket_database(), add_candle(), test_ema_requires_length_and_indicator_transitions_are_persisted(), test_persistent_level_and_sweep_event_are_idempotent(), CursorExchange, test_update_treats_naive_sqlite_timestamp_as_utc()
+Cohesion: 0.42
+Nodes (9): SupplementalMetricRecord, Connection, Row, import_candles(), import_simple_table(), main(), _parse_dt(), datetime (+1 more)
 
 ### Community 219 - "test_qualification_risk.py"
 Cohesion: 0.36
 Nodes (7): evaluate_risk(), RiskLimits, Decimal, QualificationService, GateEvaluationRecord, test_mandatory_gates_arm_disarm_and_risk_approval_are_persisted(), test_risk_governor_rejects_geometry_costs_and_controls()
 
 ### Community 220 - "ResearchPipeline"
-Cohesion: 0.29
-Nodes (3): datetime, Orchestrates research decisions only; it never calls an execution adapter., ResearchPipeline
+Cohesion: 0.48
+Nodes (6): ConfluenceResult, evaluate_confluence(), Decimal, Confluence filtration scorecard (research-only; not position-size authority)., Stage 1 gatekeepers then Stage 2 weighted score using available OHLC evidence on, _tier()
 
 ### Community 221 - "Auction Market Theory"
-Cohesion: 0.22
-Nodes (10): Transcribed trading notes, Anchored VWAP, Auction Market Theory, Balanced vs imbalanced markets, Balanced vs Imbalanced Markets, Fair Value Gap (FVG), HVN (High Volume Node), LVN (Low Volume Node) (+2 more)
+Cohesion: 0.33
+Nodes (6): FvgProEliteStrategy Container Command, Freqtrade Adapter SMT Unwired Fail-Closed, Hard Phase Exit Gates (0–5), SMT Divergence Rule, Phase 4 Evidence Gate Not Passed, Phase 5 Dry-Run Connection Locked
 
 ## Ambiguous Edges - Review These
 - `Macro Window` → `Cryptocurrency Trading Platform Development Brief`  [AMBIGUOUS]
@@ -1051,7 +1049,7 @@ Nodes (10): Transcribed trading notes, Anchored VWAP, Auction Market Theory, Bal
 ## Knowledge Gaps
 - **786 isolated node(s):** `name`, `description`, `repository`, `stack`, `buildpacks` (+781 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **59 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **57 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_

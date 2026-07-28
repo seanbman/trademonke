@@ -9,24 +9,30 @@ cd "$ROOT"
 
 if [[ ! -d .git ]]; then
   echo "not-a-git-clone"
-  exit 1
+  exit 2
 fi
 
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "not-a-git-clone"
-  exit 1
+  exit 2
+fi
+
+origin_url="$(git remote get-url origin 2>/dev/null || true)"
+if [[ -z "$origin_url" ]]; then
+  echo "no-origin-remote"
+  exit 2
 fi
 
 timeout_secs="${TRADEMONKE_UPDATE_TIMEOUT:-10}"
 if ! timeout "$timeout_secs" git fetch origin main --quiet 2>/dev/null; then
-  echo "fetch-failed"
+  echo "fetch-failed origin=${origin_url}"
   exit 2
 fi
 
 local_sha="$(git rev-parse HEAD)"
 remote_sha="$(git rev-parse origin/main 2>/dev/null || true)"
 if [[ -z "$remote_sha" ]]; then
-  echo "no-origin-main"
+  echo "no-origin-main origin=${origin_url}"
   exit 2
 fi
 
@@ -35,5 +41,5 @@ if [[ "$local_sha" == "$remote_sha" ]]; then
   exit 1
 fi
 
-echo "available local=$local_sha remote=$remote_sha"
+echo "available local=$local_sha remote=$remote_sha origin=${origin_url}"
 exit 0

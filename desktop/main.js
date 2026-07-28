@@ -347,9 +347,22 @@ async function maybeUpdate() {
   try {
     await run(BASH, [check]);
   } catch (error) {
-    if (error.code === 1) return; // current
-    setStatus("Update check skipped (offline or no remote).");
-    appendLog(`UPDATE_CHECK_SKIP ${error.message || error}`);
+    if (error.code === 1) {
+      setStatus("Already up to date with origin/main.");
+      appendLog(`UPDATE_CHECK_CURRENT ${error.stdout || ""}`.trim());
+      return;
+    }
+    const detail = String(error.stdout || error.stderr || error.message || error).trim();
+    setStatus("Update check failed (not treated as up-to-date).");
+    appendLog(`UPDATE_CHECK_FAILED code=${error.code} ${detail}`);
+    await dialog.showMessageBox({
+      type: "warning",
+      buttons: ["Continue"],
+      defaultId: 0,
+      title: "TradeMonke update check failed",
+      message: "Could not check origin/main for updates.",
+      detail: `${detail || "Fetch failed or install is not a git clone."}\n\nThis is not the same as being up to date. Fix network/credentials or repo.url, then relaunch.`,
+    });
     return;
   }
   const result = await dialog.showMessageBox({

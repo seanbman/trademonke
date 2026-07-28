@@ -65,14 +65,29 @@ Default services: migrate → postgres → API → GUI → market-data.
 ## Updates (origin/main)
 
 Packaged installs keep a **git clone** at `/opt/trademonke` tracking `origin/main`.
-The `.deb` itself is a thin bootstrap; day-to-day app updates come from the GitHub remote.
+The `.deb` itself is a thin bootstrap; day-to-day app updates come from the GitHub remote
+configured in `/etc/trademonke/repo.url` (must match [`packaging/deb/repo.url`](../packaging/deb/repo.url):
+`https://github.com/seanbman/trademonke.git`).
 
-On each Electron launch (and when `trademonke-start.sh` runs an update check):
+**Every Electron launch** runs an update check (and `trademonke-start.sh` does the same unless
+`--no-update-check`):
 
 1. `git fetch origin main`  
 2. If `HEAD` ≠ `origin/main`, prompt **Update** / **Later**  
 3. **Update** runs `scripts/desktop/trademonke-update.sh`: ff-only merge, rebuild, migrate, restart  
-4. `.env` and `runtime/` are never overwritten by git  
+4. If fetch/remote fails, show a warning (not treated as “already current”)  
+5. `.env` and `runtime/` are never overwritten by git  
+
+If the install still points at an old remote (for example `trading-bot.git`), it will never see
+commits on `trademonke` `main`. Fix with:
+
+```bash
+sudo tee /etc/trademonke/repo.url >/dev/null <<'EOF'
+https://github.com/seanbman/trademonke.git
+EOF
+git -C /opt/trademonke remote set-url origin "$(tr -d '[:space:]' </etc/trademonke/repo.url)"
+git -C /opt/trademonke fetch origin main
+```
 
 Manual update:
 

@@ -15,12 +15,12 @@
     "semantic_hash": ""
   },
   "app/api/main.py": {
-    "mtime": 1785271389.9741745,
+    "mtime": 1785271444.6588619,
     "ast_hash": "d91477969e73a69b0078e05fa2c8e1ec",
     "semantic_hash": ""
   },
   "app/api/schemas.py": {
-    "mtime": 1785271282.2004101,
+    "mtime": 1785271444.6598618,
     "ast_hash": "9775455b09c977b8cc88b7978ea5332b",
     "semantic_hash": ""
   },
@@ -235,7 +235,7 @@
     "semantic_hash": ""
   },
   "app/settings.py": {
-    "mtime": 1785271274.9418607,
+    "mtime": 1785271444.6598618,
     "ast_hash": "50abc57028fe909571d1f6e362efb5da",
     "semantic_hash": ""
   },
@@ -720,7 +720,7 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP.md": {
-    "mtime": 1785271329.2728887,
+    "mtime": 1785271444.6608746,
     "ast_hash": "c108c9620cd3919a960dc2f58ae5379c",
     "semantic_hash": ""
   },
@@ -1010,8 +1010,8 @@
     "semantic_hash": ""
   },
   "desktop/main.js": {
-    "mtime": 1785101688.5150387,
-    "ast_hash": "57c6084699c180a92f8d3fb06f17a05f",
+    "mtime": 1785278166.1861656,
+    "ast_hash": "4e8fd40970211bab67178de387942886",
     "semantic_hash": ""
   },
   "desktop/package.json": {
@@ -1025,8 +1025,8 @@
     "semantic_hash": ""
   },
   "scripts/desktop/check-update.sh": {
-    "mtime": 1784522788.072888,
-    "ast_hash": "c2ee482677d4a52cdde9b0a13ca38c18",
+    "mtime": 1785278164.0110793,
+    "ast_hash": "6fdb52045c86309994cfb6270f627922",
     "semantic_hash": ""
   },
   "scripts/desktop/common.sh": {
@@ -1065,8 +1065,8 @@
     "semantic_hash": ""
   },
   "tests/test_desktop_scripts.py": {
-    "mtime": 1785101692.5691457,
-    "ast_hash": "18c21326a54cbf86c513b9235c27ada5",
+    "mtime": 1785278213.7030413,
+    "ast_hash": "99c8fc22201b5c12364d81d9469d51ad",
     "semantic_hash": ""
   },
   "tests/test_patterns.py": {
@@ -1080,8 +1080,8 @@
     "semantic_hash": ""
   },
   "docs/DESKTOP.md": {
-    "mtime": 1785102844.7971458,
-    "ast_hash": "8cadb17fce531e9b53051de58ffdbdaf",
+    "mtime": 1785278145.3613381,
+    "ast_hash": "43760ba5c9c83fc3509aac98e5d5776b",
     "semantic_hash": ""
   },
   "docs/GUI.md": {
@@ -1170,7 +1170,7 @@
     "semantic_hash": ""
   },
   "gui/src/indicatorCatalog.ts": {
-    "mtime": 1785271329.2718887,
+    "mtime": 1785271444.6818633,
     "ast_hash": "6cf5e8ea59f8d7c894f4042d0309a2ec",
     "semantic_hash": ""
   },
@@ -1185,7 +1185,7 @@
     "semantic_hash": ""
   },
   "app/liquidity/invalidations.py": {
-    "mtime": 1785271274.9408607,
+    "mtime": 1785271444.6598618,
     "ast_hash": "27a144aefbad834d6feed9b1f8198ac5",
     "semantic_hash": ""
   },
@@ -1215,27 +1215,27 @@
     "semantic_hash": ""
   },
   "app/domain/confluence.py": {
-    "mtime": 1785271251.6510732,
+    "mtime": 1785271444.6598618,
     "ast_hash": "5b5aaa8520b419d42794a207b8c0a846",
     "semantic_hash": ""
   },
   "app/domain/ifvg.py": {
-    "mtime": 1785271242.981398,
+    "mtime": 1785271444.6598618,
     "ast_hash": "b5349157c540740a39937d6800097e33",
     "semantic_hash": ""
   },
   "app/domain/sessions.py": {
-    "mtime": 1785271412.8407352,
+    "mtime": 1785271444.6598618,
     "ast_hash": "16655913dec20447864a2b57bff308e1",
     "semantic_hash": ""
   },
   "app/domain/structure.py": {
-    "mtime": 1785271236.5728955,
+    "mtime": 1785271444.6598618,
     "ast_hash": "c5b19b655ab0c40d3a35395e382f07c1",
     "semantic_hash": ""
   },
   "tests/test_structure_confluence.py": {
-    "mtime": 1785271390.05318,
+    "mtime": 1785271444.6818633,
     "ast_hash": "2115c18abcd3d4c46ebc963bb2981c9c",
     "semantic_hash": ""
   }

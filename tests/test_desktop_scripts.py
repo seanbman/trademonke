@@ -54,6 +54,7 @@ def test_packaging_deb_assets_exist():
     repo_url = (PACKAGING / "repo.url").read_text(encoding="utf-8").strip()
     assert repo_url.startswith("https://")
     assert repo_url.endswith(".git")
+    assert "trademonke.git" in repo_url
 
 
 def test_desktop_entry_template_has_placeholders():
@@ -144,6 +145,29 @@ def test_docs_describe_deb_install():
     assert "make deb" in text
     assert "/opt/trademonke" in text
     assert "origin/main" in text
+    assert "Every Electron launch" in text
+    assert "trademonke.git" in text
+
+
+def test_check_update_not_git_clone_exits_2(tmp_path: Path):
+    env = {**os.environ, "TRADEMONKE_ROOT": str(tmp_path)}
+    result = subprocess.run(
+        ["bash", str(DESKTOP_SCRIPTS / "check-update.sh")],
+        cwd=ROOT,
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=30,
+    )
+    assert result.returncode == 2
+    assert "not-a-git-clone" in (result.stdout or "")
+
+
+def test_main_js_surfaces_update_check_failures():
+    main = (ROOT / "desktop" / "main.js").read_text(encoding="utf-8")
+    assert "UPDATE_CHECK_FAILED" in main
+    assert "Already up to date with origin/main" in main
+    assert "Could not check origin/main for updates" in main
 
 
 def test_main_js_has_first_run_bootstrap():
