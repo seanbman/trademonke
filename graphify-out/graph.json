@@ -1955,8 +1955,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "app_api_main_lifespan",
-      "community": 28,
-      "community_name": "Market Data Relay",
+      "community": 209,
+      "community_name": "ResearchPipeline",
       "norm_label": "lifespan()"
     },
     {
@@ -1966,8 +1966,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "fastapi",
-      "community": 28,
-      "community_name": "Market Data Relay",
+      "community": 209,
+      "community_name": "ResearchPipeline",
       "norm_label": "fastapi"
     },
     {
@@ -1977,8 +1977,8 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "app_api_main_require_gui_access",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 29,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "require_gui_access()"
     },
     {
@@ -1999,8 +1999,8 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "app_api_main_enabled",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "_enabled()"
     },
     {
@@ -2010,8 +2010,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_api_main_py_session",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "session"
     },
     {
@@ -2021,8 +2021,8 @@
       "source_location": "L110",
       "_origin": "ast",
       "id": "app_api_main_health",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "health()"
     },
     {
@@ -2032,8 +2032,8 @@
       "source_location": "L145",
       "_origin": "ast",
       "id": "app_api_main_setups",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 29,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "setups()"
     },
     {
@@ -2043,8 +2043,8 @@
       "source_location": "L150",
       "_origin": "ast",
       "id": "app_api_main_setup",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "setup()"
     },
     {
@@ -2054,8 +2054,8 @@
       "source_location": "L158",
       "_origin": "ast",
       "id": "app_api_main_market_data_status",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "market_data_status()"
     },
     {
@@ -2065,8 +2065,8 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "app_api_main_events",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 29,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "events()"
     },
     {
@@ -2109,8 +2109,8 @@
       "source_location": "L213",
       "_origin": "ast",
       "id": "app_api_main_recommendations",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "recommendations()"
     },
     {
@@ -2120,8 +2120,8 @@
       "source_location": "L220",
       "_origin": "ast",
       "id": "app_api_main_gui_bootstrap_data",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "_gui_bootstrap_data()"
     },
     {
@@ -2131,8 +2131,8 @@
       "source_location": "L241",
       "_origin": "ast",
       "id": "app_api_main_gui_bootstrap",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "gui_bootstrap()"
     },
     {
@@ -2186,8 +2186,8 @@
       "source_location": "L396",
       "_origin": "ast",
       "id": "app_api_main_event_stream",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 29,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "event_stream()"
     },
     {
@@ -2197,8 +2197,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_api_main_py_datetime",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 29,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "datetime"
     },
     {
@@ -2208,8 +2208,8 @@
       "source_location": "L417",
       "_origin": "ast",
       "id": "app_api_main_gui_health",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "gui_health()"
     },
     {
@@ -2219,8 +2219,8 @@
       "source_location": "L422",
       "_origin": "ast",
       "id": "app_api_main_gui_alerts",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "gui_alerts()"
     },
     {
@@ -2241,8 +2241,8 @@
       "source_location": "L439",
       "_origin": "ast",
       "id": "app_api_main_list_annotations",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "list_annotations()"
     },
     {
@@ -2252,8 +2252,8 @@
       "source_location": "L452",
       "_origin": "ast",
       "id": "app_api_main_create_annotation",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "create_annotation()"
     },
     {
@@ -2263,8 +2263,8 @@
       "source_location": "L481",
       "_origin": "ast",
       "id": "app_api_main_delete_annotation",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "delete_annotation()"
     },
     {
@@ -2285,8 +2285,8 @@
       "source_location": "L509",
       "_origin": "ast",
       "id": "app_api_main_evaluate_invalidations",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "evaluate_invalidations()"
     },
     {
@@ -2318,8 +2318,8 @@
       "source_location": "L733",
       "_origin": "ast",
       "id": "app_api_main_gui_execution",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "gui_execution()"
     },
     {
@@ -2329,8 +2329,8 @@
       "source_location": "L757",
       "_origin": "ast",
       "id": "app_api_main_workstation_snapshot",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "_workstation_snapshot()"
     },
     {
@@ -2450,8 +2450,8 @@
       "source_location": "L983",
       "_origin": "ast",
       "id": "app_api_main_audit_execution_action",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "_audit_execution_action()"
     },
     {
@@ -2472,8 +2472,8 @@
       "source_location": "L1007",
       "_origin": "ast",
       "id": "app_api_main_create_shadow_intent",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "create_shadow_intent()"
     },
     {
@@ -2483,8 +2483,8 @@
       "source_location": "L1024",
       "_origin": "ast",
       "id": "app_api_main_reconcile_shadow",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "reconcile_shadow()"
     },
     {
@@ -2505,8 +2505,8 @@
       "source_location": "L1051",
       "_origin": "ast",
       "id": "app_api_main_mount_gui",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "mount_gui()"
     },
     {
@@ -2516,8 +2516,8 @@
       "source_location": "L758",
       "_origin": "ast",
       "id": "app_api_main_rationale_758",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "build one authoritative, closed-candle workstation view."
     },
     {
@@ -3099,8 +3099,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_domain_confluence",
-      "community": 220,
-      "community_name": "ResearchPipeline",
+      "community": 9,
+      "community_name": "main Module",
       "norm_label": "confluence.py"
     },
     {
@@ -3110,8 +3110,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_domain_confluence_confluenceresult",
-      "community": 220,
-      "community_name": "ResearchPipeline",
+      "community": 9,
+      "community_name": "main Module",
       "norm_label": "confluenceresult"
     },
     {
@@ -3121,8 +3121,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "app_domain_confluence_tier",
-      "community": 220,
-      "community_name": "ResearchPipeline",
+      "community": 9,
+      "community_name": "main Module",
       "norm_label": "_tier()"
     },
     {
@@ -3132,8 +3132,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_domain_confluence_py_decimal",
-      "community": 220,
-      "community_name": "ResearchPipeline",
+      "community": 9,
+      "community_name": "main Module",
       "norm_label": "decimal"
     },
     {
@@ -3143,8 +3143,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "app_domain_confluence_evaluate_confluence",
-      "community": 220,
-      "community_name": "ResearchPipeline",
+      "community": 9,
+      "community_name": "main Module",
       "norm_label": "evaluate_confluence()"
     },
     {
@@ -3154,8 +3154,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_domain_confluence_rationale_1",
-      "community": 220,
-      "community_name": "ResearchPipeline",
+      "community": 9,
+      "community_name": "main Module",
       "norm_label": "confluence filtration scorecard (research-only; not position-size authority)."
     },
     {
@@ -3165,8 +3165,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "app_domain_confluence_rationale_63",
-      "community": 220,
-      "community_name": "ResearchPipeline",
+      "community": 9,
+      "community_name": "main Module",
       "norm_label": "stage 1 gatekeepers then stage 2 weighted score using available ohlc evidence on"
     },
     {
@@ -3902,8 +3902,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_domain_risk_risklimits",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "risklimits"
     },
     {
@@ -3924,8 +3924,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "app_domain_risk_evaluate_risk",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "evaluate_risk()"
     },
     {
@@ -4100,8 +4100,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_domain_signals_confirmed_pivots",
-      "community": 32,
-      "community_name": "Candle Domain",
+      "community": 9,
+      "community_name": "main Module",
       "norm_label": "confirmed_pivots()"
     },
     {
@@ -4199,8 +4199,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_domain_signals_rationale_11",
-      "community": 32,
-      "community_name": "Candle Domain",
+      "community": 9,
+      "community_name": "main Module",
       "norm_label": "return confirmed high/low pivot indices; right-side candles delay confirmation."
     },
     {
@@ -4276,8 +4276,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "app_domain_structure_classify_structure_break",
-      "community": 9,
-      "community_name": "main Module",
+      "community": 115,
+      "community_name": "5. Trend vs chop (is the market going somewhere?)",
       "norm_label": "classify_structure_break()"
     },
     {
@@ -4298,8 +4298,8 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "app_domain_structure_infer_prior_trend",
-      "community": 9,
-      "community_name": "main Module",
+      "community": 115,
+      "community_name": "5. Trend vs chop (is the market going somewhere?)",
       "norm_label": "infer_prior_trend()"
     },
     {
@@ -4320,8 +4320,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "app_domain_structure_rationale_46",
-      "community": 9,
-      "community_name": "main Module",
+      "community": 115,
+      "community_name": "5. Trend vs chop (is the market going somewhere?)",
       "norm_label": "refine a raw structure break into bos / choch / mss.      measurements only \u2014 no"
     },
     {
@@ -4419,8 +4419,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "app_episodes_service_episodeengine_create_swept_episodes",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "._create_swept_episodes()"
     },
     {
@@ -4452,8 +4452,8 @@
       "source_location": "L159",
       "_origin": "ast",
       "id": "app_episodes_service_episodeengine_event",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "._event()"
     },
     {
@@ -4518,8 +4518,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_execution_adapter",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "adapter.py"
     },
     {
@@ -4529,8 +4529,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_execution_adapter_executiongateerror",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "executiongateerror"
     },
     {
@@ -4540,8 +4540,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_execution_adapter_py_runtimeerror",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "runtimeerror"
     },
     {
@@ -4551,8 +4551,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_execution_adapter_freqtradeintentadapter",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "freqtradeintentadapter"
     },
     {
@@ -4562,8 +4562,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_execution_adapter_freqtradeintentadapter_init",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".__init__()"
     },
     {
@@ -4573,8 +4573,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_execution_adapter_freqtradeintentadapter_create_intent",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".create_intent()"
     },
     {
@@ -4584,8 +4584,8 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "app_execution_adapter_freqtradeintentadapter_reconcile_shadow",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".reconcile_shadow()"
     },
     {
@@ -4595,8 +4595,8 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "app_execution_adapter_freqtradeintentadapter_require_controls_clear",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "._require_controls_clear()"
     },
     {
@@ -4606,8 +4606,8 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "app_execution_adapter_freqtradeintentadapter_require_reviewed_research",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "._require_reviewed_research()"
     },
     {
@@ -4617,8 +4617,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_execution_adapter_rationale_17",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "creates auditable shadow intents; it contains no exchange or ccxt order methods."
     },
     {
@@ -4826,8 +4826,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_liquidity_invalidations",
-      "community": 77,
-      "community_name": "Order Block (OB)",
+      "community": 115,
+      "community_name": "5. Trend vs chop (is the market going somewhere?)",
       "norm_label": "invalidations.py"
     },
     {
@@ -4837,8 +4837,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_liquidity_invalidations_event_id",
-      "community": 77,
-      "community_name": "Order Block (OB)",
+      "community": 115,
+      "community_name": "5. Trend vs chop (is the market going somewhere?)",
       "norm_label": "_event_id()"
     },
     {
@@ -4848,8 +4848,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_liquidity_invalidations_evaluate_annotation_invalidations",
-      "community": 77,
-      "community_name": "Order Block (OB)",
+      "community": 115,
+      "community_name": "5. Trend vs chop (is the market going somewhere?)",
       "norm_label": "evaluate_annotation_invalidations()"
     },
     {
@@ -4859,8 +4859,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_liquidity_invalidations_py_session",
-      "community": 77,
-      "community_name": "Order Block (OB)",
+      "community": 115,
+      "community_name": "5. Trend vs chop (is the market going somewhere?)",
       "norm_label": "session"
     },
     {
@@ -4870,8 +4870,8 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "app_liquidity_invalidations_evaluate_liquidity_invalidations",
-      "community": 77,
-      "community_name": "Order Block (OB)",
+      "community": 115,
+      "community_name": "5. Trend vs chop (is the market going somewhere?)",
       "norm_label": "evaluate_liquidity_invalidations()"
     },
     {
@@ -4881,8 +4881,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_liquidity_invalidations_py_decimal",
-      "community": 77,
-      "community_name": "Order Block (OB)",
+      "community": 115,
+      "community_name": "5. Trend vs chop (is the market going somewhere?)",
       "norm_label": "decimal"
     },
     {
@@ -4892,8 +4892,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_liquidity_invalidations_rationale_1",
-      "community": 77,
-      "community_name": "Order Block (OB)",
+      "community": 115,
+      "community_name": "5. Trend vs chop (is the market going somewhere?)",
       "norm_label": "watchlist invalidation event persistence from drawings and liquidity measurement"
     },
     {
@@ -5046,8 +5046,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_market_data_candidates",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": "candidates.py"
     },
     {
@@ -5057,8 +5057,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_market_data_candidates_ticker_evidence",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": "ticker_evidence()"
     },
     {
@@ -5068,8 +5068,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_market_data_candidates_rank_candidates",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": "rank_candidates()"
     },
     {
@@ -5079,8 +5079,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "app_market_data_candidates_save_candidate_evidence",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": "save_candidate_evidence()"
     },
     {
@@ -5090,8 +5090,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_market_data_candidates_py_session",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": "session"
     },
     {
@@ -5101,8 +5101,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_market_data_cli",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "cli.py"
     },
     {
@@ -5112,8 +5112,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "app_market_data_cli_run",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "run()"
     },
     {
@@ -5123,8 +5123,8 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "app_market_data_cli_main",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "main()"
     },
     {
@@ -5178,8 +5178,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "app_market_data_collector_marketdatacollector_init",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": ".__init__()"
     },
     {
@@ -5189,8 +5189,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_market_data_collector_py_session",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": "session"
     },
     {
@@ -5310,8 +5310,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_market_data_exchange",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": "exchange.py"
     },
     {
@@ -5321,8 +5321,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_market_data_exchange_readonlyexchange",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": "readonlyexchange"
     },
     {
@@ -5332,8 +5332,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_market_data_exchange_readonlyexchange_init",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": ".__init__()"
     },
     {
@@ -5343,8 +5343,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_market_data_exchange_readonlyexchange_aenter",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": ".__aenter__()"
     },
     {
@@ -5354,8 +5354,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_market_data_exchange_readonlyexchange_aexit",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": ".__aexit__()"
     },
     {
@@ -5365,8 +5365,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "app_market_data_exchange_readonlyexchange_retry",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": ".retry()"
     },
     {
@@ -5376,8 +5376,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "t",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": "t"
     },
     {
@@ -5387,8 +5387,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_market_data_exchange_readonlyexchange_require_spot_symbol",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": ".require_spot_symbol()"
     },
     {
@@ -5398,8 +5398,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "app_market_data_exchange_readonlyexchange_fetch_ohlcv",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": ".fetch_ohlcv()"
     },
     {
@@ -5409,8 +5409,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_market_data_exchange_py_any",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": "any"
     },
     {
@@ -5420,8 +5420,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "app_market_data_exchange_readonlyexchange_fetch_tickers",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": ".fetch_tickers()"
     },
     {
@@ -5431,8 +5431,8 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "app_market_data_exchange_readonlyexchange_fetch_funding_rate",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": ".fetch_funding_rate()"
     },
     {
@@ -5442,8 +5442,8 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "app_market_data_exchange_readonlyexchange_fetch_open_interest",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": ".fetch_open_interest()"
     },
     {
@@ -5453,8 +5453,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_market_data_exchange_rationale_13",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": "public-only ccxt client. it exposes no order or credential methods."
     },
     {
@@ -5640,8 +5640,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_market_data_storage_latest_candles",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "latest_candles()"
     },
     {
@@ -5937,8 +5937,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "app_market_data_types_candidateevidence",
-      "community": 212,
-      "community_name": "GuiRelaySocket",
+      "community": 1,
+      "community_name": "episodes Module",
       "norm_label": "candidateevidence"
     },
     {
@@ -6069,8 +6069,8 @@
       "source_location": "L187",
       "_origin": "ast",
       "id": "app_market_data_watchlist_timeframe_seconds",
-      "community": 36,
-      "community_name": "Price Above/Below 200 EMA",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "timeframe_seconds()"
     },
     {
@@ -6080,8 +6080,8 @@
       "source_location": "L192",
       "_origin": "ast",
       "id": "app_market_data_watchlist_audit_configured_history",
-      "community": 36,
-      "community_name": "Price Above/Below 200 EMA",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "audit_configured_history()"
     },
     {
@@ -6091,8 +6091,8 @@
       "source_location": "L195",
       "_origin": "ast",
       "id": "app_market_data_watchlist_rationale_195",
-      "community": 36,
-      "community_name": "Price Above/Below 200 EMA",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "queue missing configured history, respecting active jobs and retry cooldown."
     },
     {
@@ -6124,8 +6124,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_qualification_service",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "service.py"
     },
     {
@@ -6135,8 +6135,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_qualification_service_qualificationservice",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "qualificationservice"
     },
     {
@@ -6146,8 +6146,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "app_qualification_service_qualificationservice_init",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".__init__()"
     },
     {
@@ -6157,8 +6157,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "app_qualification_service_qualificationservice_evaluate_gates",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".evaluate_gates()"
     },
     {
@@ -6168,8 +6168,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "app_qualification_service_qualificationservice_evaluate_risk",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".evaluate_risk()"
     },
     {
@@ -6179,8 +6179,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_qualification_service_py_decimal",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "decimal"
     },
     {
@@ -6190,8 +6190,8 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "app_qualification_service_qualificationservice_event",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "._event()"
     },
     {
@@ -6234,8 +6234,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_recommendations_service_recommendationservice",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "recommendationservice"
     },
     {
@@ -6245,8 +6245,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_recommendations_service_recommendationservice_init",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".__init__()"
     },
     {
@@ -6256,8 +6256,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_recommendations_service_recommendationservice_create_for_approved_episode",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".create_for_approved_episode()"
     },
     {
@@ -6267,8 +6267,8 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "app_recommendations_service_recommendationservice_targets",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "._targets()"
     },
     {
@@ -6278,8 +6278,8 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "app_recommendations_service_recommendationservice_event",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "._event()"
     },
     {
@@ -6289,8 +6289,8 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "app_recommendations_service_recommendationservice_timeframe_seconds",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "._timeframe_seconds()"
     },
     {
@@ -6696,8 +6696,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_research_cli",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "cli.py"
     },
     {
@@ -6707,8 +6707,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_research_cli_main",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "main()"
     },
     {
@@ -6740,8 +6740,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_research_pipeline_researchpipeline_init",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".__init__()"
     },
     {
@@ -6850,8 +6850,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_research_service",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "service.py"
     },
     {
@@ -6861,8 +6861,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_research_service_researchservice",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "researchservice"
     },
     {
@@ -6872,8 +6872,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_research_service_researchservice_init",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".__init__()"
     },
     {
@@ -6883,8 +6883,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_research_service_py_path",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "path"
     },
     {
@@ -6894,8 +6894,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_research_service_researchservice_baseline",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".baseline()"
     },
     {
@@ -6916,8 +6916,8 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "app_research_service_researchservice_record",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "._record()"
     },
     {
@@ -6927,8 +6927,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_research_validation",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "validation.py"
     },
     {
@@ -6938,8 +6938,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_research_validation_researchexample",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "researchexample"
     },
     {
@@ -6949,8 +6949,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_research_validation_chronological_split",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "chronological_split()"
     },
     {
@@ -6960,8 +6960,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_research_validation_dataset_hash",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "dataset_hash()"
     },
     {
@@ -6971,8 +6971,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "app_research_validation_metrics",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "metrics()"
     },
     {
@@ -6982,8 +6982,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "app_research_validation_walk_forward",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "walk_forward()"
     },
     {
@@ -6993,8 +6993,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "app_research_validation_ablations",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "ablations()"
     },
     {
@@ -7125,8 +7125,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_settings",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "settings.py"
     },
     {
@@ -7136,8 +7136,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_settings_settings",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "settings"
     },
     {
@@ -7147,8 +7147,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "basesettings",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "basesettings"
     },
     {
@@ -7158,8 +7158,8 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "app_settings_settings_coerce_database_url",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 28,
+      "community_name": "Market Data Relay",
       "norm_label": ".coerce_database_url()"
     },
     {
@@ -7169,8 +7169,8 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "app_settings_settings_fail_closed",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": ".fail_closed()"
     },
     {
@@ -7180,8 +7180,8 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "app_settings_settings_config_hash",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": ".config_hash()"
     },
     {
@@ -7191,8 +7191,8 @@
       "source_location": "L138",
       "_origin": "ast",
       "id": "app_settings_settings_allowed_users",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": ".allowed_users()"
     },
     {
@@ -7202,8 +7202,8 @@
       "source_location": "L142",
       "_origin": "ast",
       "id": "app_settings_settings_market_symbols",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": ".market_symbols()"
     },
     {
@@ -7213,8 +7213,8 @@
       "source_location": "L146",
       "_origin": "ast",
       "id": "app_settings_settings_market_timeframes",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": ".market_timeframes()"
     },
     {
@@ -7224,8 +7224,8 @@
       "source_location": "L150",
       "_origin": "ast",
       "id": "app_settings_settings_indicator_htfs",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": ".indicator_htfs()"
     },
     {
@@ -7235,8 +7235,8 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "app_settings_settings_is_relay_mode",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": ".is_relay_mode()"
     },
     {
@@ -7246,8 +7246,8 @@
       "source_location": "L159",
       "_origin": "ast",
       "id": "app_settings_get_settings",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "get_settings()"
     },
     {
@@ -7466,8 +7466,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_telegram_alerts",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "alerts.py"
     },
     {
@@ -7477,8 +7477,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_telegram_alerts_get_subscription",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "get_subscription()"
     },
     {
@@ -7488,8 +7488,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_telegram_alerts_py_session",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "session"
     },
     {
@@ -7499,8 +7499,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "app_telegram_alerts_set_enabled",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "set_enabled()"
     },
     {
@@ -7510,8 +7510,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "app_telegram_alerts_toggle_component",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "toggle_component()"
     },
     {
@@ -7521,8 +7521,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "app_telegram_alerts_set_minimum_score",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "set_minimum_score()"
     },
     {
@@ -7532,8 +7532,8 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "app_telegram_alerts_set_setup_only",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "set_setup_only()"
     },
     {
@@ -7543,8 +7543,8 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "app_telegram_alerts_event_matches",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "event_matches()"
     },
     {
@@ -7554,8 +7554,8 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "app_telegram_alerts_setup_event_matches_default",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "setup_event_matches_default()"
     },
     {
@@ -7565,8 +7565,8 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "app_telegram_alerts_rationale_81",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "setup transitions are watchlist opt-out; newest explicit preference wins."
     },
     {
@@ -7576,8 +7576,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_telegram_cli",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": "cli.py"
     },
     {
@@ -7587,8 +7587,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_telegram_cli_run",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": "run()"
     },
     {
@@ -7598,8 +7598,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_telegram_cli_main",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": "main()"
     },
     {
@@ -7609,8 +7609,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_telegram_client",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": "client.py"
     },
     {
@@ -7620,8 +7620,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_telegram_client_telegramapierror",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": "telegramapierror"
     },
     {
@@ -7631,8 +7631,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_telegram_client_py_runtimeerror",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": "runtimeerror"
     },
     {
@@ -7642,8 +7642,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_telegram_client_telegramclient",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": "telegramclient"
     },
     {
@@ -7653,8 +7653,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_telegram_client_telegramclient_init",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": ".__init__()"
     },
     {
@@ -7664,8 +7664,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "asyncclient",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": "asyncclient"
     },
     {
@@ -7675,8 +7675,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_telegram_client_telegramclient_close",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": ".close()"
     },
     {
@@ -7686,8 +7686,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "app_telegram_client_telegramclient_call",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": ".call()"
     },
     {
@@ -7697,8 +7697,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_telegram_client_py_any",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": "any"
     },
     {
@@ -7708,8 +7708,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "app_telegram_client_telegramclient_updates",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": ".updates()"
     },
     {
@@ -7719,8 +7719,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "app_telegram_client_telegramclient_send",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": ".send()"
     },
     {
@@ -7730,8 +7730,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "app_telegram_client_telegramclient_answer_callback",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": ".answer_callback()"
     },
     {
@@ -7741,8 +7741,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "app_telegram_client_telegramclient_identity",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": ".identity()"
     },
     {
@@ -7752,8 +7752,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "app_telegram_client_telegramclient_set_commands",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": ".set_commands()"
     },
     {
@@ -7928,8 +7928,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "timedelta",
-      "community": 16,
-      "community_name": "Chart Pattern Catalog",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "timedelta"
     },
     {
@@ -7983,8 +7983,8 @@
       "source_location": "L358",
       "_origin": "ast",
       "id": "app_telegram_commands_commandrouter_alerts",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": ".alerts()"
     },
     {
@@ -8005,8 +8005,8 @@
       "source_location": "L411",
       "_origin": "ast",
       "id": "app_telegram_commands_commandrouter_subscription_timestamp",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "._subscription_timestamp()"
     },
     {
@@ -8280,8 +8280,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_telegram_control_get_control",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 29,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "get_control()"
     },
     {
@@ -8379,8 +8379,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_telegram_service",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "service.py"
     },
     {
@@ -8390,8 +8390,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_telegram_service_telegramservice",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": "telegramservice"
     },
     {
@@ -8401,8 +8401,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_telegram_service_telegramservice_init",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": ".__init__()"
     },
     {
@@ -8412,8 +8412,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "app_telegram_service_telegramservice_process_update",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": ".process_update()"
     },
     {
@@ -8423,8 +8423,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "app_telegram_service_telegramservice_process_callback",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": ".process_callback()"
     },
     {
@@ -8434,8 +8434,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "app_telegram_service_telegramservice_send_response",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": ".send_response()"
     },
     {
@@ -8445,8 +8445,8 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "app_telegram_service_telegramservice_run_forever",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": ".run_forever()"
     },
     {
@@ -8456,8 +8456,8 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "app_telegram_service_telegramservice_drain_alerts",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": ".drain_alerts()"
     },
     {
@@ -8489,8 +8489,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_telemetry_db",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "db.py"
     },
     {
@@ -8522,8 +8522,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_telemetry_db_build_engine",
-      "community": 16,
-      "community_name": "Chart Pattern Catalog",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "build_engine()"
     },
     {
@@ -8533,8 +8533,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_telemetry_logging",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": "logging.py"
     },
     {
@@ -8544,8 +8544,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_telemetry_logging_jsonformatter",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": "jsonformatter"
     },
     {
@@ -8577,8 +8577,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "app_telemetry_logging_configure_json_logging",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 58,
+      "community_name": "Candlestick Patterns",
       "norm_label": "configure_json_logging()"
     },
     {
@@ -8698,8 +8698,8 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "app_telemetry_models_liquidityleveleventrecord",
-      "community": 0,
-      "community_name": "episode_events",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "liquidityleveleventrecord"
     },
     {
@@ -8753,8 +8753,8 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "app_telemetry_models_gateevaluationrecord",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "gateevaluationrecord"
     },
     {
@@ -8841,8 +8841,8 @@
       "source_location": "L316",
       "_origin": "ast",
       "id": "app_telemetry_models_runmanifestrecord",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "runmanifestrecord"
     },
     {
@@ -8852,8 +8852,8 @@
       "source_location": "L332",
       "_origin": "ast",
       "id": "app_telemetry_models_ordereventrecord",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "ordereventrecord"
     },
     {
@@ -8885,8 +8885,8 @@
       "source_location": "L377",
       "_origin": "ast",
       "id": "app_telemetry_models_controlstaterecord",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 29,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "controlstaterecord"
     },
     {
@@ -8918,8 +8918,8 @@
       "source_location": "L407",
       "_origin": "ast",
       "id": "app_telemetry_models_candidateevidencerecord",
-      "community": 46,
-      "community_name": "Freqtrade Integration",
+      "community": 211,
+      "community_name": "evaluate_liquidity_invalidations",
       "norm_label": "candidateevidencerecord"
     },
     {
@@ -8940,8 +8940,8 @@
       "source_location": "L433",
       "_origin": "ast",
       "id": "app_telemetry_models_backfilljobrecord",
-      "community": 36,
-      "community_name": "Price Above/Below 200 EMA",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "backfilljobrecord"
     },
     {
@@ -8973,8 +8973,8 @@
       "source_location": "L485",
       "_origin": "ast",
       "id": "app_telemetry_models_indicatoralerteventrecord",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "indicatoralerteventrecord"
     },
     {
@@ -8984,8 +8984,8 @@
       "source_location": "L505",
       "_origin": "ast",
       "id": "app_telemetry_models_alertsubscriptionrecord",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "alertsubscriptionrecord"
     },
     {
@@ -8995,8 +8995,8 @@
       "source_location": "L519",
       "_origin": "ast",
       "id": "app_telemetry_models_chartannotationrecord",
-      "community": 77,
-      "community_name": "Order Block (OB)",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "chartannotationrecord"
     },
     {
@@ -9006,8 +9006,8 @@
       "source_location": "L535",
       "_origin": "ast",
       "id": "app_telemetry_models_watchlistinvalidationeventrecord",
-      "community": 77,
-      "community_name": "Order Block (OB)",
+      "community": 115,
+      "community_name": "5. Trend vs chop (is the market going somewhere?)",
       "norm_label": "watchlistinvalidationeventrecord"
     },
     {
@@ -9094,8 +9094,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "app_telemetry_repository_list_setups",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 29,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "list_setups()"
     },
     {
@@ -12275,7 +12275,7 @@
       "label": "BUILDKIT_PROGRESS",
       "file_type": "code",
       "source_file": "scripts/desktop/trademonke-update.sh",
-      "source_location": "L24",
+      "source_location": "L37",
       "metadata": {
         "language": "bash",
         "kind": "code"
@@ -12290,7 +12290,7 @@
       "label": "COMPOSE_PROGRESS",
       "file_type": "code",
       "source_file": "scripts/desktop/trademonke-update.sh",
-      "source_location": "L24",
+      "source_location": "L37",
       "metadata": {
         "language": "bash",
         "kind": "code"
@@ -12305,7 +12305,7 @@
       "label": "PYTHONUNBUFFERED",
       "file_type": "code",
       "source_file": "scripts/desktop/trademonke-update.sh",
-      "source_location": "L24",
+      "source_location": "L37",
       "metadata": {
         "language": "bash",
         "kind": "code"
@@ -12584,8 +12584,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "scripts_verify_gui_websocket",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "verify_gui_websocket.py"
     },
     {
@@ -12595,8 +12595,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "scripts_verify_gui_websocket_verify",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "verify()"
     },
     {
@@ -12606,8 +12606,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "scripts_verify_gui_websocket_main",
-      "community": 58,
-      "community_name": "Candlestick Patterns",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "main()"
     },
     {
@@ -12661,8 +12661,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_conftest",
-      "community": 76,
-      "community_name": "ReadOnlyExchange",
+      "community": 23,
+      "community_name": "tsconfig.json",
       "norm_label": "conftest.py"
     },
     {
@@ -12672,8 +12672,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_conftest_candle_factory",
-      "community": 76,
-      "community_name": "ReadOnlyExchange",
+      "community": 32,
+      "community_name": "Candle Domain",
       "norm_label": "candle_factory()"
     },
     {
@@ -12683,8 +12683,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_alerts",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "test_alerts.py"
     },
     {
@@ -12694,8 +12694,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_test_alerts_event",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "event()"
     },
     {
@@ -12705,8 +12705,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_alerts_test_alert_subscription_component_and_score_filters",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "test_alert_subscription_component_and_score_filters()"
     },
     {
@@ -12716,8 +12716,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "tests_test_alerts_test_setup_alerts_default_on_for_tracked_symbol_and_explicitly_disable",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 70,
+      "community_name": "CandleRecord",
       "norm_label": "test_setup_alerts_default_on_for_tracked_symbol_and_explicitly_disable()"
     },
     {
@@ -12760,8 +12760,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_backfill_jobs",
-      "community": 36,
-      "community_name": "Price Above/Below 200 EMA",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "test_backfill_jobs.py"
     },
     {
@@ -12771,8 +12771,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_test_backfill_jobs_fakeexchange",
-      "community": 36,
-      "community_name": "Price Above/Below 200 EMA",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "fakeexchange"
     },
     {
@@ -12782,8 +12782,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_test_backfill_jobs_test_worker_completes_job_and_records_page_progress",
-      "community": 36,
-      "community_name": "Price Above/Below 200 EMA",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "test_worker_completes_job_and_records_page_progress()"
     },
     {
@@ -12793,8 +12793,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "tests_test_backfill_jobs_test_interrupted_jobs_are_requeued",
-      "community": 36,
-      "community_name": "Price Above/Below 200 EMA",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "test_interrupted_jobs_are_requeued()"
     },
     {
@@ -12826,8 +12826,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_dependency_lock",
-      "community": 218,
-      "community_name": "test_market_data.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_dependency_lock.py"
     },
     {
@@ -12837,8 +12837,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_test_dependency_lock_test_runtime_and_ci_use_exact_dependency_constraints",
-      "community": 218,
-      "community_name": "test_market_data.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_runtime_and_ci_use_exact_dependency_constraints()"
     },
     {
@@ -12848,8 +12848,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_test_dependency_lock_test_application_image_context_excludes_runtime_data_and_secrets",
-      "community": 218,
-      "community_name": "test_market_data.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_application_image_context_excludes_runtime_data_and_secrets()"
     },
     {
@@ -12859,8 +12859,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "tests_test_dependency_lock_test_runtime_includes_telegram_http_client_and_postgres_uuid_mapping",
-      "community": 218,
-      "community_name": "test_market_data.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_runtime_includes_telegram_http_client_and_postgres_uuid_mapping()"
     },
     {
@@ -12930,15 +12930,15 @@
       "norm_label": "test_common_sh_package_mode_repo_url_and_needs_bootstrap()"
     },
     {
-      "label": "test_update_script_refuses_non_git_install()",
+      "label": "test_update_script_refuses_dirty_tracked_files()",
       "file_type": "code",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L96",
+      "source_location": "L97",
       "_origin": "ast",
-      "id": "tests_test_desktop_scripts_test_update_script_refuses_non_git_install",
+      "id": "tests_test_desktop_scripts_test_update_script_refuses_dirty_tracked_files",
       "community": 151,
       "community_name": "GuiRelaySocket",
-      "norm_label": "test_update_script_refuses_non_git_install()"
+      "norm_label": "test_update_script_refuses_dirty_tracked_files()"
     },
     {
       "label": "Path",
@@ -12952,10 +12952,21 @@
       "norm_label": "path"
     },
     {
+      "label": "test_update_script_refuses_non_git_install()",
+      "file_type": "code",
+      "source_file": "tests/test_desktop_scripts.py",
+      "source_location": "L123",
+      "_origin": "ast",
+      "id": "tests_test_desktop_scripts_test_update_script_refuses_non_git_install",
+      "community": 151,
+      "community_name": "GuiRelaySocket",
+      "norm_label": "test_update_script_refuses_non_git_install()"
+    },
+    {
       "label": "test_desktop_entry_sed_substitution()",
       "file_type": "code",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L119",
+      "source_location": "L146",
       "_origin": "ast",
       "id": "tests_test_desktop_scripts_test_desktop_entry_sed_substitution",
       "community": 151,
@@ -12966,7 +12977,7 @@
       "label": "test_bootstrap_check_mode_exits_nonzero_when_missing()",
       "file_type": "code",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L130",
+      "source_location": "L157",
       "_origin": "ast",
       "id": "tests_test_desktop_scripts_test_bootstrap_check_mode_exits_nonzero_when_missing",
       "community": 151,
@@ -12977,7 +12988,7 @@
       "label": "test_docs_describe_deb_install()",
       "file_type": "code",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L142",
+      "source_location": "L169",
       "_origin": "ast",
       "id": "tests_test_desktop_scripts_test_docs_describe_deb_install",
       "community": 151,
@@ -12988,7 +12999,7 @@
       "label": "test_check_update_not_git_clone_exits_2()",
       "file_type": "code",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L152",
+      "source_location": "L179",
       "_origin": "ast",
       "id": "tests_test_desktop_scripts_test_check_update_not_git_clone_exits_2",
       "community": 151,
@@ -12999,7 +13010,7 @@
       "label": "test_main_js_surfaces_update_check_failures()",
       "file_type": "code",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L166",
+      "source_location": "L193",
       "_origin": "ast",
       "id": "tests_test_desktop_scripts_test_main_js_surfaces_update_check_failures",
       "community": 151,
@@ -13010,7 +13021,7 @@
       "label": "test_main_js_has_first_run_bootstrap()",
       "file_type": "code",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L173",
+      "source_location": "L200",
       "_origin": "ast",
       "id": "tests_test_desktop_scripts_test_main_js_has_first_run_bootstrap",
       "community": 151,
@@ -13021,7 +13032,7 @@
       "label": "test_splash_shows_verbose_console()",
       "file_type": "code",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L184",
+      "source_location": "L211",
       "_origin": "ast",
       "id": "tests_test_desktop_scripts_test_splash_shows_verbose_console",
       "community": 151,
@@ -13032,7 +13043,7 @@
       "label": "test_common_sh_writes_error_report()",
       "file_type": "code",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L194",
+      "source_location": "L221",
       "_origin": "ast",
       "id": "tests_test_desktop_scripts_test_common_sh_writes_error_report",
       "community": 151,
@@ -13112,8 +13123,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_execution_adapter",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_execution_adapter.py"
     },
     {
@@ -13123,8 +13134,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_test_execution_adapter_make_session",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "make_session()"
     },
     {
@@ -13134,8 +13145,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_test_execution_adapter_add_plan_and_manifest",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "add_plan_and_manifest()"
     },
     {
@@ -13145,8 +13156,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "tests_test_execution_adapter_test_adapter_is_disabled_and_dry_run_is_locked",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_adapter_is_disabled_and_dry_run_is_locked()"
     },
     {
@@ -13156,8 +13167,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "tests_test_execution_adapter_test_shadow_intent_requires_reviewed_research_controls_and_is_idempotent",
-      "community": 105,
-      "community_name": "import_platform_db.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_shadow_intent_requires_reviewed_research_controls_and_is_idempotent()"
     },
     {
@@ -13167,8 +13178,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_gui_websocket",
-      "community": 70,
-      "community_name": "CandleRecord",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_gui_websocket.py"
     },
     {
@@ -13178,8 +13189,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_test_gui_websocket_fakewebsocket",
-      "community": 70,
-      "community_name": "CandleRecord",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "fakewebsocket"
     },
     {
@@ -13189,8 +13200,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_test_gui_websocket_fakewebsocket_init",
-      "community": 70,
-      "community_name": "CandleRecord",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".__init__()"
     },
     {
@@ -13200,8 +13211,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_gui_websocket_fakewebsocket_accept",
-      "community": 70,
-      "community_name": "CandleRecord",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".accept()"
     },
     {
@@ -13211,8 +13222,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_test_gui_websocket_fakewebsocket_receive_json",
-      "community": 70,
-      "community_name": "CandleRecord",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".receive_json()"
     },
     {
@@ -13222,8 +13233,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "tests_test_gui_websocket_fakewebsocket_receive",
-      "community": 70,
-      "community_name": "CandleRecord",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".receive()"
     },
     {
@@ -13233,8 +13244,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "tests_test_gui_websocket_fakewebsocket_close",
-      "community": 70,
-      "community_name": "CandleRecord",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".close()"
     },
     {
@@ -13244,8 +13255,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "tests_test_gui_websocket_fakewebsocket_send_json",
-      "community": 70,
-      "community_name": "CandleRecord",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".send_json()"
     },
     {
@@ -13255,8 +13266,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "tests_test_gui_websocket_websocket_database",
-      "community": 70,
-      "community_name": "CandleRecord",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "websocket_database()"
     },
     {
@@ -13266,8 +13277,8 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "tests_test_gui_websocket_test_websocket_rejects_invalid_token",
-      "community": 70,
-      "community_name": "CandleRecord",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_websocket_rejects_invalid_token()"
     },
     {
@@ -13277,8 +13288,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "tests_test_gui_websocket_test_websocket_snapshot_contains_only_closed_candles",
-      "community": 70,
-      "community_name": "CandleRecord",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_websocket_snapshot_contains_only_closed_candles()"
     },
     {
@@ -13288,8 +13299,8 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "tests_test_gui_websocket_test_snapshot_fingerprint_ignores_generation_time",
-      "community": 70,
-      "community_name": "CandleRecord",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_snapshot_fingerprint_ignores_generation_time()"
     },
     {
@@ -13332,8 +13343,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_test_heroku_runtime_test_settings_accepts_database_url_alias",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 28,
+      "community_name": "Market Data Relay",
       "norm_label": "test_settings_accepts_database_url_alias()"
     },
     {
@@ -13343,8 +13354,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "tests_test_heroku_runtime_test_settings_accepts_source_version",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 28,
+      "community_name": "Market Data Relay",
       "norm_label": "test_settings_accepts_source_version()"
     },
     {
@@ -13398,8 +13409,8 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "tests_test_heroku_runtime_test_heroku_web_enables_gui_serving",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 28,
+      "community_name": "Market Data Relay",
       "norm_label": "test_heroku_web_enables_gui_serving()"
     },
     {
@@ -13409,8 +13420,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_history_audit",
-      "community": 36,
-      "community_name": "Price Above/Below 200 EMA",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "test_history_audit.py"
     },
     {
@@ -13420,8 +13431,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_test_history_audit_test_history_audit_queues_missing_configured_timeframes_and_avoids_duplicates",
-      "community": 36,
-      "community_name": "Price Above/Below 200 EMA",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "test_history_audit_queues_missing_configured_timeframes_and_avoids_duplicates()"
     },
     {
@@ -13431,8 +13442,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "tests_test_history_audit_test_completed_audit_job_accepts_best_available_but_new_timeframe_queues",
-      "community": 36,
-      "community_name": "Price Above/Below 200 EMA",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "test_completed_audit_job_accepts_best_available_but_new_timeframe_queues()"
     },
     {
@@ -13442,8 +13453,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "tests_test_history_audit_test_failed_history_job_has_retry_cooldown",
-      "community": 36,
-      "community_name": "Price Above/Below 200 EMA",
+      "community": 46,
+      "community_name": "Freqtrade Integration",
       "norm_label": "test_failed_history_job_has_retry_cooldown()"
     },
     {
@@ -13497,8 +13508,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_indicator_engine",
-      "community": 16,
-      "community_name": "Chart Pattern Catalog",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_indicator_engine.py"
     },
     {
@@ -13508,8 +13519,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_test_indicator_engine_add_candle",
-      "community": 16,
-      "community_name": "Chart Pattern Catalog",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "add_candle()"
     },
     {
@@ -13519,8 +13530,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_indicator_engine_test_ema_requires_length_and_indicator_transitions_are_persisted",
-      "community": 16,
-      "community_name": "Chart Pattern Catalog",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_ema_requires_length_and_indicator_transitions_are_persisted()"
     },
     {
@@ -13607,8 +13618,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_test_liquidity_map_test_persistent_level_and_sweep_event_are_idempotent",
-      "community": 0,
-      "community_name": "episode_events",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_persistent_level_and_sweep_event_are_idempotent()"
     },
     {
@@ -13695,8 +13706,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_market_data",
-      "community": 1,
-      "community_name": "episodes Module",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_market_data.py"
     },
     {
@@ -13728,8 +13739,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "tests_test_market_data_cursorexchange",
-      "community": 1,
-      "community_name": "episodes Module",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "cursorexchange"
     },
     {
@@ -13772,8 +13783,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "tests_test_market_data_cursorexchange_init",
-      "community": 1,
-      "community_name": "episodes Module",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".__init__()"
     },
     {
@@ -13783,8 +13794,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "tests_test_market_data_cursorexchange_fetch_ohlcv",
-      "community": 1,
-      "community_name": "episodes Module",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": ".fetch_ohlcv()"
     },
     {
@@ -13794,8 +13805,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "tests_test_market_data_test_update_treats_naive_sqlite_timestamp_as_utc",
-      "community": 1,
-      "community_name": "episodes Module",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_update_treats_naive_sqlite_timestamp_as_utc()"
     },
     {
@@ -13970,8 +13981,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_qualification_risk",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_qualification_risk.py"
     },
     {
@@ -13981,8 +13992,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_test_qualification_risk_test_risk_governor_rejects_geometry_costs_and_controls",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_risk_governor_rejects_geometry_costs_and_controls()"
     },
     {
@@ -13992,8 +14003,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "tests_test_qualification_risk_test_mandatory_gates_arm_disarm_and_risk_approval_are_persisted",
-      "community": 219,
-      "community_name": "test_qualification_risk.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_mandatory_gates_arm_disarm_and_risk_approval_are_persisted()"
     },
     {
@@ -14311,8 +14322,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_research_validation",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_research_validation.py"
     },
     {
@@ -14322,8 +14333,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "tests_test_research_validation_examples",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "examples()"
     },
     {
@@ -14333,8 +14344,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_test_research_validation_test_chronological_split_hash_walk_forward_and_ablations_are_reproducible",
-      "community": 210,
-      "community_name": "test_dependency_lock.py",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_chronological_split_hash_walk_forward_and_ablations_are_reproducible()"
     },
     {
@@ -14355,8 +14366,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_test_safety_telemetry_api_test_live_configuration_fails_closed",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 29,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_live_configuration_fails_closed()"
     },
     {
@@ -14399,8 +14410,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "tests_test_safety_telemetry_api_test_health_api",
-      "community": 209,
-      "community_name": "ResearchPipeline",
+      "community": 36,
+      "community_name": "Price Above/Below 200 EMA",
       "norm_label": "test_health_api()"
     },
     {
@@ -14432,8 +14443,8 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "tests_test_safety_telemetry_api_test_gui_access_fails_closed_and_uses_dedicated_token",
-      "community": 11,
-      "community_name": "mount_gui",
+      "community": 29,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_gui_access_fails_closed_and_uses_dedicated_token()"
     },
     {
@@ -14718,8 +14729,8 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "tests_test_symbol_search_test_search_known_symbols_includes_evidence_and_exact",
-      "community": 46,
-      "community_name": "Freqtrade Integration",
+      "community": 211,
+      "community_name": "evaluate_liquidity_invalidations",
       "norm_label": "test_search_known_symbols_includes_evidence_and_exact()"
     },
     {
@@ -14729,8 +14740,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_telegram_commands",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": "test_telegram_commands.py"
     },
     {
@@ -14740,8 +14751,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_fakeclient",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": "fakeclient"
     },
     {
@@ -14751,8 +14762,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_fakeclient_init",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": ".__init__()"
     },
     {
@@ -14762,8 +14773,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_fakeclient_send",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": ".send()"
     },
     {
@@ -14773,8 +14784,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_fakeclient_answer_callback",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": ".answer_callback()"
     },
     {
@@ -14784,8 +14795,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_fakeclient_set_commands",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": ".set_commands()"
     },
     {
@@ -14795,8 +14806,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_telegram_parts",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": "telegram_parts()"
     },
     {
@@ -14806,8 +14817,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_test_read_commands_and_persistent_controls",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": "test_read_commands_and_persistent_controls()"
     },
     {
@@ -14817,8 +14828,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_test_registered_command_menu_is_valid_and_current",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": "test_registered_command_menu_is_valid_and_current()"
     },
     {
@@ -14839,8 +14850,8 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_test_setup_and_why_commands_explain_persisted_evidence",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 16,
+      "community_name": "Chart Pattern Catalog",
       "norm_label": "test_setup_and_why_commands_explain_persisted_evidence()"
     },
     {
@@ -14850,8 +14861,8 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_test_service_restricts_chat_and_user",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": "test_service_restricts_chat_and_user()"
     },
     {
@@ -14861,8 +14872,8 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_test_service_delivers_matching_indicator_alert_once",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": "test_service_delivers_matching_indicator_alert_once()"
     },
     {
@@ -14872,8 +14883,8 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_test_service_delivers_setup_alert_without_explicit_subscription",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": "test_service_delivers_setup_alert_without_explicit_subscription()"
     },
     {
@@ -14883,8 +14894,8 @@
       "source_location": "L150",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_test_guided_menus_and_confirmation_buttons",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": "test_guided_menus_and_confirmation_buttons()"
     },
     {
@@ -14894,8 +14905,8 @@
       "source_location": "L185",
       "_origin": "ast",
       "id": "tests_test_telegram_commands_test_callback_queries_enforce_chat_and_user_authorization",
-      "community": 2,
-      "community_name": "alerts Module",
+      "community": 77,
+      "community_name": "Order Block (OB)",
       "norm_label": "test_callback_queries_enforce_chat_and_user_authorization()"
     },
     {
@@ -14982,8 +14993,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_watchlist_invalidations",
-      "community": 77,
-      "community_name": "Order Block (OB)",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_watchlist_invalidations.py"
     },
     {
@@ -14993,8 +15004,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_test_watchlist_invalidations_session",
-      "community": 77,
-      "community_name": "Order Block (OB)",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "_session()"
     },
     {
@@ -15004,8 +15015,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_test_watchlist_invalidations_test_annotation_and_liquidity_invalidation_events",
-      "community": 77,
-      "community_name": "Order Block (OB)",
+      "community": 60,
+      "community_name": "FVG Strategy Concepts",
       "norm_label": "test_annotation_and_liquidity_invalidation_events()"
     },
     {
@@ -16574,7 +16585,7 @@
       "label": "Building the `.deb`",
       "file_type": "document",
       "source_file": "docs/DESKTOP.md",
-      "source_location": "L100",
+      "source_location": "L103",
       "_origin": "ast",
       "id": "docs_desktop_building_the_deb",
       "community": 56,
@@ -16585,7 +16596,7 @@
       "label": "GUI token",
       "file_type": "document",
       "source_file": "docs/DESKTOP.md",
-      "source_location": "L116",
+      "source_location": "L119",
       "_origin": "ast",
       "id": "docs_desktop_gui_token",
       "community": 56,
@@ -16596,7 +16607,7 @@
       "label": "Data locations",
       "file_type": "document",
       "source_file": "docs/DESKTOP.md",
-      "source_location": "L126",
+      "source_location": "L129",
       "_origin": "ast",
       "id": "docs_desktop_data_locations",
       "community": 56,
@@ -16607,7 +16618,7 @@
       "label": "Desktop error reports",
       "file_type": "document",
       "source_file": "docs/DESKTOP.md",
-      "source_location": "L142",
+      "source_location": "L145",
       "_origin": "ast",
       "id": "docs_desktop_desktop_error_reports",
       "community": 56,
@@ -16618,7 +16629,7 @@
       "label": "Safety",
       "file_type": "document",
       "source_file": "docs/DESKTOP.md",
-      "source_location": "L166",
+      "source_location": "L169",
       "_origin": "ast",
       "id": "docs_desktop_safety",
       "community": 56,
@@ -71621,7 +71632,7 @@
       "relation": "defines",
       "confidence": "EXTRACTED",
       "source_file": "scripts/desktop/trademonke-update.sh",
-      "source_location": "L24",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "scripts_desktop_trademonke_update",
@@ -71632,7 +71643,7 @@
       "relation": "defines",
       "confidence": "EXTRACTED",
       "source_file": "scripts/desktop/trademonke-update.sh",
-      "source_location": "L24",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "scripts_desktop_trademonke_update",
@@ -71643,7 +71654,7 @@
       "relation": "defines",
       "confidence": "EXTRACTED",
       "source_file": "scripts/desktop/trademonke-update.sh",
-      "source_location": "L24",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "scripts_desktop_trademonke_update",
@@ -72592,7 +72603,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L130",
+      "source_location": "L157",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_desktop_scripts",
@@ -72603,7 +72614,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L152",
+      "source_location": "L179",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_desktop_scripts",
@@ -72625,7 +72636,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L194",
+      "source_location": "L221",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_desktop_scripts",
@@ -72647,7 +72658,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L119",
+      "source_location": "L146",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_desktop_scripts",
@@ -72680,7 +72691,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L142",
+      "source_location": "L169",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_desktop_scripts",
@@ -72691,7 +72702,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L173",
+      "source_location": "L200",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_desktop_scripts",
@@ -72702,7 +72713,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L166",
+      "source_location": "L193",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_desktop_scripts",
@@ -72724,7 +72735,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L184",
+      "source_location": "L211",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_desktop_scripts",
@@ -72735,7 +72746,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L96",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_desktop_scripts",
+      "target": "tests_test_desktop_scripts_test_update_script_refuses_dirty_tracked_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_desktop_scripts.py",
+      "source_location": "L123",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_desktop_scripts",
@@ -72747,10 +72769,10 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L96",
+      "source_location": "L97",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tests_test_desktop_scripts_test_update_script_refuses_non_git_install",
+      "source": "tests_test_desktop_scripts_test_update_script_refuses_dirty_tracked_files",
       "target": "tests_test_desktop_scripts_py_path",
       "confidence_score": 1.0
     },
@@ -72759,7 +72781,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L152",
+      "source_location": "L179",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_desktop_scripts_test_check_update_not_git_clone_exits_2",
@@ -72771,10 +72793,22 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_desktop_scripts.py",
-      "source_location": "L194",
+      "source_location": "L221",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_desktop_scripts_test_common_sh_writes_error_report",
+      "target": "tests_test_desktop_scripts_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_desktop_scripts.py",
+      "source_location": "L123",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_desktop_scripts_test_update_script_refuses_non_git_install",
       "target": "tests_test_desktop_scripts_py_path",
       "confidence_score": 1.0
     },
@@ -76170,7 +76204,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "docs/DESKTOP.md",
-      "source_location": "L169",
+      "source_location": "L172",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_desktop",
@@ -76192,7 +76226,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/DESKTOP.md",
-      "source_location": "L100",
+      "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_desktop_desktop_ubuntu",
@@ -76203,7 +76237,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/DESKTOP.md",
-      "source_location": "L126",
+      "source_location": "L129",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_desktop_desktop_ubuntu",
@@ -76214,7 +76248,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/DESKTOP.md",
-      "source_location": "L142",
+      "source_location": "L145",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_desktop_desktop_ubuntu",
@@ -76225,7 +76259,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/DESKTOP.md",
-      "source_location": "L116",
+      "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_desktop_desktop_ubuntu",
@@ -76280,7 +76314,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/DESKTOP.md",
-      "source_location": "L166",
+      "source_location": "L169",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_desktop_desktop_ubuntu",
@@ -94068,5 +94102,5 @@
       "source_file": "screenshots/WhatsApp Image 2026-07-10 at 3.50.46 PM.jpeg"
     }
   ],
-  "built_at_commit": "416ad6fb7f94c4e25decbd2f8bc0f85c9b097cab"
+  "built_at_commit": "7f8064a75489c34ffa85ea451cf82373449df0dc"
 }

@@ -1,16 +1,16 @@
 # Graph Report - trading-bot-x  (2026-07-28)
 
 ## Corpus Check
-- 222 files · ~397,650 words
+- 222 files · ~397,873 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2629 nodes · 5261 edges · 222 communities (165 shown, 57 thin omitted)
+- 2630 nodes · 5263 edges · 216 communities (159 shown, 57 thin omitted)
 - Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 564 edges (avg confidence: 0.76)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `416ad6fb`
+- Built from commit: `7f8064a7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -119,7 +119,6 @@
 - backtest.sh
 - backup_postgres.sh
 - restore_postgres.sh
-- import_platform_db.py
 - __init__ Module
 - GUI SPA Shell
 - vite.config Module
@@ -221,16 +220,12 @@
 - postrm
 - build-deb.sh
 - ResearchPipeline
-- test_dependency_lock.py
 - evaluate_liquidity_invalidations
-- GuiRelaySocket
 - 4. Support, resistance, and “levels”
 - test_dependency_lock.py
 - gui_websocket
 - 5. Trend vs chop (is the market going somewhere?)
 - import_platform_db.py
-- test_qualification_risk.py
-- ResearchPipeline
 - Auction Market Theory
 
 ## God Nodes (most connected - your core abstractions)
@@ -364,19 +359,19 @@
 - **Bearish Breakout Chart Patterns** — screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_head_shoulders, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_bearish_flag, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_descending_triangle, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_rising_wedge, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_symmetrical_triangle_bearish, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_double_top [EXTRACTED 1.00]
 - **Triangle Pattern Family** — screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_ascending_triangle, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_descending_triangle, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_symmetrical_triangle_bullish, screenshots_whatsapp_image_2026_07_10_at_3_50_46_pm_symmetrical_triangle_bearish [INFERRED 0.85]
 
-## Communities (222 total, 57 thin omitted)
+## Communities (216 total, 57 thin omitted)
 
 ### Community 0 - "episode_events"
-Cohesion: 0.20
-Nodes (15): classify_level_candle(), detect_confirmed_levels(), DetectedLevel, LevelEventType, LevelSide, Decimal, StrEnum, Detect levels using only pivots with the required closed candles to their right. (+7 more)
+Cohesion: 0.21
+Nodes (13): classify_level_candle(), detect_confirmed_levels(), DetectedLevel, LevelEventType, LevelSide, Decimal, StrEnum, Detect levels using only pivots with the required closed candles to their right. (+5 more)
 
 ### Community 1 - "episodes Module"
-Cohesion: 0.16
-Nodes (13): closed_rows(), MarketDataCollector, Queue one job per symbol when configured history is absent or incomplete., timeframe_ms(), Session, replace_supplement(), upsert_candles(), OhlcvRow (+5 more)
+Cohesion: 0.10
+Nodes (21): Session, rank_candidates(), save_candidate_evidence(), ticker_evidence(), closed_rows(), MarketDataCollector, Session, Queue one job per symbol when configured history is absent or incomplete. (+13 more)
 
 ### Community 2 - "alerts Module"
-Cohesion: 0.06
-Nodes (39): event_matches(), get_subscription(), Session, Setup transitions are watchlist opt-out; newest explicit preference wins., set_enabled(), set_minimum_score(), set_setup_only(), setup_event_matches_default() (+31 more)
+Cohesion: 0.16
+Nodes (6): CommandResponse, CommandRouter, inline_keyboard(), datetime, Session, test_marketdata_line_explains_open_close_and_freshness()
 
 ### Community 3 - "candidates Module"
 Cohesion: 0.05
@@ -403,16 +398,16 @@ Cohesion: 0.10
 Nodes (34): Asset-Class Specific Layer, Asset Screener, Correlation Cross-Reference, Crypto Layer, Directional Gating, Confluence Trade Filtration Whitepaper.docx, evaluate_trade Scoring Logic, Filtration Engine (+26 more)
 
 ### Community 9 - "main Module"
-Cohesion: 0.12
-Nodes (36): technical_analysis_summary(), detect_ifvg_links(), fvg_forms_after_displacement(), InverseFvgLink, observe_v_recovery(), Decimal, IFVG and V-recovery research observations (not execution authority)., Golden audit helper: imbalance creation must be at/after displacement. (+28 more)
+Cohesion: 0.10
+Nodes (41): technical_analysis_summary(), ConfluenceResult, evaluate_confluence(), Decimal, Confluence filtration scorecard (research-only; not position-size authority)., Stage 1 gatekeepers then Stage 2 weighted score using available OHLC evidence on, _tier(), detect_ifvg_links() (+33 more)
 
 ### Community 10 - "cache Module"
 Cohesion: 0.13
 Nodes (14): CachedSnapshot, Any, datetime, RelayCache, GuiSubscription, Any, RelayHub, Any (+6 more)
 
 ### Community 11 - "mount_gui"
-Cohesion: 0.07
-Nodes (14): mount_gui(), require_gui_access(), Settings, BaseSettings, test_heroku_web_enables_gui_serving(), test_settings_accepts_database_url_alias(), test_settings_accepts_source_version(), GuiRelaySocket (+6 more)
+Cohesion: 0.13
+Nodes (5): GuiRelaySocket, RelaySocket, test_gui_websocket_relay_serves_cached_snapshot(), test_relay_websocket_ingests_snapshot(), test_relay_websocket_rejects_invalid_feeder_token()
 
 ### Community 12 - "_forward_to_gui"
 Cohesion: 0.07
@@ -431,8 +426,8 @@ Cohesion: 0.13
 Nodes (16): _forward_to_gui(), LiveMarketRelay, normalize_ohlc_message(), normalize_ticker_message(), Any, Convert Kraken forming candles into a presentation-only contract., Convert Kraken BBO updates into non-authoritative midpoint prices., Relay Kraken public BBO and OHLC updates to backend-only clients. (+8 more)
 
 ### Community 16 - "Chart Pattern Catalog"
-Cohesion: 0.20
-Nodes (15): Converts closed-candle snapshots into auditable research setups; never orders., SetupLifecycleEngine, build_engine(), IndicatorSnapshotRecord, SetupRecord, SetupTransitionRecord, add_candle(), test_ema_requires_length_and_indicator_transitions_are_persisted() (+7 more)
+Cohesion: 0.22
+Nodes (12): Converts closed-candle snapshots into auditable research setups; never orders., SetupLifecycleEngine, IndicatorSnapshotRecord, SetupRecord, SetupTransitionRecord, snapshot(), test_actionable_setup_invalidates_without_same_candle_replacement(), test_context_near_miss_does_not_promote_when_trigger_turns_off() (+4 more)
 
 ### Community 17 - "engine Module"
 Cohesion: 0.17
@@ -459,7 +454,7 @@ Cohesion: 0.08
 Nodes (24): For /graphify add and --watch, For /graphify query, For the commit hook and native AGENTS.md integration, For --update and --cluster-only, /graphify, Honesty Rules, Interpreter guard for subcommands, Part A - Structural extraction for code files (+16 more)
 
 ### Community 23 - "tsconfig.json"
-Cohesion: 0.21
+Cohesion: 0.20
 Nodes (17): datetime, Setup, state_for_score(), transition(), Fvg, Decimal, Setup, SetupState (+9 more)
 
 ### Community 24 - "FVG Strategy Concepts"
@@ -479,12 +474,12 @@ Cohesion: 0.13
 Nodes (24): Bearish Engulfing, Bearish Candle Patterns, Bullish Engulfing, Bullish Candle Patterns, CANDLE PATTERN REFERENCE, Candlestick Pattern + Volume, Candlestick Types Cheat Sheet, Doji (+16 more)
 
 ### Community 28 - "Market Data Relay"
-Cohesion: 0.20
-Nodes (18): lifespan(), heroku_dyno_role(), normalize_database_url(), Process-role helpers for PaaS deployments such as Heroku., Run the Kraken relay inside the web process on Heroku web dynos (full mode only), Run the relay in market-data unless the web dyno already embeds it., Convert Heroku DATABASE_URL values into SQLAlchemy/psycopg URLs., Return web, worker, or release when running on a Heroku dyno. (+10 more)
+Cohesion: 0.17
+Nodes (19): heroku_dyno_role(), normalize_database_url(), Process-role helpers for PaaS deployments such as Heroku., Run the Kraken relay inside the web process on Heroku web dynos (full mode only), Run the relay in market-data unless the web dyno already embeds it., Convert Heroku DATABASE_URL values into SQLAlchemy/psycopg URLs., Return web, worker, or release when running on a Heroku dyno., running_on_heroku() (+11 more)
 
 ### Community 29 - "FVG Strategy Concepts"
-Cohesion: 0.17
-Nodes (19): Session, set_control(), authorize(), KillSwitch, require_authorized(), EventRecord, ServiceHeartbeatRecord, append_event_idempotently() (+11 more)
+Cohesion: 0.11
+Nodes (29): event_stream(), events(), datetime, require_gui_access(), setups(), get_control(), Session, set_control() (+21 more)
 
 ### Community 30 - "Candlestick Patterns"
 Cohesion: 0.09
@@ -495,8 +490,8 @@ Cohesion: 0.33
 Nodes (10): build_workstation_snapshot(), Session, snapshot_fingerprint(), _forward_live_market(), main(), _push_snapshot(), _relay_heartbeat(), run() (+2 more)
 
 ### Community 32 - "Candle Domain"
-Cohesion: 0.22
-Nodes (21): ComponentResult, FvgStatus, advance_fvg(), confirmed_pivots(), detect_fvgs(), htf_bias(), liquidity_sweep(), Decimal (+13 more)
+Cohesion: 0.24
+Nodes (20): ComponentResult, FvgStatus, advance_fvg(), detect_fvgs(), htf_bias(), liquidity_sweep(), Decimal, Pine-compatible indexing: on i, compare candle i-1 with i-2. (+12 more)
 
 ### Community 33 - "Abandoned Baby"
 Cohesion: 0.11
@@ -511,8 +506,8 @@ Cohesion: 0.15
 Nodes (19): ATR (Average True Range), Avoid obvious support/resistance trap zones, CHoCH (Change of Character), Demand = long, Execution checklist (check 3 things), Failed breakout with long upper wick, Spot Fake outs (institutions grabbing stop losses), FVG (Fair Value Gap) (+11 more)
 
 ### Community 36 - "Price Above/Below 200 EMA"
-Cohesion: 0.33
-Nodes (10): audit_configured_history(), Queue missing configured history, respecting active jobs and retry cooldown., timeframe_seconds(), BackfillJobRecord, FakeExchange, test_interrupted_jobs_are_requeued(), test_worker_completes_job_and_records_page_progress(), test_completed_audit_job_accepts_best_available_but_new_timeframe_queues() (+2 more)
+Cohesion: 0.11
+Nodes (25): _audit_execution_action(), create_annotation(), create_shadow_intent(), delete_annotation(), _enabled(), evaluate_invalidations(), gui_alerts(), gui_bootstrap() (+17 more)
 
 ### Community 39 - "Freqtrade Integration"
 Cohesion: 0.16
@@ -543,8 +538,8 @@ Cohesion: 0.29
 Nodes (16): Ascending Triangle, Bearish Flag, Bullish Flag, Candlestick Block Diagrams, Chart Patterns Cheat Sheet, Descending Triangle, Double Bottom, Double Top (+8 more)
 
 ### Community 46 - "Freqtrade Integration"
-Cohesion: 0.33
-Nodes (19): collection_symbols(), confirm_backfill_request(), confirm_change(), create_backfill_request(), create_change(), enqueue_backfill(), ensure_anchors(), normalize_symbol() (+11 more)
+Cohesion: 0.21
+Nodes (29): main(), run(), audit_configured_history(), collection_symbols(), confirm_backfill_request(), confirm_change(), create_backfill_request(), create_change() (+21 more)
 
 ### Community 47 - "FVG Strategy Concepts"
 Cohesion: 0.13
@@ -587,16 +582,16 @@ Cohesion: 0.24
 Nodes (10): Auto Execution Mode, Scoring System 0-6, A / A+ / A++ Rating System, HTF FVG Tap, Macro Window, Multi-Liquidity Sweep, Signal Rating A / A+ / A++, Per-Stream Statistics Tracking (+2 more)
 
 ### Community 58 - "Candlestick Patterns"
-Cohesion: 0.21
-Nodes (5): RecommendationService, main(), get_settings(), main(), verify()
+Cohesion: 0.16
+Nodes (9): main(), run(), Any, RuntimeError, TelegramApiError, TelegramClient, configure_json_logging(), JsonFormatter (+1 more)
 
 ### Community 59 - "Candlestick Patterns"
 Cohesion: 0.21
 Nodes (13): Confirmation Close Beyond Swing Low, Displacement, Fair Value Gap (Imbalance), Liquidity Sweep, MIS - PxmaXR, 1:1 Risk Reward Ratio, Opposite Liquidity / Previous Day High, Order Block (+5 more)
 
 ### Community 60 - "FVG Strategy Concepts"
-Cohesion: 0.20
-Nodes (25): episode_events(), episodes(), gui_chart(), liquidity_levels(), datetime, Orchestrates research decisions only; it never calls an execution adapter., ResearchPipeline, Base (+17 more)
+Cohesion: 0.05
+Nodes (72): episode_events(), episodes(), gui_chart(), liquidity_levels(), evaluate_risk(), RiskLimits, ExecutionGateError, FreqtradeIntentAdapter (+64 more)
 
 ### Community 61 - "Liquidity Concepts"
 Cohesion: 0.17
@@ -635,8 +630,8 @@ Cohesion: 0.24
 Nodes (12): classify_displacement(), classify_recovery(), EpisodeDecision, EpisodeState, Decimal, StrEnum, zone_retested(), Direction (+4 more)
 
 ### Community 70 - "CandleRecord"
-Cohesion: 0.21
-Nodes (4): FakeWebSocket, test_websocket_rejects_invalid_token(), test_websocket_snapshot_contains_only_closed_candles(), websocket_database()
+Cohesion: 0.32
+Nodes (14): event_matches(), get_subscription(), Session, Setup transitions are watchlist opt-out; newest explicit preference wins., set_enabled(), set_minimum_score(), set_setup_only(), setup_event_matches_default() (+6 more)
 
 ### Community 71 - "verify_stack Module"
 Cohesion: 0.25
@@ -659,12 +654,12 @@ Cohesion: 0.20
 Nodes (10): Dry-Run Fail-Closed MVP Guard, Freqtrade Sole Order Execution Authority, freqtrade Dry-Run Service, Architecture Execution Authority Boundary, One Execution Authority Rule, MVP Spot-Only Dry-Run Risk Controls, No Exchange Keys in MVP, Startup Spot and Dry-Run Validation (+2 more)
 
 ### Community 76 - "ReadOnlyExchange"
-Cohesion: 0.21
-Nodes (21): _dedupe(), detect_patterns(), DetectedPattern, _doubles(), _flag_pennant(), _mk(), _pattern_id(), PatternPoint (+13 more)
+Cohesion: 0.24
+Nodes (20): _dedupe(), detect_patterns(), DetectedPattern, _doubles(), _flag_pennant(), _mk(), _pattern_id(), PatternPoint (+12 more)
 
 ### Community 77 - "Order Block (OB)"
-Cohesion: 0.38
-Nodes (10): evaluate_annotation_invalidations(), evaluate_liquidity_invalidations(), _event_id(), Decimal, Session, Watchlist invalidation event persistence from drawings and liquidity measurement, ChartAnnotationRecord, WatchlistInvalidationEventRecord (+2 more)
+Cohesion: 0.16
+Nodes (8): TelegramService, FakeClient, telegram_parts(), test_callback_queries_enforce_chat_and_user_authorization(), test_guided_menus_and_confirmation_buttons(), test_service_delivers_matching_indicator_alert_once(), test_service_delivers_setup_alert_without_explicit_subscription(), test_service_restricts_chat_and_user()
 
 ### Community 78 - "Heroku Runtime"
 Cohesion: 0.17
@@ -774,10 +769,6 @@ Nodes (8): Advanced Filtration System, Color-Coordinated Alerts, Confluence Togg
 Cohesion: 0.43
 Nodes (8): 5:1 Risk-to-Reward Setup, Buy Side EQL Highs Liquidity, CHoCH (Change of Character), FVG (Fair Value Gap), Long Entry at FVG, Skyline Traders Club Annotated Trading Chart, Stop Loss Zone Below Entry, Take Profit Targeting EQL Highs
 
-### Community 105 - "import_platform_db.py"
-Cohesion: 0.27
-Nodes (11): ExecutionGateError, FreqtradeIntentAdapter, RuntimeError, Creates auditable shadow intents; it contains no exchange or CCXT order methods., ControlStateRecord, OrderEventRecord, RunManifestRecord, add_plan_and_manifest() (+3 more)
-
 ### Community 106 - "__init__ Module"
 Cohesion: 0.52
 Nodes (5): main(), migrate(), migration_files(), Path, test_migrations_are_ordered_and_append_only_named()
@@ -815,8 +806,8 @@ Cohesion: 0.33
 Nodes (5): For /graphify explain, For /graphify path, graphify reference: query, path, explain, Step 0 — Constrained query expansion (REQUIRED before traversal), Step 1 — Traversal
 
 ### Community 115 - "5. Trend vs chop (is the market going somewhere?)"
-Cohesion: 0.24
-Nodes (15): annotation_price_at(), evaluate_annotation_break(), interpolate_price(), label_to_event_hint(), Any, Decimal, Deterministic chart-annotation geometry helpers (closed-candle only)., Map preset labels to measured event vocabulary (no intent claims). (+7 more)
+Cohesion: 0.15
+Nodes (25): annotation_price_at(), evaluate_annotation_break(), interpolate_price(), label_to_event_hint(), Any, Decimal, Deterministic chart-annotation geometry helpers (closed-candle only)., Map preset labels to measured event vocabulary (no intent claims). (+17 more)
 
 ### Community 116 - "POI — Point of Interest"
 Cohesion: 0.09
@@ -936,7 +927,7 @@ Nodes (3): EQ — Equilibrium, OTE — Optimal Trade Entry, PD — Premium Disco
 
 ### Community 151 - "GuiRelaySocket"
 Cohesion: 0.14
-Nodes (4): Path, test_check_update_not_git_clone_exits_2(), test_common_sh_writes_error_report(), test_update_script_refuses_non_git_install()
+Nodes (5): Path, test_check_update_not_git_clone_exits_2(), test_common_sh_writes_error_report(), test_update_script_refuses_dirty_tracked_files(), test_update_script_refuses_non_git_install()
 
 ### Community 181 - "install-ubuntu.sh"
 Cohesion: 0.40
@@ -959,20 +950,12 @@ Cohesion: 0.70
 Nodes (4): install_root_writable(), run_privileged(), run_user_stack(), bootstrap.sh script
 
 ### Community 209 - "ResearchPipeline"
-Cohesion: 0.08
-Nodes (62): acknowledge_alert(), _audit_execution_action(), _audit_watchlist_action(), create_annotation(), create_shadow_intent(), delete_annotation(), empty_collection(), _enabled() (+54 more)
-
-### Community 210 - "test_dependency_lock.py"
-Cohesion: 0.38
-Nodes (10): Path, ResearchService, ablations(), chronological_split(), dataset_hash(), metrics(), ResearchExample, walk_forward() (+2 more)
+Cohesion: 0.13
+Nodes (37): acknowledge_alert(), _audit_watchlist_action(), empty_collection(), gui_watchlist_confirm_change(), gui_watchlist_create_change(), lifespan(), list_invalidations(), AlertAcknowledgementRequest (+29 more)
 
 ### Community 211 - "evaluate_liquidity_invalidations"
-Cohesion: 0.18
-Nodes (27): gui_watchlist_search(), display_name_for(), enrich_hits_with_closes(), enrich_hits_with_tickers(), _format_price(), latest_candidate_evidence(), matches_query(), normalize_query() (+19 more)
-
-### Community 212 - "GuiRelaySocket"
-Cohesion: 0.15
-Nodes (12): Session, rank_candidates(), save_candidate_evidence(), ticker_evidence(), main(), run(), Session, Any (+4 more)
+Cohesion: 0.17
+Nodes (29): gui_watchlist_search(), display_name_for(), enrich_hits_with_closes(), enrich_hits_with_tickers(), _format_price(), latest_candidate_evidence(), matches_query(), normalize_query() (+21 more)
 
 ### Community 213 - "4. Support, resistance, and “levels”"
 Cohesion: 0.18
@@ -993,14 +976,6 @@ Nodes (11): 5. Trend vs chop (is the market going somewhere?), A beginner-friend
 ### Community 217 - "import_platform_db.py"
 Cohesion: 0.42
 Nodes (9): SupplementalMetricRecord, Connection, Row, import_candles(), import_simple_table(), main(), _parse_dt(), datetime (+1 more)
-
-### Community 219 - "test_qualification_risk.py"
-Cohesion: 0.36
-Nodes (7): evaluate_risk(), RiskLimits, Decimal, QualificationService, GateEvaluationRecord, test_mandatory_gates_arm_disarm_and_risk_approval_are_persisted(), test_risk_governor_rejects_geometry_costs_and_controls()
-
-### Community 220 - "ResearchPipeline"
-Cohesion: 0.48
-Nodes (6): ConfluenceResult, evaluate_confluence(), Decimal, Confluence filtration scorecard (research-only; not position-size authority)., Stage 1 gatekeepers then Stage 2 weighted score using available OHLC evidence on, _tier()
 
 ### Community 221 - "Auction Market Theory"
 Cohesion: 0.33

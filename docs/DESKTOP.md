@@ -74,9 +74,12 @@ configured in `/etc/trademonke/repo.url` (must match [`packaging/deb/repo.url`](
 
 1. `git fetch origin main`  
 2. If `HEAD` ≠ `origin/main`, prompt **Update** / **Later**  
-3. **Update** runs `scripts/desktop/trademonke-update.sh`: ff-only merge, rebuild, migrate, restart  
+3. **Update** runs `scripts/desktop/trademonke-update.sh`: ff-only merge when possible, otherwise
+   reset the install clone to `origin/main`, then rebuild, migrate, restart  
 4. If fetch/remote fails, show a warning (not treated as “already current”)  
-5. `.env` and `runtime/` are never overwritten by git  
+5. Dirty **tracked** files block the update (lists paths). Discard with
+   `TRADEMONKE_UPDATE_DISCARD=1` on the update script, or clean the tree manually  
+6. `.env` and `runtime/` are never overwritten by git  
 
 If the install still points at an old remote (for example `trading-bot.git`), it will never see
 commits on `trademonke` `main`. Fix with:

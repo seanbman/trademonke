@@ -1060,13 +1060,13 @@
     "semantic_hash": ""
   },
   "scripts/desktop/trademonke-update.sh": {
-    "mtime": 1785110195.6358533,
-    "ast_hash": "c27beeb79508b3a3ed945cbe88d6fbeb",
+    "mtime": 1785279786.0577166,
+    "ast_hash": "6bdb6bf01a54593e7a089bdd29d728c5",
     "semantic_hash": ""
   },
   "tests/test_desktop_scripts.py": {
-    "mtime": 1785278213.7030413,
-    "ast_hash": "99c8fc22201b5c12364d81d9469d51ad",
+    "mtime": 1785279801.0388005,
+    "ast_hash": "0e3d4306f15063b375a6c69a3d62e11e",
     "semantic_hash": ""
   },
   "tests/test_patterns.py": {
@@ -1080,8 +1080,8 @@
     "semantic_hash": ""
   },
   "docs/DESKTOP.md": {
-    "mtime": 1785278145.3613381,
-    "ast_hash": "43760ba5c9c83fc3509aac98e5d5776b",
+    "mtime": 1785279801.3183103,
+    "ast_hash": "8617d279a4627f2f6822035d948c3b1e",
     "semantic_hash": ""
   },
   "docs/GUI.md": {

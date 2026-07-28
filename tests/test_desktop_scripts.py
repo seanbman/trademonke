@@ -93,6 +93,33 @@ echo OK
     assert "missing_needs_bootstrap" in result.stdout
 
 
+
+def test_update_script_refuses_dirty_tracked_files(tmp_path: Path):
+    fake_root = tmp_path / "opt"
+    fake_root.mkdir()
+    subprocess.run(["git", "init"], cwd=fake_root, check=True, capture_output=True)
+    subprocess.run(["git", "config", "user.email", "test@example.com"], cwd=fake_root, check=True, capture_output=True)
+    subprocess.run(["git", "config", "user.name", "test"], cwd=fake_root, check=True, capture_output=True)
+    tracked = fake_root / "docker-compose.yml"
+    tracked.write_text("services: {}\n", encoding="utf-8")
+    subprocess.run(["git", "add", "docker-compose.yml"], cwd=fake_root, check=True, capture_output=True)
+    subprocess.run(["git", "commit", "-m", "init"], cwd=fake_root, check=True, capture_output=True)
+    tracked.write_text("services: {api: {}}\n", encoding="utf-8")
+    env = {**os.environ, "TRADEMONKE_ROOT": str(fake_root), "TRADEMONKE_NONINTERACTIVE": "1"}
+    result = subprocess.run(
+        ["bash", str(DESKTOP_SCRIPTS / "trademonke-update.sh")],
+        cwd=ROOT,
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=30,
+    )
+    assert result.returncode != 0
+    combined = (result.stdout or "") + (result.stderr or "")
+    assert "uncommitted changes" in combined.lower()
+    assert "docker-compose.yml" in combined
+
+
 def test_update_script_refuses_non_git_install(tmp_path: Path):
     # trademonke-update.sh must exit when install dir is not a git clone.
     fake_root = tmp_path / "opt"
