@@ -10,4 +10,5 @@ def test_migrations_are_ordered_and_append_only_named():
         "0003_service_heartbeats.sql",
         "0004_research_provenance.sql",
         "0005_research_workstation.sql",
+        "0006_chart_annotations_invalidations.sql",
     ]

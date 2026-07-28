@@ -19,4 +19,6 @@ def truncate_chart_for_cache(chart: dict[str, Any], hours: int = 24) -> dict[str
     result["imbalances"] = []
     result["indicator_snapshots"] = []
     result["episode_events"] = {}
+    result["annotations"] = []
+    result["patterns"] = []
     return result

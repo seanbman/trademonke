@@ -69,6 +69,9 @@ export function WatchlistRail({
   const [searching, setSearching] = useState(false);
   const [pending, setPending] = useState<PendingChange | null>(null);
   const [busy, setBusy] = useState(false);
+  const [techniqueDraft, setTechniqueDraft] = useState("");
+  const [techniqueFilter, setTechniqueFilter] = useState("");
+  const [applyPending, setApplyPending] = useState<string | null>(null);
 
   useEffect(() => {
     const trimmed = query.trim();
@@ -129,9 +132,15 @@ export function WatchlistRail({
       .finally(() => setBusy(false));
   };
 
+  const filteredAssets = techniqueFilter
+    ? assets.filter((asset) => asset.symbol.toLowerCase().includes(techniqueFilter.toLowerCase())
+      || asset.status.toLowerCase().includes(techniqueFilter.toLowerCase()))
+    : assets;
+
   return (
     <>
       <h2>Watchlist</h2>
+      <p className="muted live-rail-note">Live ticking prices · historical candles load on the chart only</p>
       <div className="watchlist-search">
         <input
           value={query}
@@ -141,6 +150,27 @@ export function WatchlistRail({
         />
         {searching && <small className="muted">Searching…</small>}
       </div>
+      <div className="technique-filter">
+        <input
+          value={techniqueDraft}
+          onChange={(event) => setTechniqueDraft(event.target.value)}
+          placeholder="Filter by confluence / technique"
+          aria-label="Technique filter"
+        />
+        <button type="button" className="hit-action" onClick={() => setApplyPending(techniqueDraft.trim())}>
+          Apply
+        </button>
+      </div>
+      {applyPending !== null && (
+        <div className="watchlist-pending">
+          <b>Apply technique filter?</b>
+          <small>{applyPending || "(clear filter)"}</small>
+          <div className="watchlist-pending-actions">
+            <button onClick={() => {setTechniqueFilter(applyPending); setApplyPending(null);}}>OK</button>
+            <button className="ghost" onClick={() => setApplyPending(null)}>Cancel</button>
+          </div>
+        </div>
+      )}
       {pending && (
         <div className="watchlist-pending">
           <b>{pending.symbol} → {pending.target_status}</b>
@@ -194,7 +224,7 @@ export function WatchlistRail({
           })}
         </div>
       )}
-      {assets.map((asset) => (
+      {filteredAssets.map((asset) => (
         <button
           className={selected === asset.symbol ? "asset selected" : "asset"}
           onClick={() => onSelect(asset.symbol)}
@@ -212,6 +242,7 @@ export function WatchlistRail({
           <small>
             {asset.status}
             {asset.protected ? " · anchor" : ""}
+            {techniqueFilter ? ` · filter ${techniqueFilter}` : ""}
           </small>
         </button>
       ))}

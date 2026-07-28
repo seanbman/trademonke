@@ -16,7 +16,19 @@ export type ChartPattern = {
   soft_label:boolean;
   authority:string;
 };
-export type ChartPayload = {contract_version:string;exchange:string;symbol:string;timeframe:string;candles:{timestamp:string;open:string;high:string;low:string;close:string;volume:string}[];liquidity_levels:{id:string;price:string;direction:string;level_type:string;status:string}[];imbalances:{id:string;episode_id:string;direction:string;type:string;lower_price:string;upper_price:string;status:string;created_at:string}[];episodes:Episode[];recommendations:Recommendation[];indicator_snapshots:IndicatorSnapshot[];patterns?:ChartPattern[]};
+export type ChartPayload = {contract_version:string;exchange:string;symbol:string;timeframe:string;candles:{timestamp:string;open:string;high:string;low:string;close:string;volume:string}[];liquidity_levels:{id:string;price:string;direction:string;level_type:string;status:string}[];imbalances:{id:string;episode_id:string;direction:string;type:string;lower_price:string;upper_price:string;status:string;created_at:string}[];episodes:Episode[];recommendations:Recommendation[];indicator_snapshots:IndicatorSnapshot[];patterns?:ChartPattern[];annotations?:ChartAnnotation[]};
+export type ChartAnnotation = {id:string;kind:string;label:string;checklist_item:string|null;geometry:Record<string,any>;created_by:string;created_at:string};
+export type TechnicalSummary = {
+  contract_version:string;exchange:string;symbol:string;timeframe:string;generated_at:string;
+  trade_stance:string;stance_reason:string;
+  six_component:{direction:string|null;score:number;setup_state:string|null;gates:Record<string,boolean>};
+  liquidity_levels:{id:string;price:string;direction:string;level_type:string;status:string}[];
+  open_fvgs:{id:string;direction:string;type:string;lower_price:string;upper_price:string;status:string}[];
+  latest_structure:{event_type:string;source:string;message:string;candle_timestamp:string;measurements:Record<string,unknown>}[];
+  risk_geometry:Record<string,any>|null;
+  invalidation_events:{event_type:string;source:string;message:string;candle_timestamp:string;measurements:Record<string,unknown>}[];
+};
+export type InvalidationAlert = {event_id:string;symbol:string;timeframe:string;event_type:string;source:string;message:string;candle_timestamp:string;created_at:string;measurements:Record<string,unknown>};
 export type EpisodeEvent = {event_id:string;event_type:string;prior_state:string|null;current_state:string;occurred_at:string;reason_codes:string[];measurements:Record<string,unknown>};
 export type Health = {status:string;database:string;feed_status:string;stale_streams:number;total_streams:number;services:Record<string,string>;paused:boolean;kill_switch:boolean;strategy_version:string;git_sha:string};
 export type Alert = {event_id:string;symbol:string;timeframe:string;event_type:string;score:number;message:string;created_at:string;acknowledged:boolean};
