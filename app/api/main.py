@@ -788,6 +788,7 @@ async def _send_workstation_refresh(websocket: WebSocket, symbol: str, timeframe
             "contract_version": "workstation.v1",
             "type": "heartbeat",
             "generated_at": generated_at,
+            "health": payload.get("health"),
         })
     return fingerprint
 

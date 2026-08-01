@@ -97,3 +97,57 @@ def test_snapshot_fingerprint_ignores_generation_time():
     first = {"bootstrap": {"generated_at": "first", "watchlist": []}, "chart": {}}
     second = {"bootstrap": {"generated_at": "second", "watchlist": []}, "chart": {}}
     assert api_main._snapshot_fingerprint(first) == api_main._snapshot_fingerprint(second)
+
+
+def test_snapshot_fingerprint_ignores_health_and_bulk_bootstrap_lists():
+    first = {
+        "bootstrap": {
+            "generated_at": "first",
+            "watchlist": [{"symbol": "BTC/USDT"}],
+            "controls": {"paused": False},
+            "setups": [{"id": "s1"}],
+            "episodes": [{"id": "e1"}],
+            "recommendations": [{"id": "r1"}],
+        },
+        "chart": {"symbol": "BTC/USDT"},
+        "health": {"status": "healthy", "feed_status": "healthy"},
+        "alerts": [],
+    }
+    second = {
+        "bootstrap": {
+            "generated_at": "second",
+            "watchlist": [{"symbol": "BTC/USDT"}],
+            "controls": {"paused": False},
+            "setups": [{"id": "s2"}],
+            "episodes": [{"id": "e2"}],
+            "recommendations": [{"id": "r2"}],
+        },
+        "chart": {"symbol": "BTC/USDT"},
+        "health": {"status": "degraded", "feed_status": "stale"},
+        "alerts": [],
+    }
+    assert api_main._snapshot_fingerprint(first) == api_main._snapshot_fingerprint(second)
+
+
+def test_websocket_snapshot_uses_slim_bootstrap(tmp_path, monkeypatch):
+    Session = websocket_database(tmp_path)
+    settings = Settings(gui_access_token="correct-token")
+    monkeypatch.setattr(api_main, "SessionLocal", Session)
+    monkeypatch.setattr(api_main, "get_settings", lambda: settings)
+
+    async def run_in_process(function, *args):
+        return function(*args)
+
+    monkeypatch.setattr(api_main.asyncio, "to_thread", run_in_process)
+    socket = FakeWebSocket({
+        "type": "subscribe", "token": "correct-token",
+        "symbol": "BTC/USDT", "timeframe": "5m",
+    })
+    asyncio.run(api_main.gui_websocket(socket))
+    message = socket.sent[0]
+    bootstrap = message["data"]["bootstrap"]
+    assert bootstrap["watchlist"]
+    assert bootstrap["setups"] == []
+    assert bootstrap["episodes"] == []
+    assert bootstrap["recommendations"] == []
+    assert "paused" in bootstrap["controls"]

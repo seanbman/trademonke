@@ -1,4 +1,4 @@
-import {Fragment,useCallback,useEffect,useMemo,useState} from "react";
+import {Fragment,useCallback,useEffect,useMemo,useRef,useState} from "react";
 import {ChartPanel, type DrawTool} from "./ChartPanel";
 import {IndicatorGuide} from "./IndicatorGuide";
 import {WatchlistRail} from "./WatchlistRail";
@@ -10,11 +10,12 @@ import {compactPrice,humanizeAlert,isTerminalState,patternLabel,reasonLabel,scor
 import "./styles.css";
 
 const PRESET_LABELS=["LQ","BSL","SSL","BOS","CHoC","MSS"] as const;
+const LIVE_PRICE_FLUSH_MS=200;
 
 const api=async<T,>(url:string,token:string,options:RequestInit={}):Promise<T>=>{const response=await fetch(url,{...options,headers:{"Content-Type":"application/json","X-GUI-Token":token,...options.headers}});if(!response.ok)throw new Error(`${response.status} ${response.statusText}`);return response.json()};
 
 export default function App(){
-  const [token,setToken]=useState(()=>sessionStorage.getItem("gui-token")??""),[draftToken,setDraftToken]=useState(""),[boot,setBoot]=useState<Bootstrap|null>(null),[chart,setChart]=useState<ChartPayload|null>(null),[liveCandle,setLiveCandle]=useState<LiveCandle|null>(null),[livePrices,setLivePrices]=useState<Record<string,string>>({}),[events,setEvents]=useState<EpisodeEvent[]>([]),[health,setHealth]=useState<Health|null>(null),[alerts,setAlerts]=useState<Alert[]>([]),[execution,setExecution]=useState<ExecutionConsole|null>(null),[symbol,setSymbol]=useState(""),[timeframe,setTimeframe]=useState("5m"),[stream,setStream]=useState<"connecting"|"live"|"offline">("offline"),[feeder,setFeeder]=useState<"live"|"cached"|"offline">("offline"),[market,setMarket]=useState<"connecting"|"waiting"|"live"|"stale"|"offline">("offline"),[lastMarketAt,setLastMarketAt]=useState(0),[error,setError]=useState("");
+  const [token,setToken]=useState(()=>sessionStorage.getItem("gui-token")??""),[draftToken,setDraftToken]=useState(""),[boot,setBoot]=useState<Bootstrap|null>(null),[chart,setChart]=useState<ChartPayload|null>(null),[liveCandle,setLiveCandle]=useState<LiveCandle|null>(null),[livePrices,setLivePrices]=useState<Record<string,string>>({}),[events,setEvents]=useState<EpisodeEvent[]>([]),[health,setHealth]=useState<Health|null>(null),[alerts,setAlerts]=useState<Alert[]>([]),[execution,setExecution]=useState<ExecutionConsole|null>(null),[symbol,setSymbol]=useState(""),[timeframe,setTimeframe]=useState("5m"),[stream,setStream]=useState<"connecting"|"live"|"offline">("offline"),[feeder,setFeeder]=useState<"live"|"cached"|"offline">("offline"),[market,setMarket]=useState<"connecting"|"waiting"|"live"|"stale"|"offline">("offline"),[error,setError]=useState("");
   const [indicatorDirection,setIndicatorDirection]=useState<"long"|"short">("long"),[enabledIndicators,setEnabledIndicators]=useState(DEFAULT_INDICATORS),[layers,setLayers]=useState(DEFAULT_LAYERS),[selectedIndicator,setSelectedIndicator]=useState<IndicatorKey>("fvg_retest");
   const [patternTypes,setPatternTypes]=useState(DEFAULT_PATTERN_TYPES);
   const [visibleSetupIds,setVisibleSetupIds]=useState<string[]>([]),[focusedSetupId,setFocusedSetupId]=useState<string|null>(null),[setupContextKey,setSetupContextKey]=useState(""),[episodeEvents,setEpisodeEvents]=useState<Record<string,EpisodeEvent[]>>({});
@@ -22,6 +23,11 @@ export default function App(){
   const [guideOpen,setGuideOpen]=useState(false),[guideId,setGuideId]=useState<string|null>(null);
   const [drawTool,setDrawTool]=useState<DrawTool>("none"),[drawLabel,setDrawLabel]=useState<string>("LQ"),[checklistItem,setChecklistItem]=useState("");
   const [summary,setSummary]=useState<TechnicalSummary|null>(null),[invalidations,setInvalidations]=useState<InvalidationAlert[]>([]);
+  const livePricesRef=useRef<Record<string,string>>({});
+  const priceFlushTimerRef=useRef<number|undefined>(undefined);
+  const lastMarketAtRef=useRef(0);
+  const marketLiveRef=useRef(false);
+  const feederLiveRef=useRef(false);
   const openGuide=(id?:string)=>{setGuideId(id??null);setGuideOpen(true)};
   const refreshAnnotations=useCallback(()=>{
     if(!token||!symbol)return;
@@ -39,8 +45,125 @@ export default function App(){
       .catch(()=>undefined);
   },[token,symbol,timeframe]);
   useEffect(()=>{if(!token)return;api<Bootstrap>("/api/v1/gui/bootstrap",token).then(data=>{setBoot(data);setSymbol(data.watchlist[0]?.symbol??"");setError("")}).catch(e=>{setError(String(e));setToken("");sessionStorage.removeItem("gui-token")})},[token]);
-  useEffect(()=>{if(!symbol||!token)return;let socket:WebSocket|null=null,retry:number|undefined,stopped=false,delay=1000;setChart(null);setLiveCandle(null);setEvents([]);setEpisodeEvents({});setMarket("connecting");const connect=()=>{setStream("connecting");const protocol=location.protocol==="https:"?"wss":"ws";socket=new WebSocket(`${protocol}://${location.host}/api/v1/gui/ws`);socket.onopen=()=>{delay=1000;socket?.send(JSON.stringify({type:"subscribe",token,symbol,timeframe}))};socket.onmessage=event=>{const message=JSON.parse(event.data) as WorkstationMessage;setStream("live");if(message.type==="snapshot"){setBoot(message.data.bootstrap);setChart(message.data.chart);setHealth(message.data.health);setAlerts(message.data.alerts);setExecution(message.data.execution);setEpisodeEvents((message.data as {episode_events?:Record<string,EpisodeEvent[]>}).episode_events??{});setError("")}else if(message.type==="feeder_status"){setFeeder(message.status);if(message.status!=="live"){setLiveCandle(null);setMarket(message.status==="cached"?"stale":"offline")}}else if(message.type==="market_status"){setMarket(message.status==="connected"?"waiting":"offline");if(message.status==="connected")setFeeder("live");else if(message.status==="disconnected")setFeeder("offline")}else if(message.type==="live_price"){setFeeder("live");setLivePrices(prices=>({...prices,[message.symbol]:message.price}));setLastMarketAt(Date.now());setMarket("live")}else if(message.type==="live_candle"&&message.symbol===symbol&&message.timeframe===timeframe){setLiveCandle(message.candle)}};socket.onerror=()=>socket?.close();socket.onclose=()=>{if(stopped)return;setStream("offline");setFeeder("offline");setMarket("offline");retry=window.setTimeout(connect,delay);delay=Math.min(delay*2,30000)}};connect();return()=>{stopped=true;if(retry!==undefined)window.clearTimeout(retry);socket?.close()}},[symbol,timeframe,token]);
-  useEffect(()=>{const timer=window.setInterval(()=>{if(market==="live"&&Date.now()-lastMarketAt>15000)setMarket("stale")},5000);return()=>window.clearInterval(timer)},[market,lastMarketAt]);
+  useEffect(()=>{
+    const watchlist=boot?.watchlist;
+    if(!watchlist)return;
+    const allowed=new Set(watchlist.map(item=>item.symbol));
+    livePricesRef.current=Object.fromEntries(Object.entries(livePricesRef.current).filter(([key])=>allowed.has(key)));
+    setLivePrices(prev=>{
+      const next=Object.fromEntries(Object.entries(prev).filter(([key])=>allowed.has(key)));
+      return Object.keys(next).length===Object.keys(prev).length?prev:next;
+    });
+  },[boot?.watchlist]);
+  useEffect(()=>{
+    if(!symbol||!token)return;
+    let socket:WebSocket|null=null,retry:number|undefined,stopped=false,delay=1000;
+    setChart(null);setLiveCandle(null);setEvents([]);setEpisodeEvents({});setMarket("connecting");
+    marketLiveRef.current=false;feederLiveRef.current=false;
+    const flushLivePrices=()=>{
+      priceFlushTimerRef.current=undefined;
+      setLivePrices({...livePricesRef.current});
+    };
+    const schedulePriceFlush=()=>{
+      if(priceFlushTimerRef.current!==undefined)return;
+      priceFlushTimerRef.current=window.setTimeout(flushLivePrices,LIVE_PRICE_FLUSH_MS);
+    };
+    const connect=()=>{
+      setStream("connecting");
+      const protocol=location.protocol==="https:"?"wss":"ws";
+      socket=new WebSocket(`${protocol}://${location.host}/api/v1/gui/ws`);
+      socket.onopen=()=>{
+        delay=1000;
+        setStream("live");
+        socket?.send(JSON.stringify({type:"subscribe",token,symbol,timeframe}));
+      };
+      socket.onmessage=event=>{
+        const message=JSON.parse(event.data) as WorkstationMessage;
+        if(message.type==="heartbeat"){
+          if(message.health)setHealth(message.health);
+        }else if(message.type==="snapshot"){
+          setBoot(prev=>{
+            const next=message.data.bootstrap;
+            // Slim WS bootstrap omits global research lists; keep REST bootstrap lists if present.
+            if(!prev)return next;
+            return {
+              ...next,
+              setups:next.setups?.length?next.setups:prev.setups,
+              episodes:next.episodes?.length?next.episodes:prev.episodes,
+              recommendations:next.recommendations?.length?next.recommendations:prev.recommendations,
+            };
+          });
+          setChart(message.data.chart);
+          setHealth(message.data.health);
+          setAlerts(message.data.alerts);
+          setExecution(message.data.execution);
+          setEpisodeEvents((message.data as {episode_events?:Record<string,EpisodeEvent[]>}).episode_events??{});
+          setError("");
+        }else if(message.type==="feeder_status"){
+          feederLiveRef.current=message.status==="live";
+          setFeeder(message.status);
+          if(message.status!=="live"){
+            setLiveCandle(null);
+            marketLiveRef.current=false;
+            setMarket(message.status==="cached"?"stale":"offline");
+          }
+        }else if(message.type==="market_status"){
+          if(message.status==="connected"){
+            feederLiveRef.current=true;
+            setFeeder("live");
+            setMarket("waiting");
+          }else{
+            feederLiveRef.current=false;
+            marketLiveRef.current=false;
+            setFeeder("offline");
+            setMarket("offline");
+          }
+        }else if(message.type==="live_price"){
+          livePricesRef.current={...livePricesRef.current,[message.symbol]:message.price};
+          schedulePriceFlush();
+          lastMarketAtRef.current=Date.now();
+          if(!feederLiveRef.current){
+            feederLiveRef.current=true;
+            setFeeder("live");
+          }
+          if(!marketLiveRef.current){
+            marketLiveRef.current=true;
+            setMarket("live");
+          }
+        }else if(message.type==="live_candle"&&message.symbol===symbol&&message.timeframe===timeframe){
+          setLiveCandle(message.candle);
+        }
+      };
+      socket.onerror=()=>socket?.close();
+      socket.onclose=()=>{
+        if(stopped)return;
+        setStream("offline");
+        feederLiveRef.current=false;
+        marketLiveRef.current=false;
+        setFeeder("offline");
+        setMarket("offline");
+        retry=window.setTimeout(connect,delay);
+        delay=Math.min(delay*2,30000);
+      };
+    };
+    connect();
+    return()=>{
+      stopped=true;
+      if(retry!==undefined)window.clearTimeout(retry);
+      if(priceFlushTimerRef.current!==undefined)window.clearTimeout(priceFlushTimerRef.current);
+      priceFlushTimerRef.current=undefined;
+      socket?.close();
+    };
+  },[symbol,timeframe,token]);
+  useEffect(()=>{
+    const timer=window.setInterval(()=>{
+      if(market==="live"&&Date.now()-lastMarketAtRef.current>15000){
+        marketLiveRef.current=false;
+        setMarket("stale");
+      }
+    },5000);
+    return()=>window.clearInterval(timer);
+  },[market]);
   useEffect(()=>{refreshSummary()},[refreshSummary]);
   const degraded=feeder!=="live";
   const potentialSetups=useMemo(()=>degraded?[]:(chart?.episodes??[]).slice().sort((a,b)=>new Date(b.updated_at).getTime()-new Date(a.updated_at).getTime()),[chart,degraded]);
